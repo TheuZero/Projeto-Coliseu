@@ -3,38 +3,64 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
-	//este é unm model, onde fica a lógica do jogo. Ele não tem contato algum com o view.
+	//este é o model de movimento, onde fica a lógica do jogo. Ele não tem contato algum com o view.
 
 	public float movementSpeed = 4;
+	public float dashSpeed = 12;
+	public float runSpeed = 10;
 	public float jumpSpeed = 4;
-	public float timer = 0f;
-	public float maxTimer = 0.5f;
-
+	public float jumpTimer = 0f;
+	public float jumpMaxTimer = 0.5f;
+	public float dashTimer = 1f;
+	public bool isDashing;
+	public float lastDirection;
 
 	public void GroundMovement(float direction){
-		transform.Translate(Vector2.right * movementSpeed * Time.deltaTime * direction);
-		Flip(direction);
+		if(!isDashing){
+			transform.Translate(Vector2.right * movementSpeed * Time.deltaTime * direction);
+			Flip(direction);
+		}
 	}
-
 	public void Flip(float direction){
 		if(transform.localScale.x > 0 && direction < 0 || transform.localScale.x < 0 && direction > 0){
 			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 		}
 	}
-
 	public void Jump(Rigidbody2D rb){
-		if(timer < maxTimer){
-			timer += Time.deltaTime;
+		if(jumpTimer < jumpMaxTimer){
+			jumpTimer += Time.deltaTime;
 			transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
 			rb.velocity = new Vector2(rb.velocity.x, 0);
 		}
 	}
-
-	public void ResetTimer(float timer){
-		this.timer = timer;
+	public void JumpResetTimer(){
+		jumpTimer = 0;
 	}
 
-	public void TimerLimit(){
-		timer = maxTimer;
+	public void JumpTimerLimit(){
+		jumpTimer = jumpMaxTimer;
+	}
+
+	public void ActivateDash(float direction){
+		isDashing = true;
+		dashTimer = 0.4f;
+		lastDirection = direction;
+		Flip(direction);
+
+	}
+	public void Dash(float direction){
+		if(isDashing){
+			dashTimer -= Time.deltaTime;
+			if (dashTimer > 0){
+				transform.Translate(Vector2.right * dashSpeed * Time.deltaTime * lastDirection);
+			}else{
+				isDashing = false;
+			}
+		}
+	}
+
+	public void Running(float direction){
+			transform.Translate(Vector2.right * runSpeed * Time.deltaTime * direction);
+			Flip(direction);
 	}
 }
