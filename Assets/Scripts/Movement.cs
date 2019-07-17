@@ -14,6 +14,11 @@ public class Movement : MonoBehaviour {
 	public float dashTimer = 1f;
 	public bool isDashing;
 	public float lastDirection;
+	public GroundDetection groundDetection;
+
+	void Start(){
+		groundDetection = GetComponent<GroundDetection>();
+	}
 
 	public void GroundMovement(float direction){
 		if(!isDashing){
@@ -42,10 +47,12 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void ActivateDash(float direction){
-		isDashing = true;
-		dashTimer = 0.4f;
-		lastDirection = direction;
-		Flip(direction);
+		//if(groundDetection.isGrounded){
+			isDashing = true;
+			dashTimer = 0.4f;
+			lastDirection = direction;
+			Flip(direction);
+		//}
 
 	}
 	public void Dash(float direction){

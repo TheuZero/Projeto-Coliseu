@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GroundDetection : MonoBehaviour
 {
-    public BoxCollider2D collider;
+    new public BoxCollider2D collider;
     public LayerMask ground;
-    public bool isGrounded;
+    public bool isGroundedCheck;
     public Movement movement;
     public float rayNumber;
     Vector3 rayPosition;
@@ -26,10 +26,10 @@ public class GroundDetection : MonoBehaviour
         Detection();
         //Debug.Log(collider.bounds.min);
        // Debug.Log(Vector2.up * -0.014f);
-       Debug.Log(collider.bounds.size);
+        Debug.Log(collider.bounds.size);
     }
 
-    public void Detection(){
+    private bool Detection(){
         size = collider.bounds.size;
 		min = collider.bounds.min;
 		max = collider.bounds.max;
@@ -41,11 +41,16 @@ public class GroundDetection : MonoBehaviour
            
             if(hit.collider != null){
                 Debug.Log("vc é gay");
-                isGrounded = true;
+                isGroundedCheck = true;
                 movement.JumpResetTimer();
             }else{
-                isGrounded = false;
+                isGroundedCheck = false;
             }
         }
+        return isGroundedCheck;
+    }
+
+    public bool isGrounded {
+        get { return Detection(); }
     }
 }

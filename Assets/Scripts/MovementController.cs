@@ -12,9 +12,11 @@ public class MovementController : MonoBehaviour {
 	float lastKeyPressed;
 	float doubleTapDashTimer = 0.4f;
 	float lastPressed;
+	public GroundDetection groundDetection;
 	// Use this for initialization
 
 	void Start () {
+		groundDetection = GetComponent<GroundDetection>();
 		movement = GetComponent<Movement>();
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
