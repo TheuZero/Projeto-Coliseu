@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour {
 	public float jumpTimer = 0f;
 	public float jumpMaxTimer = 0.5f;
 	public float dashTimer = 1f;
+	public float defaultDashTimer = 0.4f;
 	public bool isDashing;
 	public float lastDirection;
 	public GroundDetection groundDetection;
@@ -49,7 +50,7 @@ public class Movement : MonoBehaviour {
 	public void ActivateDash(float direction){
 		//if(groundDetection.isGrounded){
 			isDashing = true;
-			dashTimer = 0.4f;
+			dashTimer = defaultDashTimer;
 			lastDirection = direction;
 			Flip(direction);
 		//}
