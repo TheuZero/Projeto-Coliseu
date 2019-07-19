@@ -13,13 +13,24 @@ public class MovementController : MonoBehaviour {
 	float doubleTapDashTimer = 0.4f;
 	float lastPressed;
 	public GroundDetection groundDetection;
-	// Use this for initialization
+	
+	int isGrounded;
+	int isWalking;
+	int isDashing;
+	int isJumping;
+	
 
 	void Start () {
 		groundDetection = GetComponent<GroundDetection>();
 		movement = GetComponent<Movement>();
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
+
+		//hashes
+		isGrounded = Animator.StringToHash("isGrounded");
+		isWalking = Animator.StringToHash("isWalking");
+		isDashing = Animator.StringToHash("isDashing");
+		isJumping = Animator.StringToHash("isJumping");
 	}
 	
 	// Update is called once per frame
@@ -30,18 +41,29 @@ public class MovementController : MonoBehaviour {
 			if(lastKeyPressed == Input.GetAxisRaw("Horizontal")){
 				if(Time.time - lastPressed < doubleTapDashTimer){
 					movement.ActivateDash(Input.GetAxisRaw("Horizontal"));
-					anim.SetTrigger("isDashing");
+					anim.SetTrigger(isDashing);
 					lastKeyPressed = 0;
 				}
 			}
 			lastPressed = Time.time;
-			lastKeyPressed = Input.GetAxisRaw("Horizontal");
+			if(Input.GetAxisRaw("Horizontal") != 0){
+				lastKeyPressed = Input.GetAxisRaw("Horizontal");
+			}
 		}
 		//pulo
+		if(Input.GetButtonDown("Jump")){
+			if(groundDetection.isGrounded){
+				movement.ActivateJump();
+				//anim.SetBool("isJumping", true);
+			}
+		}
+		if(Input.GetButtonUp("Jump")){
+			movement.JumpTimerLimit();
+		}
 
 		//------------ataques---------------
 		if(Input.GetButtonDown("Fire1")){
-			anim.SetBool("isAttacking", true);
+			anim.SetTrigger("isAttacking");
 		}
 	}
 
@@ -49,24 +71,21 @@ public class MovementController : MonoBehaviour {
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
 			if(stateInfo.IsTag("Base")){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));
-				anim.SetBool("isWalking", true);
+				anim.SetBool(isWalking, true);
 			}
 		}else{
-			anim.SetBool("isWalking", false);
+			anim.SetBool(isWalking, false);
 		}
 
 		if(Input.GetButton("Jump")){
 			movement.Jump(rb);
 		}
-		if(Input.GetButtonUp("Jump")){
-			movement.JumpTimerLimit();
-		}
 
-		//rotina de dash, ativado após o activate dash.
-		movement.Dash(Mathf.Sign(transform.localScale.x));
+		StateUpdate();
 	}
 
-	void Walk(){
-
+	void StateUpdate(){
+		anim.SetBool(isGrounded,groundDetection.isGrounded);
+		anim.SetBool(isJumping, movement.isJumping);
 	}
 }

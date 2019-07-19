@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour {
 	//este é o model de movimento, onde fica a lógica do jogo. Ele não tem contato algum com o view.
-
 	public float movementSpeed = 4;
 	public float dashSpeed = 12;
 	public float runSpeed = 10;
+
+	//timers
 	public float jumpSpeed = 4;
 	public float jumpTimer = 0f;
 	public float jumpMaxTimer = 0.5f;
 	public float dashTimer = 1f;
 	public float defaultDashTimer = 0.4f;
+
+	//states
 	public bool isDashing;
+	public bool isJumping;
+
+
 	public float lastDirection;
 	public GroundDetection groundDetection;
 
 	void Start(){
 		groundDetection = GetComponent<GroundDetection>();
+	}
+
+	void FixedUpdate(){
+		//rotina de dash, ativado após o activate dash.
+		Dash(Mathf.Sign(transform.localScale.x));
 	}
 
 	public void GroundMovement(float direction){
@@ -32,11 +43,22 @@ public class Movement : MonoBehaviour {
 			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 		}
 	}
+
+	public void ActivateJump(){
+
+		transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
+		isJumping = true;
+	}
+
 	public void Jump(Rigidbody2D rb){
-		if(jumpTimer < jumpMaxTimer){
-			jumpTimer += Time.deltaTime;
-			transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
-			rb.velocity = new Vector2(rb.velocity.x, 0);
+		if(isJumping){
+			if(jumpTimer < jumpMaxTimer){
+				jumpTimer += Time.deltaTime;
+				transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
+				rb.velocity = new Vector2(rb.velocity.x, 0);
+			}else{
+				isJumping = false;
+			}
 		}
 	}
 	public void JumpResetTimer(){
@@ -44,6 +66,7 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void JumpTimerLimit(){
+		isJumping = false;
 		jumpTimer = jumpMaxTimer;
 	}
 
@@ -60,7 +83,7 @@ public class Movement : MonoBehaviour {
 		if(isDashing){
 			dashTimer -= Time.deltaTime;
 			if (dashTimer > 0){
-				transform.Translate(Vector2.right * dashSpeed * Time.deltaTime * lastDirection);
+				transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * lastDirection) * (4 * dashTimer));
 			}else{
 				isDashing = false;
 			}

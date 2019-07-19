@@ -36,7 +36,7 @@ public class GroundDetection : MonoBehaviour
 
         for(int i = 0; i <  rayNumber; i++){
             rayPosition = new Vector3(max.x - (size.x / (rayNumber - 1)) * (i), min.y, 0);
-            RaycastHit2D hit = Physics2D.Raycast(rayPosition, -Vector2.up, 0.14f, ground);
+            RaycastHit2D hit = Physics2D.Raycast(rayPosition, -Vector2.up, 0.08f, ground);
             Debug.DrawRay(rayPosition, Vector2.up * -0.14f, Color.red);
            
             if(hit.collider != null){
