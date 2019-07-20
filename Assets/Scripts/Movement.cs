@@ -14,22 +14,29 @@ public class Movement : MonoBehaviour {
 	public float jumpMaxTimer = 0.5f;
 	public float dashTimer = 1f;
 	public float defaultDashTimer = 0.4f;
-
+	public float airDashTimer = 10f;
+	public float defaultAirDashTimer = 0.4f;
+	public float gravityTimer = 0.2f;
+	public float defaultGravityTimer = 0.2f;
 	//states
 	public bool isDashing;
+	public bool isAirDashing;
 	public bool isJumping;
 
 
 	public float lastDirection;
 	public GroundDetection groundDetection;
 
+	public Rigidbody2D rb;
 	void Start(){
 		groundDetection = GetComponent<GroundDetection>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	void FixedUpdate(){
 		//rotina de dash, ativado após o activate dash.
 		Dash(Mathf.Sign(transform.localScale.x));
+		AirDash(Mathf.Sign(transform.localScale.x));
 	}
 
 	public void GroundMovement(float direction){
@@ -71,17 +78,24 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void ActivateDash(float direction){
-		//if(groundDetection.isGrounded){
+		if(groundDetection.isGrounded){
 			isDashing = true;
 			dashTimer = defaultDashTimer;
 			lastDirection = direction;
 			Flip(direction);
-		//}
+		}else{
+			isAirDashing = true;
+			airDashTimer = defaultAirDashTimer;
+			lastDirection = direction;
+			Flip(direction);
+		}
 
 	}
+
 	public void Dash(float direction){
 		if(isDashing){
 			dashTimer -= Time.deltaTime;
+			gravityTimer -= Time.deltaTime;
 			if (dashTimer > 0){
 				transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * lastDirection) * (4 * dashTimer));
 			}else{
@@ -89,6 +103,21 @@ public class Movement : MonoBehaviour {
 			}
 		}
 	}
+
+	public void AirDash(float direction){
+		if(isAirDashing){
+			airDashTimer -= Time.deltaTime;
+			if (airDashTimer > 0){
+				transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * lastDirection) * (4 * airDashTimer));
+				if(gravityTimer > 0){
+					rb.velocity = new Vector3(0,-4,0);
+				}
+			}else{
+				isAirDashing = false;
+			}
+		}
+	}
+
 
 	public void Running(float direction){
 			transform.Translate(Vector2.right * runSpeed * Time.deltaTime * direction);
