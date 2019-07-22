@@ -85,7 +85,7 @@ public class MovementController : MonoBehaviour {
 	}
 
 	void StateUpdate(){
-		anim.SetBool(isGrounded,groundDetection.isGrounded);
+		anim.SetBool(isGrounded, groundDetection.isGrounded);
 		anim.SetBool(isJumping, movement.isJumping);
 	}
 }

@@ -107,13 +107,15 @@ public class Movement : MonoBehaviour {
 	public void AirDash(float direction){
 		if(isAirDashing){
 			airDashTimer -= Time.deltaTime;
+			gravityTimer -= Time.deltaTime;
 			if (airDashTimer > 0){
 				transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * lastDirection) * (4 * airDashTimer));
 				if(gravityTimer > 0){
-					rb.velocity = new Vector3(0,-4,0);
+					rb.velocity = new Vector3(0,-1,0);
 				}
 			}else{
 				isAirDashing = false;
+				gravityTimer = defaultGravityTimer;
 			}
 		}
 	}
