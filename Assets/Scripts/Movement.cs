@@ -12,9 +12,9 @@ public class Movement : MonoBehaviour {
 	public float jumpSpeed = 4;
 	public float jumpTimer = 0f;
 	public float jumpMaxTimer = 0.5f;
-	public float dashTimer = 1f;
+	public float dashTimer = 0f;
 	public float defaultDashTimer = 0.4f;
-	public float airDashTimer = 10f;
+	public float airDashTimer = 0f;
 	public float defaultAirDashTimer = 0.4f;
 	public float gravityTimer = 0.2f;
 	public float defaultGravityTimer = 0.2f;
@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour {
 	public bool isDashing;
 	public bool isAirDashing;
 	public bool isJumping;
-
+	public bool isRunning;
 
 	public float lastDirection;
 	public GroundDetection groundDetection;
@@ -120,9 +120,21 @@ public class Movement : MonoBehaviour {
 		}
 	}
 
+	public void ActivateRun(float direction){
+		if(isDashing || isAirDashing){
+			if(direction == transform.localScale.x){
+				if(dashTimer > defaultDashTimer / 3 || airDashTimer > defaultAirDashTimer / 3){
+					isRunning = true;
+				}
+			}
+		}
+	}
 
 	public void Running(float direction){
+		if(isRunning){
 			transform.Translate(Vector2.right * runSpeed * Time.deltaTime * direction);
 			Flip(direction);
+		}
 	}
+
 }
