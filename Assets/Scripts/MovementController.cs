@@ -18,6 +18,7 @@ public class MovementController : MonoBehaviour {
 	int isWalking;
 	int isDashing;
 	int isJumping;
+	int isRunning;
 	
 
 	void Start () {
@@ -31,6 +32,7 @@ public class MovementController : MonoBehaviour {
 		isWalking = Animator.StringToHash("isWalking");
 		isDashing = Animator.StringToHash("isDashing");
 		isJumping = Animator.StringToHash("isJumping");
+		isRunning = Animator.StringToHash("isRunning");
 	}
 	
 	// Update is called once per frame
@@ -49,6 +51,9 @@ public class MovementController : MonoBehaviour {
 			if(Input.GetAxisRaw("Horizontal") != 0){
 				lastKeyPressed = Input.GetAxisRaw("Horizontal");
 			}
+		}
+		if(Input.GetAxisRaw("Horizontal") == 0){
+			movement.isRunning = false;
 		}
 		//pulo
 		if(Input.GetButtonDown("Jump")){
@@ -69,6 +74,7 @@ public class MovementController : MonoBehaviour {
 
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
+			movement.Running(Input.GetAxisRaw("Horizontal"));
 			if(stateInfo.IsTag("Base")){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));
 				anim.SetBool(isWalking, true);
@@ -87,5 +93,6 @@ public class MovementController : MonoBehaviour {
 	void StateUpdate(){
 		anim.SetBool(isGrounded, groundDetection.isGrounded);
 		anim.SetBool(isJumping, movement.isJumping);
+		anim.SetBool(isRunning, movement.isRunning);
 	}
 }

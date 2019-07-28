@@ -80,12 +80,14 @@ public class Movement : MonoBehaviour {
 	public void ActivateDash(float direction){
 		if(groundDetection.isGrounded){
 			isDashing = true;
+			airDashTimer = defaultAirDashTimer;
 			dashTimer = defaultDashTimer;
 			lastDirection = direction;
 			Flip(direction);
 		}else{
 			isAirDashing = true;
 			airDashTimer = defaultAirDashTimer;
+			dashTimer = defaultDashTimer;
 			lastDirection = direction;
 			Flip(direction);
 		}
@@ -123,7 +125,7 @@ public class Movement : MonoBehaviour {
 	public void ActivateRun(float direction){
 		if(isDashing || isAirDashing){
 			if(direction == transform.localScale.x){
-				if(dashTimer > defaultDashTimer / 3 || airDashTimer > defaultAirDashTimer / 3){
+				if(dashTimer < defaultDashTimer / 3 || airDashTimer < defaultAirDashTimer / 3){
 					isRunning = true;
 				}
 			}
@@ -131,6 +133,7 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void Running(float direction){
+		ActivateRun(direction);
 		if(isRunning){
 			transform.Translate(Vector2.right * runSpeed * Time.deltaTime * direction);
 			Flip(direction);
