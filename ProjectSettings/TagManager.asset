@@ -8,6 +8,8 @@ TagManager:
   - Hurt Box
   - Ledge Box
   - Ledge Area
+  - Hit Box
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - Hit Box
   - Hurt Box
   - Ledge
-  - 
+  - Enemy
   - 
   - 
   - 
