@@ -43,7 +43,7 @@ public class MovementController : MonoBehaviour {
 			if(lastKeyPressed == Input.GetAxisRaw("Horizontal")){
 				if(Time.time - lastPressed < doubleTapDashTimer){
 					movement.ActivateDash(Input.GetAxisRaw("Horizontal"));
-					anim.SetTrigger(isDashing);
+					//anim.SetTrigger(isDashing);
 					lastKeyPressed = 0;
 				}
 			}
@@ -74,7 +74,7 @@ public class MovementController : MonoBehaviour {
 
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
-			movement.Running(Input.GetAxisRaw("Horizontal"));
+			//movement.Running(Input.GetAxisRaw("Horizontal"));
 			if(stateInfo.IsTag("Base")){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));
 				anim.SetBool(isWalking, true);
@@ -94,5 +94,6 @@ public class MovementController : MonoBehaviour {
 		anim.SetBool(isGrounded, groundDetection.isGrounded);
 		anim.SetBool(isJumping, movement.isJumping);
 		anim.SetBool(isRunning, movement.isRunning);
+		anim.SetBool(isDashing, movement.isDashing);
 	}
 }

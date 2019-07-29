@@ -51,6 +51,6 @@ public class GroundDetection : MonoBehaviour
     }
 
     public bool isGrounded {
-        get { return Detection(); }
+        get { return isGroundedCheck; }
     }
 }

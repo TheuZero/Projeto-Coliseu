@@ -126,7 +126,8 @@ public class Movement : MonoBehaviour {
 		if(isDashing || isAirDashing){
 			if(direction == transform.localScale.x){
 				if(dashTimer < defaultDashTimer / 3 || airDashTimer < defaultAirDashTimer / 3){
-					isRunning = true;
+					isDashing = false;
+					isRunning = true;					
 				}
 			}
 		}
