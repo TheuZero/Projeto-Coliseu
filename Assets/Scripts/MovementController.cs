@@ -40,16 +40,18 @@ public class MovementController : MonoBehaviour {
 		stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
 		if(Input.GetButtonDown("Horizontal")){
-			if(lastKeyPressed == Input.GetAxisRaw("Horizontal")){
-				if(Time.time - lastPressed < doubleTapDashTimer){
+			if(lastKeyPressed == Input.GetAxisRaw("Horizontal") && Time.time - lastPressed < doubleTapDashTimer ){
+
 					movement.ActivateDash(Input.GetAxisRaw("Horizontal"));
 					//anim.SetTrigger(isDashing);
 					lastKeyPressed = 0;
-				}
+				
 			}
+			else{
 			lastPressed = Time.time;
 			if(Input.GetAxisRaw("Horizontal") != 0){
 				lastKeyPressed = Input.GetAxisRaw("Horizontal");
+			}
 			}
 		}
 		if(Input.GetAxisRaw("Horizontal") == 0){
@@ -65,16 +67,11 @@ public class MovementController : MonoBehaviour {
 		if(Input.GetButtonUp("Jump")){
 			movement.JumpTimerLimit();
 		}
-
-		//------------ataques---------------
-		if(Input.GetButtonDown("Fire1")){
-			anim.SetTrigger("isAttacking");
-		}
 	}
 
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
-			//movement.Running(Input.GetAxisRaw("Horizontal"));
+			movement.Running(Input.GetAxisRaw("Horizontal"));
 			if(stateInfo.IsTag("Base")){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));
 				anim.SetBool(isWalking, true);

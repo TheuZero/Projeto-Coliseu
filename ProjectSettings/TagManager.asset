@@ -10,6 +10,7 @@ TagManager:
   - Ledge Area
   - Hit Box
   - Enemy
+  - Special Hit Box
   layers:
   - Default
   - TransparentFX
