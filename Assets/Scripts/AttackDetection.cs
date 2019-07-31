@@ -13,7 +13,9 @@ public class AttackDetection : MonoBehaviour
             Debug.Log("wtf");
         }
         if(col.gameObject.tag == "Hurt Box"){
-            col.gameObject.GetComponent<DamageDetection>().TakeDamage(attack.DamageCalc(), attack.GetHitstun());
+            attack.DamageCalc();
+//            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
+            col.gameObject.GetComponent<DamageDetection>().TakeDamage(attack.attackInfo);
             
         }
     }

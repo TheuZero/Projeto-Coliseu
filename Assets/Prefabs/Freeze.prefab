@@ -388,7 +388,6 @@ Transform:
   - {fileID: 574465937}
   - {fileID: 110918538}
   - {fileID: 429711770}
-  - {fileID: 1871706160298000444}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -616,7 +615,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 1
-  hitstun: 0.1
 --- !u!114 &2966505406697483806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,33 +739,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60236b50b22b27d478c3bd7f6f718891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4520033737446068424
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1871706160298000444}
-  m_Layer: 10
-  m_Name: Projectiles
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1871706160298000444
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4520033737446068424}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1103768241043425690}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -40,7 +40,6 @@ public class GroundDetection : MonoBehaviour
             Debug.DrawRay(rayPosition, Vector2.up * -0.14f, Color.red);
            
             if(hit.collider != null){
-                Debug.Log("vc é gay");
                 isGroundedCheck = true;
                 movement.JumpResetTimer();
             }else{

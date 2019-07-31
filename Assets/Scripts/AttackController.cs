@@ -5,22 +5,32 @@ using UnityEngine;
 public class AttackController : MonoBehaviour
 {
     Animator anim;
+    GameObject icePillar;
+    float side;
     void Start()
     {
         anim = GetComponent<Animator>();
+        icePillar = transform.parent.transform.GetChild(2).GetChild(0).gameObject;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("Attack")){
 			anim.SetTrigger("isAttacking");
 		}
-
-        if(Input.GetButtonDown("Special")){
-            anim.SetBool("icePillar", true);
-        }else{
-            anim.SetBool("icePillar", false);
+        if(!icePillar.activeSelf){
+            if(Input.GetButtonDown("Special")){
+                anim.SetBool("icePillar", true);
+            }else{
+                anim.SetBool("icePillar", false);
+            }
         }
+    }
+
+    public void ActivateIcePillar(){
+        side = transform.localScale.x;
+        icePillar.SetActive(true);
+        icePillar.transform.position = new Vector2(transform.position.x + side * 0.8f, transform.position.y + 0.12f);
+        icePillar.transform.localScale = new Vector2(side, icePillar.transform.localScale.y);
     }
 }

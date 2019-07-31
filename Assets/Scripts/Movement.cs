@@ -52,7 +52,6 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void ActivateJump(){
-
 		transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
 		isJumping = true;
 	}

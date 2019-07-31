@@ -21,11 +21,11 @@ public class Defense : MonoBehaviour
         StateUpdate();
     }
     
-    public void Damaged(float damage, float hitstun){
-        HP -= damage;
+    public void Damaged(AttackInfo attackInfo){
+        HP -= attackInfo.damage;
         if(hitstun > 0){
             isHitstunned = true;
-            hitstunTimer = hitstun;
+            hitstunTimer = attackInfo.hitstun;
         }
     }
 

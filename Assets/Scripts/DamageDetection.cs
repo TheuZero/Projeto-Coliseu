@@ -11,8 +11,8 @@ public class DamageDetection : MonoBehaviour
         parent = transform.parent.gameObject;
         defense = parent.GetComponent<Defense>();
     }
-    public void TakeDamage(float damage, float hitstun){
-        defense.Damaged(damage, hitstun);
-        Debug.Log(parent.name + "Has taken " + damage + " damage and " + hitstun + " hitstun");
+    public void TakeDamage(AttackInfo attackInfo){
+        defense.Damaged(attackInfo);
+        Debug.Log(parent.name + "Has taken " + attackInfo.damage + " damage and " + attackInfo.hitstun + " hitstun");
     }
 }
