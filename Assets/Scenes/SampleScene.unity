@@ -490,6 +490,7 @@ GameObject:
   - component: {fileID: 906836848}
   - component: {fileID: 906836850}
   - component: {fileID: 906836849}
+  - component: {fileID: 906836851}
   m_Layer: 0
   m_Name: Ice Ball
   m_TagString: Untagged
@@ -504,12 +505,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906836847}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.67, y: -0.753, z: 0.00048828125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1002679498}
-  m_RootOrder: 0
+  m_Father: {fileID: 914012211}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &906836849
 SpriteRenderer:
@@ -578,6 +579,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &906836851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906836847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d279a35ac75f5df439eed10a56c0ecf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &914012210
 GameObject:
   m_ObjectHideFlags: 0
@@ -588,6 +601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914012211}
   - component: {fileID: 914012212}
+  - component: {fileID: 914012213}
   m_Layer: 10
   m_Name: Special
   m_TagString: Special Hit Box
@@ -607,8 +621,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1922586870}
+  - {fileID: 906836848}
   m_Father: {fileID: 1828173145}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &914012212
 BoxCollider2D:
@@ -636,7 +651,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
---- !u!1 &1002679497
+--- !u!114 &914012213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914012210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece12f1035cc99443b093bec6cd7847e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 1
+--- !u!1 &968772614
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,29 +672,68 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1002679498}
-  m_Layer: 0
-  m_Name: Projectiles
+  - component: {fileID: 968772615}
+  - component: {fileID: 968772616}
+  - component: {fileID: 968772618}
+  m_Layer: 10
+  m_Name: Hit Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1002679498
+  m_IsActive: 0
+--- !u!4 &968772615
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002679497}
+  m_GameObject: {fileID: 968772614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 906836848}
-  m_Father: {fileID: 1828173145}
-  m_RootOrder: 1
+  m_Children: []
+  m_Father: {fileID: 1922586870}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968772616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968772614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed203f0eb521cb449d513b93ac9dfe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &968772618
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968772614}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.5, y: -0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.000100016594, y: 0.0001}
+  m_EdgeRadius: 0
 --- !u!1 &1054516621
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,10 +745,10 @@ GameObject:
   - component: {fileID: 1054516628}
   - component: {fileID: 1054516627}
   - component: {fileID: 1054516626}
-  - component: {fileID: 1054516625}
   - component: {fileID: 1054516624}
   - component: {fileID: 1054516623}
   - component: {fileID: 1054516622}
+  - component: {fileID: 1054516625}
   m_Layer: 14
   m_Name: Bandit_0
   m_TagString: Enemy
@@ -736,7 +803,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027072579, y: 0}
+  m_Offset: {x: -0.027072579, y: 0.011753321}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -747,7 +814,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.42491478, y: 0.67}
+  m_Size: {x: 0.42491478, y: 0.6464934}
   m_EdgeRadius: 0
 --- !u!95 &1054516625
 Animator:
@@ -951,7 +1018,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1528855723}
-  - {fileID: 1002679498}
   - {fileID: 914012211}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -969,7 +1035,6 @@ GameObject:
   - component: {fileID: 1922586873}
   - component: {fileID: 1922586872}
   - component: {fileID: 1922586871}
-  - component: {fileID: 1922586875}
   - component: {fileID: 1922586876}
   m_Layer: 10
   m_Name: Ice Pillar
@@ -988,7 +1053,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.816, y: 0.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 968772615}
   m_Father: {fileID: 914012211}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1100,18 +1166,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
---- !u!114 &1922586875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922586869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d3e54ff6d2eb941bf05148344ea733, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1922586876
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,20 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackDetection : MonoBehaviour
+public class SpecialDetection : MonoBehaviour
 {
-    GameObject player;
-    Attack attack;
+    IcePillar attack;
     void Start(){
-        player = transform.parent.transform.parent.gameObject;
-        attack = player.GetComponent<Attack>();
+        attack = transform.parent.gameObject.GetComponent<IcePillar>();
     }
     void OnTriggerEnter2D(Collider2D col){
         if(col == null){
             Debug.Log("wtf");
         }
         if(col.gameObject.tag == "Hurt Box"){
-            attack.DamageCalc();
 //            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attack.attackInfo);
             
