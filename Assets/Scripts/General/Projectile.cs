@@ -9,13 +9,15 @@ public class Projectile : MonoBehaviour
     public float side;
 
     AttackInfo attackInfo;
+    GameObject player;
     
     void Start(){
         attackInfo = new AttackInfo();
+        player = transform.parent.transform.parent.transform.GetChild(0).gameObject;
     }
     void OnEnable(){
-
-        SetAttack();
+        StartCoroutine("Duration");
+        //side = player.transform.localScale.x;
     }
 
     void FixedUpdate(){
@@ -30,4 +32,10 @@ public class Projectile : MonoBehaviour
         attackInfo.knockup = 4.4f;
         attackInfo.knockupDuration = 0.10f;
     }
+
+    IEnumerator Duration(){
+        yield return new WaitForSeconds(1);
+        gameObject.SetActive(false);
+    }
+    //remover o dano e pegar o side pelo scale
 }

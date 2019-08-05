@@ -7,9 +7,14 @@ public class IcePillar : MonoBehaviour
     GameObject special;
     public AttackInfo attackInfo;
 
+    float hitstun = 2;
+    float damage = 5;
+    float knockback = 8;
+    float knockbackDuration = 0.5f;
+    float knockup = 4.4f;
+    float knockupDuration = 0.25f;
     
     void Awake(){
-        special = transform.parent.gameObject;
         attackInfo = new AttackInfo();
         SetAttack();
     }
@@ -18,18 +23,15 @@ public class IcePillar : MonoBehaviour
         //gameObject.transform.SetParent(special.transform, false);
     }
     void OnDisable(){
-        gameObject.transform.SetParent(special.transform);
+        //gameObject.transform.SetParent(special.transform);
     }
     void SetAttack(){
-        attackInfo.hitstun = 2;
-        attackInfo.damage = 5;
-        attackInfo.knockback = 8;
-        attackInfo.knockbackDuration = 0.5f;
-        attackInfo.knockup = 4.4f;
-        attackInfo.knockupDuration = 0.25f;
-    }
-    public void FlipSide(){
-        attackInfo.side = transform.localScale.x;
+        attackInfo.hitstun = hitstun;
+        attackInfo.damage = damage;
+        attackInfo.knockback = knockback;
+        attackInfo.knockbackDuration = knockbackDuration;
+        attackInfo.knockup = knockup;
+        attackInfo.knockupDuration = knockupDuration;
     }
     IEnumerator Duration(){
         yield return new WaitForSeconds(3);
