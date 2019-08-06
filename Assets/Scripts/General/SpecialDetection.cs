@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SpecialDetection : MonoBehaviour
 {
-    IcePillar attack;
+    SpecialDamage attack;
     void Start(){
-        attack = transform.parent.gameObject.GetComponent<IcePillar>();
+        attack = transform.parent.gameObject.GetComponent<SpecialDamage>();
     }
     void OnTriggerEnter2D(Collider2D col){
         if(col == null){

@@ -83,7 +83,9 @@ public class MovementController : MonoBehaviour {
 		if(Input.GetButton("Jump")){
 			movement.Jump(rb);
 		}
-
+		if(groundDetection.isGrounded){
+			movement.JumpResetTimer();
+		}
 		StateUpdate();
 	}
 

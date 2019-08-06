@@ -11,13 +11,14 @@ public class Projectile : MonoBehaviour
     AttackInfo attackInfo;
     GameObject player;
     
-    void Start(){
+    void Awake(){
         attackInfo = new AttackInfo();
         player = transform.parent.transform.parent.transform.GetChild(0).gameObject;
     }
     void OnEnable(){
         StartCoroutine("Duration");
-        //side = player.transform.localScale.x;
+        attackInfo.side = player.transform.localScale.x;
+        side = player.transform.localScale.x;
     }
 
     void FixedUpdate(){

@@ -16,7 +16,7 @@ public class GroundDetection : MonoBehaviour
     Vector3 size;
     void Start()
     {
-        movement = GetComponent<Movement>();
+        //movement = GetComponent<Movement>();
         collider = GetComponent<BoxCollider2D>();    
     }
 
@@ -41,7 +41,7 @@ public class GroundDetection : MonoBehaviour
            
             if(hit.collider != null){
                 isGroundedCheck = true;
-                movement.JumpResetTimer();
+                //movement.JumpResetTimer();
             }else{
                 isGroundedCheck = false;
             }

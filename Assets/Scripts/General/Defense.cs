@@ -6,8 +6,10 @@ public class Defense : MonoBehaviour
 {
     Animator anim;
     Rigidbody2D rb;
-
+    GroundDetection gd;
+    
     public float HP = 20;
+    public float weight = 10;
     float defense;
     bool isHitstunned;
     float hitstunTimer;
@@ -23,10 +25,11 @@ public class Defense : MonoBehaviour
 
     void Start(){
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        gd = GetComponent<GroundDetection>();
         hitstun = Animator.StringToHash("Hitstun");
         launch = Animator.StringToHash("Launch");
         fall = Animator.StringToHash("Fall");
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate(){
@@ -34,6 +37,10 @@ public class Defense : MonoBehaviour
         StateUpdate();
         ApplyKnockback();
         ApplyKnockup();
+
+        if(gd.isGrounded){
+            anim.SetBool(launch, false);
+        }
 
         if(Input.GetKey("q")){
             anim.SetBool(fall, false);
@@ -65,23 +72,27 @@ public class Defense : MonoBehaviour
     }
 
     public void ApplyKnockback(){
-        if(knockbackDuration > 0){
+        if(knockback > 0){
             knockbackDuration -= Time.deltaTime;
-            knockback -= Time.deltaTime;
+            knockback -= Time.deltaTime * weight;
+            if(knockback < 0){
+                knockback = 0;
+            }
             transform.Translate(Vector2.right * knockback * Time.deltaTime * side);
         }
     }
 
     public void ApplyKnockup(){
-        if(knockupDuration > 0){
+        if(knockup > 0){
             rb.velocity = new Vector2(rb.velocity.x, 0);
-            knockup -= Time.deltaTime;
+            knockup -= Time.deltaTime * weight;
             knockupDuration -= Time.deltaTime;
+            if(knockup < 0 ){
+                knockup = 0;
+            }
             transform.Translate(Vector2.up * knockup * Time.deltaTime);
             anim.SetBool(launch, true);
             anim.SetBool(fall, true);
-        }else{
-            anim.SetBool(launch, false);
         }
     }
 
