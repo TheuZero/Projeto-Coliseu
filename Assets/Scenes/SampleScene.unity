@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 906836849}
   - component: {fileID: 906836851}
   - component: {fileID: 906836852}
+  - component: {fileID: 906836853}
   m_Layer: 10
   m_Name: Ice Ball
   m_TagString: Untagged
@@ -596,6 +597,7 @@ MonoBehaviour:
   speed: 6
   duration: 6
   side: 0
+  maxHit: 0
 --- !u!114 &906836852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -608,12 +610,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38d9fb5b64cba94790c73518fa4c5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitstun: 2
-  damage: 5
-  knockback: 4
-  knockbackDuration: 0.5
-  knockup: 2
-  knockupDuration: 0.25
+  attackData: {fileID: 11400000, guid: 1f9806f35dc6bfe4e8bc86c735a6dac8, type: 2}
+--- !u!61 &906836853
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906836847}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.34}
+    newSize: {x: 0.48, y: 0.34}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.34030312, y: 0.34}
+  m_EdgeRadius: 0
 --- !u!1 &914012210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,12 +1246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38d9fb5b64cba94790c73518fa4c5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitstun: 2
-  damage: 5
-  knockback: 8
-  knockbackDuration: 0.5
-  knockup: 4.4
-  knockupDuration: 0.25
+  attackData: {fileID: 11400000, guid: de1ac5a28fa852647bc80aa0131d4aec, type: 2}
 --- !u!114 &1922586876
 MonoBehaviour:
   m_ObjectHideFlags: 0

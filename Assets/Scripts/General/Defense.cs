@@ -38,7 +38,7 @@ public class Defense : MonoBehaviour
         ApplyKnockback();
         ApplyKnockup();
 
-        if(gd.isGrounded){
+        if(gd.isGrounded && knockup <= 0){
             anim.SetBool(launch, false);
         }
 
