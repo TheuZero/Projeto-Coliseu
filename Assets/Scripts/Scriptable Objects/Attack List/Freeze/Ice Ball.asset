@@ -14,8 +14,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300344, guid: abfbabfb92e9db249b4f217f2fb24a1f, type: 3}
   attackName: 
-  dmgMultiplier: 2
-  knockback: 4
-  knockup: 0
-  hitstun: 0.4
-  hitlag: 0
+  hitData:
+  - dmgMultiplier: 2
+    knockback: 0
+    knockup: 0
+    hitstun: 0
+    hitlag: 0
+  - dmgMultiplier: 0
+    knockback: 0
+    knockup: 0
+    hitstun: 0
+    hitlag: 0
+  - dmgMultiplier: 0
+    knockback: 0
+    knockup: 0
+    hitstun: 0
+    hitlag: 0
+  - dmgMultiplier: 0
+    knockback: 0
+    knockup: 0
+    hitstun: 0
+    hitlag: 0

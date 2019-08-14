@@ -5,12 +5,10 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     public float attack = 1f;
-    //float hitstun = 0.1f;
-    //float hitlag = 0.1f;
-    //float knockback = 0.2f;
-    //float knockup;
+
     float attackModifier;
 
+    public AttackData attackData;
     public AttackInfo attackInfo;
 
     void Start(){
@@ -55,16 +53,6 @@ public class Attack : MonoBehaviour
         attackInfo.knockbackDuration = 0.3f;
         attackInfo.knockup = 3;
         attackInfo.knockupDuration = 0.15f;
-    }
-
-    public void IcePillar1(){
-        attackModifier = 0;
-        attackInfo.hitstun = 1;
-    }
-
-    public void IcePillar2(){
-        attackModifier = 3;
-        attackInfo.hitstun = 3f;
     }
 }
 public class AttackInfo{

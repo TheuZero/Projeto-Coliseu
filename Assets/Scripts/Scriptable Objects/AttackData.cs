@@ -8,7 +8,30 @@ public class AttackData : ScriptableObject
     [SerializeField]
     Sprite icon;
     [SerializeField]
-    string attackName;
+    string attackName = "";
+    [SerializeField]
+    public HitData[] hitData = new HitData[1];
+
+    public Sprite Icon{
+        get{
+            return icon;
+        }
+    }
+
+    public string AttackName{
+        get{
+            return attackName;
+        }
+    }
+    public float HitNumber{
+        get{
+            return hitData.Length;
+        }
+    }
+}
+
+[System.Serializable]
+public class HitData{
     [SerializeField]
     int dmgMultiplier;
     [SerializeField]
@@ -20,12 +43,7 @@ public class AttackData : ScriptableObject
     [SerializeField]
     float hitlag;
 
-    public string AttackName{
-        get{
-            return attackName;
-        }
-    }
-
+    
     public int DmgMultiplier{
         set{
             dmgMultiplier = value;

@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300444, guid: abfbabfb92e9db249b4f217f2fb24a1f, type: 3}
   attackName: Ice Pillar
-  dmgMultiplier: 5
-  knockback: 7
-  knockup: 4
-  hitstun: 0
-  hitlag: 0.2
+  hitData:
+  - dmgMultiplier: 1
+    knockback: 1
+    knockup: 1
+    hitstun: 0.2
+    hitlag: 0.2
+  - dmgMultiplier: 5
+    knockback: 5
+    knockup: 5
+    hitstun: 0
+    hitlag: 0.4
