@@ -24,44 +24,38 @@ public class Attack : MonoBehaviour
         attackModifier = 1;
         attackInfo.hitstun = 0.2f;
         attackInfo.knockback = 0.2f;
-        attackInfo.knockbackDuration = 0.2f;
         attackInfo.knockup = 0;
-        attackInfo.knockupDuration = 0;
+        attackInfo.hitlag = 2.1f;
     }
 
     public void Combo2(){
         attackModifier = 1.2f;
         attackInfo.hitstun = 0.3f;
         attackInfo.knockback = 0.2f;
-        attackInfo.knockbackDuration = 0.2f;
         attackInfo.knockup = 0;
-        attackInfo.knockupDuration = 0;
+        attackInfo.hitlag = 0.1f;
     }
 
     public void Combo3(){
         attackModifier = 2;
         attackInfo.hitstun = 0.7f;
         attackInfo.knockback = 0.2f;
-        attackInfo.knockbackDuration = 0.2f;
         attackInfo.knockup = 0;
-        attackInfo.knockupDuration = 0;
+        attackInfo.hitlag = 0.2f;
     }
     public void Combo4(){
         attackModifier = 3;
         attackInfo.hitstun = 1.5f;
         attackInfo.knockback = 4.2f;
-        attackInfo.knockbackDuration = 0.3f;
         attackInfo.knockup = 3;
-        attackInfo.knockupDuration = 0.15f;
+        attackInfo.hitlag = 0.3f;
     }
 }
 public class AttackInfo{
     public float hitstun;
     public float hitlag;
     public float knockback;
-    public float knockbackDuration;
     public float knockup;
-    public float knockupDuration;
     public float damage;
     public float side;
 

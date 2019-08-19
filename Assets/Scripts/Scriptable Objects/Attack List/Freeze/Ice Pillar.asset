@@ -16,10 +16,10 @@ MonoBehaviour:
   attackName: Ice Pillar
   hitData:
   - dmgMultiplier: 1
-    knockback: 1
-    knockup: 1
+    knockback: 5
+    knockup: 5
     hitstun: 0.2
-    hitlag: 0.2
+    hitlag: 0.15
   - dmgMultiplier: 5
     knockback: 5
     knockup: 5

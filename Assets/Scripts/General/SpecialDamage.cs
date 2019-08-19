@@ -30,5 +30,6 @@ public class SpecialDamage : MonoBehaviour
         attackInfo.knockback = attackData.hitData[hitData].Knockback;
         attackInfo.knockup = attackData.hitData[hitData].Knockup;
         attackInfo.hitstun = attackData.hitData[hitData].Hitstun;
+        attackInfo.hitlag = attackData.hitData[hitData].Hitlag;
     }
 }
