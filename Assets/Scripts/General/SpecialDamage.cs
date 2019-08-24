@@ -5,17 +5,12 @@ using UnityEngine;
 public class SpecialDamage : MonoBehaviour
 {
     public AttackInfo attackInfo;
-    
+    public AttackData attackData;
+    int hitData = 0;
     GameObject player;
     float side;
 
-    public float hitstun = 2;
-    public float damage = 5;
-    public float knockback = 8;
-    public float knockbackDuration = 0.5f;
-    public float knockup = 4.4f;
-    public float knockupDuration = 0.25f;
-    
+
     void Awake(){
         attackInfo = new AttackInfo();
         player = transform.parent.transform.parent.transform.GetChild(0).gameObject;
@@ -24,18 +19,17 @@ public class SpecialDamage : MonoBehaviour
 
     void OnEnable(){
         attackInfo.side = player.transform.localScale.x;
-        SetAttack();
+        SetAttack(hitData);
     }
     void OnDisable(){
 
     }
 
-    void SetAttack(){
-        attackInfo.hitstun = hitstun;
-        attackInfo.damage = damage;
-        attackInfo.knockback = knockback;
-        attackInfo.knockbackDuration = knockbackDuration;
-        attackInfo.knockup = knockup;
-        attackInfo.knockupDuration = knockupDuration;
+    void SetAttack(int hitData){
+        attackInfo.damage = attackData.hitData[hitData].DmgMultiplier;
+        attackInfo.knockback = attackData.hitData[hitData].Knockback;
+        attackInfo.knockup = attackData.hitData[hitData].Knockup;
+        attackInfo.hitstun = attackData.hitData[hitData].Hitstun;
+        attackInfo.hitlag = attackData.hitData[hitData].Hitlag;
     }
 }

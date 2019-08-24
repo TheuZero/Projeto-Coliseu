@@ -14,11 +14,11 @@ public class Defense : MonoBehaviour
     bool isHitstunned;
     float hitstunTimer;
     float knockback;
-    float knockbackDuration;
     float knockup;
-    float knockupDuration;
     float side;
 
+    float hitlagTimer;
+    //animator
     int hitstun;
     int launch;
     int fall;
@@ -33,17 +33,24 @@ public class Defense : MonoBehaviour
     }
 
     void FixedUpdate(){
-        Hitstunned();
         StateUpdate();
-        ApplyKnockback();
-        ApplyKnockup();
+        if(hitlagTimer <= 0){
+            anim.speed = 1;
+            Hitstunned();
 
-        if(gd.isGrounded){
-            anim.SetBool(launch, false);
-        }
+            ApplyKnockback();
+            ApplyKnockup();
 
-        if(Input.GetKey("q")){
-            anim.SetBool(fall, false);
+            if(gd.isGrounded && knockup <= 0){
+                anim.SetBool(launch, false);
+            }
+
+            if(Input.GetKey("q")){
+                anim.SetBool(fall, false);
+            }
+        }else{
+            anim.speed = 0;
+            hitlagTimer -= Time.deltaTime;
         }
     }
     
@@ -52,13 +59,12 @@ public class Defense : MonoBehaviour
         if(hitstun > 0){
             isHitstunned = true;
             hitstunTimer = attackInfo.hitstun;
+            hitlagTimer = attackInfo.hitlag;
         }
 
         knockback = attackInfo.knockback;
-        knockbackDuration = attackInfo.knockbackDuration;
         side = attackInfo.side;
         knockup = attackInfo.knockup;
-        knockupDuration = attackInfo.knockupDuration;
         
     }
 
@@ -73,7 +79,6 @@ public class Defense : MonoBehaviour
 
     public void ApplyKnockback(){
         if(knockback > 0){
-            knockbackDuration -= Time.deltaTime;
             knockback -= Time.deltaTime * weight;
             if(knockback < 0){
                 knockback = 0;
@@ -86,7 +91,6 @@ public class Defense : MonoBehaviour
         if(knockup > 0){
             rb.velocity = new Vector2(rb.velocity.x, 0);
             knockup -= Time.deltaTime * weight;
-            knockupDuration -= Time.deltaTime;
             if(knockup < 0 ){
                 knockup = 0;
             }

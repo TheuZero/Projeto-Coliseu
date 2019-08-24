@@ -13,6 +13,6 @@ public class DamageDetection : MonoBehaviour
     }
     public void TakeDamage(AttackInfo attackInfo){
         defense.Damaged(attackInfo);
-        Debug.Log(parent.name + "Has taken " + attackInfo.damage + " damage and " + attackInfo.hitstun + " hitstun");
+        Debug.Log(parent.name + "Has taken " + attackInfo.damage + " damage, " + attackInfo.hitstun + " hitstun, " + attackInfo.hitlag + " hitlag");
     }
 }
