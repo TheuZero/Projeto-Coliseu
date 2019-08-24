@@ -19,6 +19,7 @@ public class MovementController : MonoBehaviour {
 	int isDashing;
 	int isJumping;
 	int isRunning;
+	int baseTag;
 	
 
 	void Start () {
@@ -33,26 +34,25 @@ public class MovementController : MonoBehaviour {
 		isDashing = Animator.StringToHash("isDashing");
 		isJumping = Animator.StringToHash("isJumping");
 		isRunning = Animator.StringToHash("isRunning");
+		baseTag = Animator.StringToHash("Base");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log(Input.GetAxisRaw("Horizontal"));
 		stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
 		if(Input.GetButtonDown("Horizontal")){
 			if(lastKeyPressed == Input.GetAxisRaw("Horizontal") && Time.time - lastPressed < doubleTapDashTimer ){
-
+				if(stateInfo.IsTag("Base")){
 					movement.ActivateDash(Input.GetAxisRaw("Horizontal"));
-					//anim.SetTrigger(isDashing);
-					lastKeyPressed = 0;
-				
-			}
-			else{
+				}
+				//anim.SetTrigger(isDashing);
+				lastKeyPressed = 0;
+			}else{
 			lastPressed = Time.time;
-			if(Input.GetAxisRaw("Horizontal") != 0){
-				lastKeyPressed = Input.GetAxisRaw("Horizontal");
-			}
+				if(Input.GetAxisRaw("Horizontal") != 0){
+					lastKeyPressed = Input.GetAxisRaw("Horizontal");
+				}
 			}
 		}
 		if(Input.GetAxisRaw("Horizontal") == 0){
@@ -60,7 +60,8 @@ public class MovementController : MonoBehaviour {
 		}
 		//pulo
 		if(Input.GetButtonDown("Jump")){
-			if(groundDetection.isGrounded){
+			if(groundDetection.isGrounded && stateInfo.tagHash == baseTag){
+				
 				movement.ActivateJump();
 				//anim.SetBool("isJumping", true);
 			}
@@ -72,9 +73,8 @@ public class MovementController : MonoBehaviour {
 
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
-			
 			movement.Running(Input.GetAxisRaw("Horizontal"));
-			if(stateInfo.IsTag("Base")){
+			if(stateInfo.tagHash == baseTag){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));
 				anim.SetBool(isWalking, true);
 			}
@@ -83,7 +83,7 @@ public class MovementController : MonoBehaviour {
 		}
 
 		if(Input.GetButton("Jump")){
-			movement.Jump(rb);
+				movement.Jump(rb);
 		}
 		if(groundDetection.isGrounded){
 			movement.JumpResetTimer();
