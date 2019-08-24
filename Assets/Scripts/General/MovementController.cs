@@ -37,6 +37,7 @@ public class MovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Debug.Log(Input.GetAxisRaw("Horizontal"));
 		stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
 		if(Input.GetButtonDown("Horizontal")){
@@ -71,6 +72,7 @@ public class MovementController : MonoBehaviour {
 
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
+			
 			movement.Running(Input.GetAxisRaw("Horizontal"));
 			if(stateInfo.IsTag("Base")){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));

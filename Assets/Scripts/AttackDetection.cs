@@ -20,13 +20,18 @@ public class AttackDetection : MonoBehaviour
             attack.DamageCalc();
 //            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attack.attackInfo);
-            StartCoroutine(Hitfreeze(attack.attackInfo.hitlag));
+            attack.ActivateHitfreeze();
         }
     }
 
-    IEnumerator Hitfreeze(float timer){
-        anim.speed = 0;
-        yield return new WaitForSeconds(timer);
-        anim.speed = 1;
+    void Update(){
+        if(Input.GetKey("r")){
+            anim.speed = 0;
+            Debug.Log("Travado" + anim.speed);
+        }
+        if(Input.GetKey("e")){
+            anim.speed = 1;
+            Debug.Log("destravado" + anim.speed);
+        }
     }
 }
