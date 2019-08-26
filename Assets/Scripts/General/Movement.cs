@@ -23,6 +23,7 @@ public class Movement : MonoBehaviour {
 	public bool isAirDashing;
 	public bool isJumping;
 	public bool isRunning;
+	
 
 	public float lastDirection;
 	public GroundDetection groundDetection;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5420,7 +5420,7 @@ GameObject:
   - component: {fileID: 968772615}
   - component: {fileID: 968772616}
   - component: {fileID: 968772618}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Hit Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5658,6 +5658,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1247809294}
+  - {fileID: 1426593667}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5691,7 +5692,7 @@ GameObject:
   - component: {fileID: 1247809294}
   - component: {fileID: 1247809296}
   - component: {fileID: 1247809295}
-  m_Layer: 14
+  m_Layer: 12
   m_Name: HurtBox
   m_TagString: Hurt Box
   m_Icon: {fileID: 0}
@@ -5750,12 +5751,106 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.35025814, y: 0.4740184}
   m_EdgeRadius: 0
+--- !u!1 &1426593666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1426593667}
+  - component: {fileID: 1426593668}
+  m_Layer: 15
+  m_Name: Human Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1426593667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426593666}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1054516628}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1426593668
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426593666}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
 --- !u!4 &1528855723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1103768241043425690, guid: e42ab4856b418e547ac9aab563ed0473,
     type: 3}
   m_PrefabInstance: {fileID: 1103768242709886809}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1672752356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1672752357}
+  - component: {fileID: 1672752358}
+  m_Layer: 15
+  m_Name: Human Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1672752357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672752356}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1528855723}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1672752358
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672752356}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2
 --- !u!1 &1828173144
 GameObject:
   m_ObjectHideFlags: 0
@@ -6101,13 +6196,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hit Box
       objectReference: {fileID: 0}
+    - target: {fileID: 110918537, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 114095486, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
       propertyPath: m_TagString
       value: Hit Box
       objectReference: {fileID: 0}
+    - target: {fileID: 114095486, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 284425946, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
       propertyPath: m_TagString
       value: Hit Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 284425946, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1936492274, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
       propertyPath: m_TagString
@@ -6115,7 +6222,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1936492274, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936492274, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1103768241043425689, guid: e42ab4856b418e547ac9aab563ed0473,
         type: 3}
