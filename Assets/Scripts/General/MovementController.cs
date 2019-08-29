@@ -42,18 +42,7 @@ public class MovementController : MonoBehaviour {
 		stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
 		if(Input.GetButtonDown("Horizontal")){
-			if(lastKeyPressed == Input.GetAxisRaw("Horizontal") && Time.time - lastPressed < doubleTapDashTimer ){
-				if(stateInfo.IsTag("Base")){
-					movement.ActivateDash(Input.GetAxisRaw("Horizontal"));
-				}
-				//anim.SetTrigger(isDashing);
-				lastKeyPressed = 0;
-			}else{
-			lastPressed = Time.time;
-				if(Input.GetAxisRaw("Horizontal") != 0){
-					lastKeyPressed = Input.GetAxisRaw("Horizontal");
-				}
-			}
+			DashCheck();
 		}
 		if(Input.GetAxisRaw("Horizontal") == 0){
 			movement.isRunning = false;
@@ -96,5 +85,20 @@ public class MovementController : MonoBehaviour {
 		anim.SetBool(isJumping, movement.isJumping);
 		anim.SetBool(isRunning, movement.isRunning);
 		anim.SetBool(isDashing, movement.isDashing);
+	}
+
+	void DashCheck(){
+		if(lastKeyPressed == Input.GetAxisRaw("Horizontal") && Time.time - lastPressed < doubleTapDashTimer ){
+			if(stateInfo.IsTag("Base")){
+				movement.ActivateDash(Input.GetAxisRaw("Horizontal"));
+			}
+			//anim.SetTrigger(isDashing);
+			lastKeyPressed = 0;
+		}else{
+			lastPressed = Time.time;
+			if(Input.GetAxisRaw("Horizontal") != 0){
+				lastKeyPressed = Input.GetAxisRaw("Horizontal");
+			}
+		}		
 	}
 }
