@@ -8,9 +8,14 @@ public class AttackController : MonoBehaviour
     GameObject icePillar;
     GameObject iceBall;
     float side;
+    InputOrganizer input;
+    int attackCommand = InputValues.attack;
+    Status status;
     void Start()
     {
         anim = GetComponent<Animator>();
+        input = GetComponent<InputOrganizer>();
+        status = GetComponent<Status>();
         icePillar = transform.parent.transform.GetChild(1).GetChild(0).gameObject;
         iceBall = transform.parent.transform.GetChild(1).GetChild(1).gameObject;
     }
@@ -18,7 +23,7 @@ public class AttackController : MonoBehaviour
     void Update()
     {
         if(Input.GetButtonDown("Attack")){
-			anim.SetTrigger("isAttacking");
+			input.InputCommand(attackCommand);
 		}
 
         if(!icePillar.activeSelf){

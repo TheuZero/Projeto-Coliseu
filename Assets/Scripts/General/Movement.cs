@@ -12,6 +12,8 @@ public class Movement : MonoBehaviour {
 	public float jumpSpeed = 4;
 	public float jumpTimer = 0f;
 	public float jumpMaxTimer = 0.5f;
+	public float jumpSquat = 0.1f;
+	public float maxJumpSquat = 0.1f;
 	public float dashTimer = 0f;
 	public float defaultDashTimer = 0.4f;
 	public float airDashTimer = 0f;

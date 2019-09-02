@@ -15,6 +15,7 @@ public class Attack : MonoBehaviour
     void Start(){
         attackInfo = new AttackInfo();
         anim = GetComponent<Animator>();
+ 
     }
 
     public void DamageCalc(){

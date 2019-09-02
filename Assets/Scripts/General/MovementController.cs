@@ -20,6 +20,9 @@ public class MovementController : MonoBehaviour {
 	int isJumping;
 	int isRunning;
 	int baseTag;
+	InputOrganizer input;
+	int jumpInput = InputValues.jump;
+	Status status;
 	
 
 	void Start () {
@@ -27,7 +30,8 @@ public class MovementController : MonoBehaviour {
 		movement = GetComponent<Movement>();
 		anim = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
-
+		input = GetComponent<InputOrganizer>();
+		status = GetComponent<Status>();
 		//hashes
 		isGrounded = Animator.StringToHash("isGrounded");
 		isWalking = Animator.StringToHash("isWalking");
@@ -39,7 +43,7 @@ public class MovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+		
 
 		if(Input.GetButtonDown("Horizontal")){
 			DashCheck();
@@ -49,21 +53,26 @@ public class MovementController : MonoBehaviour {
 		}
 		//pulo
 		if(Input.GetButtonDown("Jump")){
-			if(groundDetection.isGrounded && stateInfo.tagHash == baseTag){
-				
-				movement.ActivateJump();
-				//anim.SetBool("isJumping", true);
-			}
+			input.InputCommand(jumpInput);
 		}
 		if(Input.GetButtonUp("Jump")){
 			movement.JumpTimerLimit();
 		}
 	}
+	public bool JumpCheck(){
+		bool executed = false;
+		if(groundDetection.isGrounded && status.canMove){
+				status.canAttack = false;			
+				movement.ActivateJump();
+				executed = true;
+			}
+		return executed;
+	}
 
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
 			movement.Running(Input.GetAxisRaw("Horizontal"));
-			if(stateInfo.tagHash == baseTag){
+			if(status.canMove){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));
 				anim.SetBool(isWalking, true);
 			}
@@ -72,7 +81,7 @@ public class MovementController : MonoBehaviour {
 		}
 
 		if(Input.GetButton("Jump")){
-				movement.Jump(rb);
+			movement.Jump(rb);
 		}
 		if(groundDetection.isGrounded){
 			movement.JumpResetTimer();
@@ -85,6 +94,9 @@ public class MovementController : MonoBehaviour {
 		anim.SetBool(isJumping, movement.isJumping);
 		anim.SetBool(isRunning, movement.isRunning);
 		anim.SetBool(isDashing, movement.isDashing);
+		if(groundDetection.isGrounded){
+			//anim.SetBool("isJumping", false);
+		}
 	}
 
 	void DashCheck(){
