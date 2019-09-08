@@ -15,6 +15,9 @@ public class InputOrganizer : MonoBehaviour
     MovementController movement;
     Status status;
 
+    public delegate bool neutralSpecial();
+    public neutralSpecial nSpecial;
+
     void Start()
     {
         for(int i = 0; i < buffer.Length; i++){
@@ -35,7 +38,7 @@ public class InputOrganizer : MonoBehaviour
         FlushBuffer();
     }
 
-    public void InputCommand(int command){
+    public void InputCommand(int command, int type){
         for (int i = 0; i < buffer.Length - 1; i++){
             buffer[i + 1] = buffer[i];
             buffer[i + 1] = buffer[i];
@@ -60,14 +63,13 @@ public class InputOrganizer : MonoBehaviour
     private void CheckCommand(){
         for(int i = buffer.Length - 1; i > 0; i--){
             if(!buffer[i].used){
-                buffer[i].used = Execute(buffer[i].command);
+                buffer[i].used = Execute(buffer[i].command, buffer[i].type);
                 i = 0;
-                flushTimer = 0;
             }
         }
     }
 
-    private bool Execute(int command){
+    private bool Execute(int command, int type){
         confirm = false;
         Debug.Log("Executou o comando");
         if(command == 0){
@@ -88,6 +90,12 @@ public class InputOrganizer : MonoBehaviour
                 confirm = true;
             }
         }
+        if(command == InputValues.nSpecial){
+            confirm = nSpecial();
+        }
+        if(confirm){
+            flushTimer = 0;
+        }
         return confirm;
     }
 }
@@ -99,7 +107,7 @@ public class InputBufferItem{
     }
     public int command = 0;
     public bool used = false;
-
+    public int type;
 }
 static class InputValues{
     public static int move = 3;
@@ -109,9 +117,20 @@ static class InputValues{
     public static int fAttack = 11;
     public static int dAttack = 12;
     public static int upAttack = 13;
+    public static int nSpecial = 20;
 
     //montar uma lista de valores para cada tipo de ataque, especialmente se eles dependerem de dois botões simultaneamente.
     //montar uma comparação de valores recebidos dos input com os da classe e reagir de acordo no InputOrganizer, assim que for possível completar, tirar da lista,
     //caso contrário, esperar o tempo antes de zerar
     //Talvez manter somente dois elementos, fazer o tempo resetar somente quando o Input for concluído, caso contrário, remover o resto da lista.
 }
+
+//colocar o resto dos botões o input buffer, tanto o aperto, segurar e soltar
+static class InputType{
+    public static int down = 0;
+    public static int hold = 1;
+    public static int up = 2;
+}
+
+//para fazer movimentos que precisam de mais de um botão para sair, seria bom mandar a lista do buffer atual como parametro
+//para o comando e ele fazer todas as verificações necessárias antes de escolher a ação para ser executada

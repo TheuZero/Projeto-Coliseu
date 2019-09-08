@@ -53,10 +53,11 @@ public class MovementController : MonoBehaviour {
 		}
 		//pulo
 		if(Input.GetButtonDown("Jump")){
-			input.InputCommand(jumpInput);
+			input.InputCommand(jumpInput, InputType.down);
 		}
 		if(Input.GetButtonUp("Jump")){
-			movement.JumpTimerLimit();
+			input.InputCommand(jumpInput, InputType.up);
+			
 		}
 	}
 	public bool JumpCheck(){
@@ -67,6 +68,10 @@ public class MovementController : MonoBehaviour {
 				executed = true;
 			}
 		return executed;
+	}
+	public bool JumpEnd(){
+		movement.JumpTimerLimit();
+		return true;
 	}
 
 	void FixedUpdate(){
