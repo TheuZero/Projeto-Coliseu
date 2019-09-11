@@ -21,7 +21,6 @@ public class MovementController : MonoBehaviour {
 	int isRunning;
 	int baseTag;
 	InputOrganizer input;
-	int jumpInput = InputValues.jump;
 	Status status;
 	
 
@@ -43,7 +42,7 @@ public class MovementController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
 		if(Input.GetButtonDown("Horizontal")){
 			DashCheck();
@@ -52,13 +51,7 @@ public class MovementController : MonoBehaviour {
 			movement.isRunning = false;
 		}
 		//pulo
-		if(Input.GetButtonDown("Jump")){
-			input.InputCommand(jumpInput, InputType.down);
-		}
-		if(Input.GetButtonUp("Jump")){
-			input.InputCommand(jumpInput, InputType.up);
-			
-		}
+
 	}
 	public bool JumpCheck(){
 		bool executed = false;
@@ -71,6 +64,7 @@ public class MovementController : MonoBehaviour {
 	}
 	public bool JumpEnd(){
 		movement.JumpTimerLimit();
+		anim.SetBool("isJumping", false);
 		return true;
 	}
 

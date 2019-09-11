@@ -79,7 +79,12 @@ public class InputOrganizer : MonoBehaviour
 
         }
         if(command == InputValues.jump){
-            confirm = movement.JumpCheck();
+            if(type == InputType.down){
+                confirm = movement.JumpCheck();
+            }
+            if(type == InputType.up){
+                confirm = movement.JumpEnd();
+            }
         }
         if(command == InputValues.attack){
             if(status.canAttack){

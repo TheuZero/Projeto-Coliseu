@@ -6,6 +6,8 @@ public class Controller : MonoBehaviour
 {
     int attackCommand = InputValues.attack;
     int specialCommand = InputValues.nSpecial;
+    int jumpInput = InputValues.jump;
+
     InputOrganizer input;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,12 @@ public class Controller : MonoBehaviour
         if(Input.GetButtonDown("Special")){
             input.InputCommand(specialCommand, InputType.down);
         }
+        if(Input.GetButtonDown("Jump")){
+			input.InputCommand(jumpInput, InputType.down);
+		}
+		if(Input.GetButtonUp("Jump")){
+			input.InputCommand(jumpInput, InputType.up);
+		}
     }
     void FixedUpdate(){
 
