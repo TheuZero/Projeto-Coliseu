@@ -62,11 +62,7 @@ public class MovementController : MonoBehaviour {
 			}
 		return executed;
 	}
-	public bool JumpEnd(){
-		movement.JumpTimerLimit();
-		anim.SetBool("isJumping", false);
-		return true;
-	}
+
 
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
@@ -111,5 +107,11 @@ public class MovementController : MonoBehaviour {
 				lastKeyPressed = Input.GetAxisRaw("Horizontal");
 			}
 		}		
+	}
+
+	public bool JumpEnd(){
+		movement.JumpTimerLimit();
+		//anim.SetBool("isJumping", false);
+		return true;
 	}
 }

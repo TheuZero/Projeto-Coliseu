@@ -6,10 +6,12 @@ public class InputOrganizer : MonoBehaviour
 {
     [SerializeField]
     public InputBufferItem[] buffer = new InputBufferItem[12];
+    public InputBufferItem[] aux;
     public float maxFlushTimer = 2.33f;
     public float flushTimer = 0;
 
-    public bool confirm;
+
+    public int commandAux = 11;
 
     Animator anim;
     MovementController movement;
@@ -23,6 +25,7 @@ public class InputOrganizer : MonoBehaviour
         for(int i = 0; i < buffer.Length; i++){
             buffer[i] = new InputBufferItem();
         }
+        aux = new InputBufferItem[buffer.Length - 1];
         anim = GetComponent<Animator>();
         movement = GetComponent<MovementController>();
         status = GetComponent<Status>();
@@ -34,18 +37,25 @@ public class InputOrganizer : MonoBehaviour
         if(Input.GetKey(KeyCode.A)){
             Debug.Log(buffer[0].command);
         }
-        CheckCommand();
+
         FlushBuffer();
     }
 
+    void LateUpdate(){
+        CheckCommand();
+    }
+
     public void InputCommand(int command, int type){
-        for (int i = 0; i < buffer.Length - 1; i++){
-            buffer[i + 1] = buffer[i];
-            buffer[i + 1] = buffer[i];
+        for (int i = 0; i < aux.Length; i++){
+            aux[i] = buffer[i];
         }
         buffer[0].command = command;
         buffer[0].used = false;
-        flushTimer = 0;
+        buffer[0].type = type;
+        for (int i = 1; i < buffer.Length; i ++){
+            buffer[i] = aux[i - 1];
+        }
+        commandAux = 11;
     }
 
     private void FlushBuffer(){
@@ -63,14 +73,33 @@ public class InputOrganizer : MonoBehaviour
     private void CheckCommand(){
         for(int i = buffer.Length - 1; i > 0; i--){
             if(!buffer[i].used){
-                buffer[i].used = Execute(buffer[i].command, buffer[i].type);
-                i = 0;
+                if(Execute(buffer[i].command, buffer[i].type)){
+                    buffer[i].used = true;
+                    break;
+                }
+                break;
             }
         }
     }
+    
+    /*private void CheckCommand(){
+        if(buffer[commandAux].used){
+            commandAux--;
+        }else{
+            buffer[commandAux].used = Execute(buffer[commandAux].command, buffer[commandAux].type);
+        }
+        if(commandAux <= 0){
+            commandAux = 11;
+        }
+        Debug.Log("Aux position" + commandAux);
+    }*/
 
     private bool Execute(int command, int type){
-        confirm = false;
+        for(int i = 0; i < buffer.Length; i++){
+            Debug.Log(buffer[i].command + " " + i);
+            Debug.Log(buffer[i].used + " " + i );
+        }
+        bool confirm = false;
         Debug.Log("Executou o comando");
         if(command == 0){
             confirm = true;
@@ -82,7 +111,7 @@ public class InputOrganizer : MonoBehaviour
             if(type == InputType.down){
                 confirm = movement.JumpCheck();
             }
-            if(type == InputType.up){
+            else if(type == InputType.up){
                 confirm = movement.JumpEnd();
             }
         }

@@ -10,6 +10,8 @@ public class AttackController : MonoBehaviour
     float side;
     Status status;
     InputOrganizer input;
+    ParticleSystem specialEffect;
+    ParticleSystem specialScreen;
 
     void Start()
     {
@@ -17,6 +19,8 @@ public class AttackController : MonoBehaviour
         status = GetComponent<Status>();
         icePillar = transform.parent.transform.GetChild(1).GetChild(0).gameObject;
         iceBall = transform.parent.transform.GetChild(1).GetChild(1).gameObject;
+        specialEffect = transform.GetChild(4).GetComponent<ParticleSystem>();
+        specialScreen = transform.GetChild(5).GetComponent<ParticleSystem>();
         input = GetComponent<InputOrganizer>();
         input.nSpecial = IcePillarVerify;
     }
@@ -34,21 +38,27 @@ public class AttackController : MonoBehaviour
     }
 
     private bool IcePillarVerify(){
-        bool verification;
-        if(!icePillar.activeSelf){
-            anim.SetBool("icePillar", true);
+        bool verification = false;
+        if(!icePillar.activeSelf && status.canSpecial){
+            anim.SetTrigger("icePillar");
+            specialEffect.Play();
+            specialScreen.Play();
+            StartCoroutine(SpecialFreeze(1));
             verification = true;
+            status.canAttack = false;
+            status.canMove = false;
+            status.canSpecial = false;  
         }else{
             verification = false;
         }
-        anim.SetBool("icePillar", false);
         return verification;
     }
 
     private void ActivateIcePillar(){
-        side = transform.localScale.x;
+        Vector2 pillarSize = icePillar.transform.localScale;
+        side = transform.localScale.x * (Mathf.Abs(pillarSize.x));
         icePillar.SetActive(true);
-        icePillar.transform.position = new Vector2(transform.position.x + side * 0.8f, transform.position.y + 0.12f);
+        icePillar.transform.position = new Vector2(transform.position.x + side * 0.8f, transform.position.y + (pillarSize.y * 1.24f) * 0.12f);
         icePillar.transform.localScale = new Vector2(side, icePillar.transform.localScale.y);
     }
 
@@ -57,5 +67,11 @@ public class AttackController : MonoBehaviour
         iceBall.SetActive(true);
         iceBall.transform.position = new Vector2(transform.position.x + side * 0.4f, transform.position.y);
         iceBall.transform.localScale = new Vector2(side, iceBall.transform.localScale.y);
+    }
+
+    IEnumerator SpecialFreeze(float delay){
+        anim.speed = 0;
+        yield return new WaitForSeconds(delay);
+        anim.speed = 1;
     }
 }
