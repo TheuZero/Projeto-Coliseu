@@ -26,7 +26,7 @@ public class GroundDetection : MonoBehaviour
         Detection();
         //Debug.Log(collider.bounds.min);
        // Debug.Log(Vector2.up * -0.014f);
-        Debug.Log(collider.bounds.size);
+        //Debug.Log(collider.bounds.size);
     }
 
     private bool Detection(){

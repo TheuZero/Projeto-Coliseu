@@ -7,7 +7,7 @@ public class InputOrganizer : MonoBehaviour
     [SerializeField]
     public InputBufferItem[] buffer = new InputBufferItem[12];
     public InputBufferItem[] aux;
-    public float maxFlushTimer = 2.33f;
+    public float maxFlushTimer = 0.33f;
     public float flushTimer = 0;
 
 
@@ -95,12 +95,7 @@ public class InputOrganizer : MonoBehaviour
     }*/
 
     private bool Execute(int command, int type){
-        for(int i = 0; i < buffer.Length; i++){
-            Debug.Log(buffer[i].command + " " + i);
-            Debug.Log(buffer[i].used + " " + i );
-        }
         bool confirm = false;
-        Debug.Log("Executou o comando");
         if(command == 0){
             confirm = true;
         }
@@ -144,14 +139,11 @@ public class InputBufferItem{
     public int type;
 }
 static class InputValues{
-    public static int move = 3;
-    public static int dash = 1;
+    public static int move = 1;
+//    public static int dash = 1;
     public static int jump = 2;
-    public static int attack = 10;
-    public static int fAttack = 11;
-    public static int dAttack = 12;
-    public static int upAttack = 13;
-    public static int nSpecial = 20;
+    public static int attack = 3;
+    public static int nSpecial = 4;
 
     //montar uma lista de valores para cada tipo de ataque, especialmente se eles dependerem de dois botões simultaneamente.
     //montar uma comparação de valores recebidos dos input com os da classe e reagir de acordo no InputOrganizer, assim que for possível completar, tirar da lista,
@@ -161,9 +153,10 @@ static class InputValues{
 
 //colocar o resto dos botões o input buffer, tanto o aperto, segurar e soltar
 static class InputType{
-    public static int down = 0;
-    public static int hold = 1;
-    public static int up = 2;
+    public static int none = 0;
+    public static int down = 1;
+    public static int hold = 2;
+    public static int up = 3;
 }
 
 //para fazer movimentos que precisam de mais de um botão para sair, seria bom mandar a lista do buffer atual como parametro

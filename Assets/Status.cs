@@ -14,6 +14,7 @@ public class Status : MonoBehaviour
     public bool canSpecial;
     Animator anim;
     AnimatorStateInfo stateInfo;
+    AnimatorStateInfo previousStateInfo;
     int baseTag;
     void Start()
     {
@@ -28,10 +29,13 @@ public class Status : MonoBehaviour
     }
     void FixedUpdate(){
         stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        if(stateInfo.tagHash == baseTag){
-            canMove = true;
-            canAttack = true;
-            canSpecial = true;
+        if(stateInfo.fullPathHash != previousStateInfo.fullPathHash){
+            if(stateInfo.tagHash == baseTag){
+                canMove = true;
+                canAttack = true;
+                canSpecial = true;
+            }
         }
+        previousStateInfo = anim.GetCurrentAnimatorStateInfo(0);
     }
 }

@@ -5,24 +5,27 @@ using UnityEngine;
 public class FreezeStateManager : MonoBehaviour
 {
     public class FreezeAnimTimers{
+
         public float c1Time;
         public float c2Time;
         public float c3Time;
         public float c4Time;
-        public float damageTime;
+        public float dashTime;
+        public float icePillar;
     }
     Animator anim;
     FreezeAnimTimers animTimers;
     void Start()
     {
         anim = GetComponent<Animator>();
+        animTimers = new FreezeAnimTimers();
         getAnimTimers();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(animTimers.icePillar);
     }
     void getAnimTimers(){
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
@@ -41,6 +44,12 @@ public class FreezeStateManager : MonoBehaviour
                     break;
                 case "Combo 4":
                     animTimers.c4Time = clip.length;
+                    break;
+                case "Dash":
+                    animTimers.dashTime = clip.length;
+                    break;
+                case "Ice Pillar":
+                    animTimers.icePillar = clip.length;
                     break;
             }
         }
