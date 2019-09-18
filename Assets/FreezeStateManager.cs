@@ -25,7 +25,6 @@ public class FreezeStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(animTimers.icePillar);
     }
     void getAnimTimers(){
         AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;

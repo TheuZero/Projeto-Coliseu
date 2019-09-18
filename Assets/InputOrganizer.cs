@@ -6,7 +6,7 @@ public class InputOrganizer : MonoBehaviour
 {
     [SerializeField]
     public InputBufferItem[] buffer = new InputBufferItem[12];
-    public InputBufferItem[] aux;
+    public InputBufferItem[] aux = new InputBufferItem[12];
     public float maxFlushTimer = 0.33f;
     public float flushTimer = 0;
 
@@ -20,10 +20,12 @@ public class InputOrganizer : MonoBehaviour
     public delegate bool neutralSpecial();
     public neutralSpecial nSpecial;
 
+    string tst;
     void Start()
     {
         for(int i = 0; i < buffer.Length; i++){
             buffer[i] = new InputBufferItem();
+            aux[i] = new InputBufferItem();
         }
         aux = new InputBufferItem[buffer.Length - 1];
         anim = GetComponent<Animator>();
@@ -43,17 +45,35 @@ public class InputOrganizer : MonoBehaviour
 
     void LateUpdate(){
         CheckCommand();
+        if(Input.GetKeyDown("1")){
+            tst = "";
+            for(int i = 0; i < buffer.Length - 1; i++){
+                tst += "o buffer da posicao " + i + " o comando é de valor " + buffer[i].command + " está em " + buffer[i].used + "\n";
+            }
+            Debug.Log(tst);
+        }
+        if(Input.GetKeyDown("2")){
+            tst = "";
+            for(int i = 0; i < aux.Length - 1; i++){
+                tst += "o buffer aux da posicao " + i + " o comando é de valor " + aux[i].command + " está em " + aux[i].used + "\n";
+            }
+            Debug.Log(tst);
+        }
     }
 
     public void InputCommand(int command, int type){
         for (int i = 0; i < aux.Length; i++){
-            aux[i] = buffer[i];
+            aux[i].command = buffer[i].command;
+            aux[i].used = buffer[i].used;
+            aux[i].type = buffer[i].type ;
         }
         buffer[0].command = command;
         buffer[0].used = false;
         buffer[0].type = type;
         for (int i = 1; i < buffer.Length; i ++){
-            buffer[i] = aux[i - 1];
+            buffer[i].command = aux[i - 1].command;
+            buffer[i].used = aux[i - 1].used;
+            buffer[i].type = aux[i - 1].type ;
         }
         commandAux = 11;
     }
@@ -71,7 +91,7 @@ public class InputOrganizer : MonoBehaviour
     }
 
     private void CheckCommand(){
-        for(int i = buffer.Length - 1; i > 0; i--){
+        for(int i = buffer.Length - 1; i >= 0; i--){
             if(!buffer[i].used){
                 if(Execute(buffer[i].command, buffer[i].type)){
                     buffer[i].used = true;
@@ -91,11 +111,40 @@ public class InputOrganizer : MonoBehaviour
         if(commandAux <= 0){
             commandAux = 11;
         }
-        Debug.Log("Aux position" + commandAux);
     }*/
 
     private bool Execute(int command, int type){
         bool confirm = false;
+
+        switch(command){
+            case 0:
+                confirm = true;
+                break;
+            case InputValues.move:
+                break;
+            case InputValues.jump:
+                if(type == InputType.down){
+                    confirm = movement.JumpCheck();
+                }
+                else if(type == InputType.up){
+                    confirm = movement.JumpEnd();
+                }
+                break;
+            case InputValues.attack:
+                if(status.canAttack){
+                    status.canMove = false;
+                    anim.SetTrigger("isAttacking");
+                    
+                    Debug.Log("Atacou");
+                    confirm = true;
+                }
+                break;
+            case InputValues.nSpecial:
+                confirm = nSpecial();
+                break;
+        }
+
+        /*
         if(command == 0){
             confirm = true;
         }
@@ -121,7 +170,7 @@ public class InputOrganizer : MonoBehaviour
         }
         if(command == InputValues.nSpecial){
             confirm = nSpecial();
-        }
+        }*/
         if(confirm){
             flushTimer = 0;
         }
@@ -133,12 +182,14 @@ public class InputBufferItem{
     public InputBufferItem(){
         command = 0;
         used = false;
+        type = 0;
     }
     public int command = 0;
     public bool used = false;
     public int type;
 }
 static class InputValues{
+    public static int none = 0;
     public static int move = 1;
 //    public static int dash = 1;
     public static int jump = 2;
