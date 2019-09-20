@@ -20,6 +20,9 @@ public class InputOrganizer : MonoBehaviour
     public delegate bool neutralSpecial();
     public neutralSpecial nSpecial;
 
+    public delegate bool attackDown();
+    public attackDown attack;
+
     string tst;
     void Start()
     {
@@ -27,7 +30,6 @@ public class InputOrganizer : MonoBehaviour
             buffer[i] = new InputBufferItem();
             aux[i] = new InputBufferItem();
         }
-        aux = new InputBufferItem[buffer.Length - 1];
         anim = GetComponent<Animator>();
         movement = GetComponent<MovementController>();
         status = GetComponent<Status>();
@@ -36,15 +38,12 @@ public class InputOrganizer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.A)){
-            Debug.Log(buffer[0].command);
-        }
-
         FlushBuffer();
+        CheckCommand();
     }
 
     void LateUpdate(){
-        CheckCommand();
+        
         if(Input.GetKeyDown("1")){
             tst = "";
             for(int i = 0; i < buffer.Length - 1; i++){
@@ -95,7 +94,6 @@ public class InputOrganizer : MonoBehaviour
             if(!buffer[i].used){
                 if(Execute(buffer[i].command, buffer[i].type)){
                     buffer[i].used = true;
-                    break;
                 }
                 break;
             }
@@ -116,35 +114,6 @@ public class InputOrganizer : MonoBehaviour
     private bool Execute(int command, int type){
         bool confirm = false;
 
-        switch(command){
-            case 0:
-                confirm = true;
-                break;
-            case InputValues.move:
-                break;
-            case InputValues.jump:
-                if(type == InputType.down){
-                    confirm = movement.JumpCheck();
-                }
-                else if(type == InputType.up){
-                    confirm = movement.JumpEnd();
-                }
-                break;
-            case InputValues.attack:
-                if(status.canAttack){
-                    status.canMove = false;
-                    anim.SetTrigger("isAttacking");
-                    
-                    Debug.Log("Atacou");
-                    confirm = true;
-                }
-                break;
-            case InputValues.nSpecial:
-                confirm = nSpecial();
-                break;
-        }
-
-        /*
         if(command == 0){
             confirm = true;
         }
@@ -160,17 +129,13 @@ public class InputOrganizer : MonoBehaviour
             }
         }
         if(command == InputValues.attack){
-            if(status.canAttack){
-                status.canMove = false;
-                anim.SetTrigger("isAttacking");
-                
-                Debug.Log("Atacou");
-                confirm = true;
+            if(type == InputType.down){
+                confirm = attack();
             }
         }
         if(command == InputValues.nSpecial){
             confirm = nSpecial();
-        }*/
+        }
         if(confirm){
             flushTimer = 0;
         }

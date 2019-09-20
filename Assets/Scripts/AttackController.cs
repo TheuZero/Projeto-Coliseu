@@ -22,7 +22,10 @@ public class AttackController : MonoBehaviour
         specialEffect = transform.GetChild(4).GetComponent<ParticleSystem>();
         specialScreen = transform.GetChild(5).GetComponent<ParticleSystem>();
         input = GetComponent<InputOrganizer>();
+
+
         input.nSpecial = IcePillarVerify;
+        input.attack = Combo;
     }
 
     void Update()
@@ -35,6 +38,17 @@ public class AttackController : MonoBehaviour
             }
         }
 
+    }
+    private bool Combo(){
+        bool verification = false;
+       
+        if(status.canAttack){ 
+            status.canMove = false;
+            anim.SetTrigger("isAttacking");
+            verification = true;
+            Debug.Log("executado");
+        }
+        return verification;
     }
 
     private bool IcePillarVerify(){
