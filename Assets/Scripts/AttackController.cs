@@ -24,8 +24,8 @@ public class AttackController : MonoBehaviour
         input = GetComponent<InputOrganizer>();
 
 
-        input.nSpecial = IcePillarVerify;
-        input.attack = Combo;
+        //input.nSpecial = IcePillarVerify;
+        //input.attack = Combo;
     }
 
     void Update()

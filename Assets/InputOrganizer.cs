@@ -13,15 +13,11 @@ public class InputOrganizer : MonoBehaviour
 
     public int commandAux = 11;
 
-    Animator anim;
-    MovementController movement;
-    Status status;
+//    Animator anim;
+//    MovementController movement;
+//    Status status;
+    StateManager state;
 
-    public delegate bool neutralSpecial();
-    public neutralSpecial nSpecial;
-
-    public delegate bool attackDown();
-    public attackDown attack;
 
     string tst;
     void Start()
@@ -30,9 +26,10 @@ public class InputOrganizer : MonoBehaviour
             buffer[i] = new InputBufferItem();
             aux[i] = new InputBufferItem();
         }
-        anim = GetComponent<Animator>();
-        movement = GetComponent<MovementController>();
-        status = GetComponent<Status>();
+//        anim = GetComponent<Animator>();
+//        movement = GetComponent<MovementController>();
+//        status = GetComponent<Status>();
+        state = GetComponent<StateManager>();
     }
 
     // Update is called once per frame
@@ -112,12 +109,13 @@ public class InputOrganizer : MonoBehaviour
     }*/
 
     private bool Execute(int command, int type){
-        bool confirm = false;
+        //bool confirm = false;
 
+        /*
         if(command == 0){
             confirm = true;
         }
-        if(command == InputValues.move){
+        if(command == InputValues.moveX){
 
         }
         if(command == InputValues.jump){
@@ -130,16 +128,17 @@ public class InputOrganizer : MonoBehaviour
         }
         if(command == InputValues.attack){
             if(type == InputType.down){
-                confirm = attack();
+                confirm = state.AttackDown();
             }
         }
         if(command == InputValues.nSpecial){
-            confirm = nSpecial();
+            confirm = state.SpecialDown();
         }
         if(confirm){
             flushTimer = 0;
         }
-        return confirm;
+        */
+        return state.WasExecuted(command, type);
     }
 }
 
@@ -155,11 +154,12 @@ public class InputBufferItem{
 }
 static class InputValues{
     public static int none = 0;
-    public static int move = 1;
+    public static int moveX = 1;
 //    public static int dash = 1;
     public static int jump = 2;
     public static int attack = 3;
     public static int nSpecial = 4;
+    public static int moveY = 5;
 
     //montar uma lista de valores para cada tipo de ataque, especialmente se eles dependerem de dois botões simultaneamente.
     //montar uma comparação de valores recebidos dos input com os da classe e reagir de acordo no InputOrganizer, assim que for possível completar, tirar da lista,
