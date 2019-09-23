@@ -42,8 +42,10 @@ public class StateManager : MonoBehaviour
     }
 
     void AddCommands(){
-        AttackDown += 
+        AttackDown += attack.Combo();
+        
     }
+
     public bool WasExecuted(int command, int type){
         confirm = true;
         if(command == InputValues.moveX){
