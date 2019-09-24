@@ -53,7 +53,7 @@ public class MovementController : MonoBehaviour {
 		//pulo
 
 	}
-	public bool JumpCheck(){
+	public bool JumpVerify(){
 		bool executed = false;
 		if(groundDetection.isGrounded && status.canMove){
 				status.canAttack = false;			

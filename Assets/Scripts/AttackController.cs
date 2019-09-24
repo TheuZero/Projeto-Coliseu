@@ -13,6 +13,8 @@ public class AttackController : MonoBehaviour
     ParticleSystem specialEffect;
     ParticleSystem specialScreen;
 
+    bool verification;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -30,6 +32,7 @@ public class AttackController : MonoBehaviour
 
     void Update()
     {
+        /*
         if(!iceBall.activeSelf){
             if(Input.GetButtonDown("Tech")){
                 anim.SetBool("iceBall", true);
@@ -37,10 +40,11 @@ public class AttackController : MonoBehaviour
                 anim.SetBool("iceBall", false);
             }
         }
+        */
 
     }
-    private bool Combo(){
-        bool verification = false;
+    public bool ComboVerify(){
+        verification = false;
        
         if(status.canAttack){ 
             status.canMove = false;
@@ -51,23 +55,36 @@ public class AttackController : MonoBehaviour
         return verification;
     }
 
-    private bool IcePillarVerify(){
-        bool verification = false;
+    public bool IcePillarVerify(){
+        verification = false;
         if(!icePillar.activeSelf && status.canSpecial){
             anim.SetTrigger("icePillar");
             specialEffect.Play();
             specialScreen.Play();
             StartCoroutine(SpecialFreeze(1));
             verification = true;
-            status.canAttack = false;
-            status.canMove = false;
-            status.canSpecial = false;  
+            DisableActions();
         }else{
             verification = false;
         }
         return verification;
     }
 
+    public bool IceBallVerify(){
+        verification = false;
+        if(!iceBall.activeSelf && status.canSpecial){
+            verification = true;
+            anim.SetTrigger("iceBall");
+            DisableActions();
+        }
+        return verification;
+    }
+
+    private void DisableActions(){
+        status.canAttack = false;
+        status.canMove = false;
+        status.canSpecial = false;  
+    }
     private void ActivateIcePillar(){
         Vector2 pillarSize = icePillar.transform.localScale;
         side = transform.localScale.x * (Mathf.Abs(pillarSize.x));

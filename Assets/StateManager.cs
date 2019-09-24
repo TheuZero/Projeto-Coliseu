@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//InputHandler ou ActionHandler seria um bom nome?
 public class StateManager : MonoBehaviour
 {
     AttackController attack;
@@ -17,12 +18,16 @@ public class StateManager : MonoBehaviour
     public OffensiveInputValidation AttackDown;
     public OffensiveInputValidation AttackHold;
     public OffensiveInputValidation AttackUp;
+    public OffensiveInputValidation TechDown;
+    public OffensiveInputValidation TechHold;
+    public OffensiveInputValidation TechUp;
     public InputValidation MoveDown;
     public InputValidation MoveHold;
     public InputValidation MoveUp;
     public InputValidation JumpDown;
     public InputValidation JumpHold;
     public InputValidation JumpUp;
+    
 
     bool confirm;
 
@@ -32,18 +37,32 @@ public class StateManager : MonoBehaviour
         animTimers = new BasicAnimTimers();
         attack = GetComponent<AttackController>();
         movement = GetComponent<MovementController>();
-
+        AddCommands();
         getAnimTimers();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void OnEnable(){
+        AddCommands();
+    }
+    void OnDisable(){
+
     }
 
     void AddCommands(){
-        AttackDown += attack.Combo();
-        
+        AttackDown += attack.ComboVerify;
+        JumpDown += movement.JumpVerify;
+        //JumpHold += movement.JumpHold();
+        JumpUp += movement.JumpEnd;
+        TechDown += attack.IceBallVerify;
+        SpecialDown += attack.IcePillarVerify;
+    }
+    void RemoveCommands(){
+        AttackDown -= attack.ComboVerify;
+        SpecialDown -= attack.IcePillarVerify;
+        JumpDown -= movement.JumpVerify;
+        //JumpHold -= movement.JumpHold();
+        JumpUp -= movement.JumpEnd;
+        TechDown -= attack.IceBallVerify;
     }
 
     public bool WasExecuted(int command, int type){
@@ -88,6 +107,15 @@ public class StateManager : MonoBehaviour
         else if(command == InputValues.nSpecial){
             if(type == InputType.down){
                 confirm = SpecialDown();
+            }else if(type == InputType.hold){
+                confirm = SpecialHold();
+            }else if(type == InputType.up){
+                confirm = SpecialUp();
+            }
+        }
+        else if(command == InputValues.tech){
+            if(type == InputType.down){
+                confirm = TechDown();
             }else if(type == InputType.hold){
                 confirm = SpecialHold();
             }else if(type == InputType.up){

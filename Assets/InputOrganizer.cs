@@ -160,6 +160,8 @@ static class InputValues{
     public static int attack = 3;
     public static int nSpecial = 4;
     public static int moveY = 5;
+    public static int tech = 6;
+    public const int defense = 7;
 
     //montar uma lista de valores para cada tipo de ataque, especialmente se eles dependerem de dois botões simultaneamente.
     //montar uma comparação de valores recebidos dos input com os da classe e reagir de acordo no InputOrganizer, assim que for possível completar, tirar da lista,
