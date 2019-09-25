@@ -71,7 +71,6 @@ public class InputOrganizer : MonoBehaviour
             buffer[i].used = aux[i - 1].used;
             buffer[i].type = aux[i - 1].type ;
         }
-        commandAux = 11;
     }
 
     private void FlushBuffer(){
@@ -79,7 +78,7 @@ public class InputOrganizer : MonoBehaviour
         if(flushTimer > maxFlushTimer){
             for(int i = 0; i < buffer.Length; i++){
                 buffer[i].command = 0;
-                buffer[i].used = false;
+                buffer[i].used = true;
             }
             Debug.Log("Flushed buffer");
             flushTimer = 0;
@@ -91,6 +90,7 @@ public class InputOrganizer : MonoBehaviour
             if(!buffer[i].used){
                 if(Execute(buffer[i].command, buffer[i].type)){
                     buffer[i].used = true;
+                    flushTimer = 0;
                 }
                 break;
             }

@@ -45,13 +45,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: iceBall
-    m_Type: 4
+  - m_Name: icePillar
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: icePillar
+  - m_Name: iceBall
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -1325,7 +1325,7 @@ AnimatorStateMachine:
     m_Position: {x: 528, y: 336, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102657063796256276}
-    m_Position: {x: 600, y: 84, z: 0}
+    m_Position: {x: 648, y: 48, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102893393158797290}
     m_Position: {x: 132, y: 288, z: 0}

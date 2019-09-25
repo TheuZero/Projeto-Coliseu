@@ -59,8 +59,6 @@ public class AttackController : MonoBehaviour
         verification = false;
         if(!icePillar.activeSelf && status.canSpecial){
             anim.SetTrigger("icePillar");
-            specialEffect.Play();
-            specialScreen.Play();
             StartCoroutine(SpecialFreeze(1));
             verification = true;
             DisableActions();
@@ -101,6 +99,8 @@ public class AttackController : MonoBehaviour
     }
 
     IEnumerator SpecialFreeze(float delay){
+        specialEffect.Play();
+        specialScreen.Play();
         anim.speed = 0;
         yield return new WaitForSeconds(delay);
         anim.speed = 1;

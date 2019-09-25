@@ -80,7 +80,8 @@ public class StateManager : MonoBehaviour
             if(type == InputType.down){
                 confirm = JumpDown();
             }else if(type == InputType.hold){
-                confirm = JumpHold();
+                //confirm = JumpHold();
+                confirm = true;
             }else if(type == InputType.up){
                 confirm = JumpUp();
             }
@@ -90,9 +91,11 @@ public class StateManager : MonoBehaviour
             if(type == InputType.down){
                 confirm = AttackDown();
             }else if(type == InputType.hold){
-                confirm = AttackHold();
+                //confirm = AttackHold();
+                confirm = true;
             }else if(type == InputType.up){
-                confirm = AttackUp();
+                //confirm = AttackUp();
+                confirm = true;
             }
         }
         else if(command == InputValues.moveY){
@@ -108,18 +111,22 @@ public class StateManager : MonoBehaviour
             if(type == InputType.down){
                 confirm = SpecialDown();
             }else if(type == InputType.hold){
-                confirm = SpecialHold();
+                //confirm = SpecialHold();
+                confirm = true;
             }else if(type == InputType.up){
-                confirm = SpecialUp();
+                //confirm = SpecialUp();
+                confirm = true;
             }
         }
         else if(command == InputValues.tech){
             if(type == InputType.down){
                 confirm = TechDown();
             }else if(type == InputType.hold){
-                confirm = SpecialHold();
+                //confirm = TechHold();
+                confirm = true;
             }else if(type == InputType.up){
-                confirm = SpecialUp();
+                //confirm = TechUp();
+                confirm = true;
             }
         }
         return confirm;

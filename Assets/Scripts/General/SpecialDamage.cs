@@ -14,7 +14,6 @@ public class SpecialDamage : MonoBehaviour
     void Awake(){
         attackInfo = new AttackInfo();
         player = transform.parent.transform.parent.transform.GetChild(0).gameObject;
-        
     }
 
     void OnEnable(){
