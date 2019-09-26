@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour
     }
     void OnEnable(){
         StartCoroutine("Duration");
+        SpawnReference();
         attackInfo.side = player.transform.localScale.x;
         side = player.transform.localScale.x;
         hitCounter = maxHit;
@@ -26,6 +27,13 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate(){
         transform.Translate(Vector2.right * (speed * side) * Time.deltaTime);
+    }
+
+    void SpawnReference(){
+        Vector2 projectileSize = transform.localScale;
+        side = player.transform.localScale.x * (Mathf.Abs(projectileSize.x));
+        gameObject.transform.position = new Vector2(player.transform.position.x + side * 0.8f, player.transform.position.y);
+        gameObject.transform.localScale = new Vector2(side, gameObject.transform.localScale.y);
     }
 
 /*  void SetAttack(){

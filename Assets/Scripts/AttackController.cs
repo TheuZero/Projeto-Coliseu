@@ -32,15 +32,6 @@ public class AttackController : MonoBehaviour
 
     void Update()
     {
-        /*
-        if(!iceBall.activeSelf){
-            if(Input.GetButtonDown("Tech")){
-                anim.SetBool("iceBall", true);
-            }else{
-                anim.SetBool("iceBall", false);
-            }
-        }
-        */
 
     }
     public bool ComboVerify(){
@@ -84,18 +75,11 @@ public class AttackController : MonoBehaviour
         status.canSpecial = false;  
     }
     private void ActivateIcePillar(){
-        Vector2 pillarSize = icePillar.transform.localScale;
-        side = transform.localScale.x * (Mathf.Abs(pillarSize.x));
         icePillar.SetActive(true);
-        icePillar.transform.position = new Vector2(transform.position.x + side * 0.8f, transform.position.y + (pillarSize.y * 1.24f) * 0.12f);
-        icePillar.transform.localScale = new Vector2(side, icePillar.transform.localScale.y);
     }
 
     private void ActivateIceBall(){
-        side = transform.localScale.x;
         iceBall.SetActive(true);
-        iceBall.transform.position = new Vector2(transform.position.x + side * 0.4f, transform.position.y);
-        iceBall.transform.localScale = new Vector2(side, iceBall.transform.localScale.y);
     }
 
     IEnumerator SpecialFreeze(float delay){
