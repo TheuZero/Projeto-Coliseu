@@ -21,8 +21,8 @@ public class AttackController : MonoBehaviour
         status = GetComponent<Status>();
         icePillar = transform.parent.transform.GetChild(1).GetChild(0).gameObject;
         iceBall = transform.parent.transform.GetChild(1).GetChild(1).gameObject;
-        specialEffect = transform.GetChild(4).GetComponent<ParticleSystem>();
-        specialScreen = transform.GetChild(5).GetComponent<ParticleSystem>();
+        specialEffect = transform.GetChild(2).transform.GetChild(0).GetComponent<ParticleSystem>();
+        specialScreen = transform.GetChild(2).transform.GetChild(1).GetComponent<ParticleSystem>();
         input = GetComponent<InputOrganizer>();
 
 
@@ -52,7 +52,7 @@ public class AttackController : MonoBehaviour
             anim.SetTrigger("icePillar");
             StartCoroutine(SpecialFreeze(1));
             verification = true;
-            DisableActions();
+            status.DisableActions();
         }else{
             verification = false;
         }
@@ -64,16 +64,11 @@ public class AttackController : MonoBehaviour
         if(!iceBall.activeSelf && status.canSpecial){
             verification = true;
             anim.SetTrigger("iceBall");
-            DisableActions();
+            status.DisableActions();
         }
         return verification;
     }
 
-    private void DisableActions(){
-        status.canAttack = false;
-        status.canMove = false;
-        status.canSpecial = false;  
-    }
     private void ActivateIcePillar(){
         icePillar.SetActive(true);
     }

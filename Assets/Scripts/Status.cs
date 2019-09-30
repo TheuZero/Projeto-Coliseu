@@ -39,7 +39,13 @@ public class Status : MonoBehaviour
         previousStateInfo = anim.GetCurrentAnimatorStateInfo(0);
     }
 
-    IEnumerator FreezeCharacter(float duration){
+    public void DisableActions(){
+        canAttack = false;
+        canMove = false;
+        canSpecial = false;  
+    }
+
+    public IEnumerator FreezeCharacter(float duration){
         timeFactor = 0;
         anim.speed = 0;
         yield return new WaitForSeconds(duration);
@@ -47,7 +53,7 @@ public class Status : MonoBehaviour
         anim.speed = 1;
     }
 
-    IEnumerator SlowCharacter(float slow, float duration){
+    public IEnumerator SlowCharacter(float slow, float duration){
         timeFactor = 1 - slow;
         anim.speed = 1 - slow;
         yield return new WaitForSeconds(duration);

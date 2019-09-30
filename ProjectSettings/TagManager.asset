@@ -11,6 +11,7 @@ TagManager:
   - Hit Box
   - Enemy
   - Special Hit Box
+  - Entity Hit Box
   layers:
   - Default
   - TransparentFX
@@ -27,7 +28,7 @@ TagManager:
   - Hurt Box
   - Ledge
   - Enemy
-  - 
+  - Character Collider
   - 
   - 
   - 

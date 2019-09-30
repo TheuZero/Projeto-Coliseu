@@ -10,22 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2f01bc18ced0f840862bbd069a1689a, type: 3}
-  m_Name: Ice Pillar
+  m_Name: Dash Special
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300444, guid: abfbabfb92e9db249b4f217f2fb24a1f, type: 3}
-  attackName: Ice Pillar
+  icon: {fileID: 0}
+  attackName: Dash Special
   hitData:
   - manaGain: 0
-    dmgMultiplier: 1
-    knockback: 5
-    knockup: 5
-    hitstun: 0.2
-    hitlag: 0.15
-  - manaGain: 0
-    dmgMultiplier: 5
-    knockback: 5
-    knockup: 5
-    hitstun: 0
-    hitlag: 0.4
+    dmgMultiplier: 2
+    knockback: 7
+    knockup: 4
+    hitstun: 1
+    hitlag: 0.3
   attackType: 1
-  hitType: 2
+  hitType: 0

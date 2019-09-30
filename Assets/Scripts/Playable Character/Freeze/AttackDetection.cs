@@ -8,7 +8,7 @@ public class AttackDetection : MonoBehaviour
     Attack attack;
     Animator anim;
     void Start(){
-        player = transform.parent.transform.parent.gameObject;
+        player = transform.parent.transform.parent.gameObject.transform.parent.gameObject;
         attack = player.GetComponent<Attack>();
         anim = player.GetComponent<Animator>();
     }
