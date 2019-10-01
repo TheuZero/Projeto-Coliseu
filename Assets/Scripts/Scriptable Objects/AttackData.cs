@@ -27,6 +27,8 @@ public class AttackData : ScriptableObject
     public AttackType attackType;
     [SerializeField]
     public HitType hitType;
+    [SerializeField]
+    public MovementData movementData;
 
     public Sprite Icon{
         get{
