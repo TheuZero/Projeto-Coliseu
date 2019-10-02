@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ice Ball Movement Data
   m_EditorClassIdentifier: 
   moveData:
-  - xSpeed: 0
+  - xSpeed: 6
     ySpeed: 0
-    xOrientation: 0
+    xOrientation: 1
     yOrientation: 0
