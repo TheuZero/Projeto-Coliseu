@@ -9,13 +9,13 @@ public class FreezeSpecialBehaviour : MonoBehaviour
     float timer;
     float movementSpeed = 7f;
     float direction;
-
+    AttackDetection attackDetection;    
     //temporary
     Animator anim;
     void Start()
     {
         status = GetComponent<Status>();
-
+        attackDetection = transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<AttackDetection>();
         //temp
         anim = GetComponent<Animator>();
     }

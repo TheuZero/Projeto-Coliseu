@@ -1,75 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &488719680185390840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691611143549034269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63067f849e55f154b814a3ff7d548e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxFlushTimer: 0.33
-  flushTimer: 0
-  commandAux: 11
---- !u!114 &488719680185390847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691611143549034269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8598c7d8b7b4bba49912ecc42d1e37a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &488719680185390795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691611143549034269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cacc9ab730596ab4fa3d29cbdea614d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  maxHp: 0
-  mp: 0
-  maxMp: 0
-  canMove: 0
-  canAttack: 0
-  canSpecial: 0
---- !u!114 &488719680185390794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691611143549034269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe06b1bd8b4c97469ed9ecb48e25dd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &488719680185390793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691611143549034269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02af15b7e278d5e4eac2e0add19328c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &691611143131539219
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +240,7 @@ GameObject:
   - component: {fileID: 691611143324080881}
   - component: {fileID: 691611143324080880}
   - component: {fileID: 691611143324080887}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Hit Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5067,6 +4997,76 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &488719680185390793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691611143549034269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02af15b7e278d5e4eac2e0add19328c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &488719680185390794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691611143549034269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe06b1bd8b4c97469ed9ecb48e25dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &488719680185390795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691611143549034269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cacc9ab730596ab4fa3d29cbdea614d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  maxHp: 0
+  mp: 0
+  maxMp: 0
+  canMove: 0
+  canAttack: 0
+  canSpecial: 0
+--- !u!114 &488719680185390840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691611143549034269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63067f849e55f154b814a3ff7d548e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFlushTimer: 0.33
+  flushTimer: 0
+  commandAux: 11
+--- !u!114 &488719680185390847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691611143549034269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8598c7d8b7b4bba49912ecc42d1e37a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &691611143681250555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5077,7 +5077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691611143681250554}
   m_Layer: 0
-  m_Name: Freeze 1
+  m_Name: Freeze Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10028,7 +10028,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 1
-  attackData: {fileID: 0}
 --- !u!1 &691611144399056293
 GameObject:
   m_ObjectHideFlags: 0
@@ -10040,7 +10039,7 @@ GameObject:
   - component: {fileID: 691611144399056292}
   - component: {fileID: 691611144399056299}
   - component: {fileID: 691611144399056297}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Hit Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10110,7 +10109,7 @@ GameObject:
   - component: {fileID: 691611144687151417}
   - component: {fileID: 691611144687151423}
   - component: {fileID: 691611144687151416}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14897,18 +14896,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 110918537, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
-      propertyPath: m_TagString
-      value: Hit Box
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 110918537, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 114095486, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
       propertyPath: m_TagString
       value: Hit Box
       objectReference: {fileID: 0}
-    - target: {fileID: 114095486, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+    - target: {fileID: 574465936, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_TagString
+      value: Hurt Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 284425946, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -14916,7 +14915,19 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hit Box
       objectReference: {fileID: 0}
-    - target: {fileID: 284425946, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+    - target: {fileID: 429711769, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095486, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114095486, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_TagString
+      value: Hit Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 1936492274, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
@@ -14928,21 +14939,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1936492274, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1103768241043425689, guid: e42ab4856b418e547ac9aab563ed0473,
-        type: 3}
-      propertyPath: m_Mass
+    - target: {fileID: 1936492276, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+      propertyPath: m_UsedByComposite
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 574465936, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
-      propertyPath: m_TagString
-      value: Hurt Box
-      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1103768243074112778, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+    - {fileID: 2966505406697483806, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
+    - {fileID: 1103768241043425681, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e42ab4856b418e547ac9aab563ed0473, type: 3}
 --- !u!4 &3941885993491263054 stripped
 Transform:

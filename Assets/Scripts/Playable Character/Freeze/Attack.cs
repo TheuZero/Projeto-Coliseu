@@ -9,13 +9,13 @@ public class Attack : MonoBehaviour
     float attackModifier;
     
     Animator anim;
-    public AttackData attackData;
     public AttackInfo attackInfo;
+    AttackDetection attackDetection;
 
     void Start(){
         attackInfo = new AttackInfo();
         anim = GetComponent<Animator>();
- 
+        attackDetection = transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<AttackDetection>();
     }
 
     public void DamageCalc(){
