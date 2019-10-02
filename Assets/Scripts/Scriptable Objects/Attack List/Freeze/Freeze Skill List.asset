@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09d7f97318f7edd498fa3e1760c1bfb0, type: 3}
-  m_Name: New SkillList
+  m_Name: Freeze Skill List
   m_EditorClassIdentifier: 
-  normalAttack:
-  - {fileID: 11400000, guid: 0153f1dcf926bb344ab43c86ac17b982, type: 2}
-  - {fileID: 11400000, guid: de1ac5a28fa852647bc80aa0131d4aec, type: 2}
+  normalAttack: []
+  skill:
   - {fileID: 11400000, guid: 1f9806f35dc6bfe4e8bc86c735a6dac8, type: 2}
+  - {fileID: 11400000, guid: de1ac5a28fa852647bc80aa0131d4aec, type: 2}
   - {fileID: 11400000, guid: e755b5954bbe27946a0080ac3cabbef2, type: 2}
+  specialSkill: []

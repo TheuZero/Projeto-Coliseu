@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   attackName: Dash Special
+  manaCost: 0
   hitData:
   - manaGain: 0
     dmgMultiplier: 2
@@ -23,3 +24,4 @@ MonoBehaviour:
     hitlag: 0.3
   attackType: 1
   hitType: 0
+  movementData: {fileID: 11400000, guid: b11cbd174a05a624d8d9ab37efa25281, type: 2}
