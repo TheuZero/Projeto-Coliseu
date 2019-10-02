@@ -6,5 +6,7 @@ using UnityEngine;
 public class SkillList : ScriptableObject
 {
     [SerializeField]
-    public ScriptableObject[] normalAttack;
+    public AttackData[] normalAttack;
+    public AttackData[] skill;
+    public AttackData[] specialSkill;
 }

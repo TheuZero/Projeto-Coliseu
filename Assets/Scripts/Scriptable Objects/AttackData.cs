@@ -20,7 +20,7 @@ public class AttackData : ScriptableObject
     [SerializeField]
     string attackName = "";
     [SerializeField]
-    public readonly float manaCost;
+    public float manaCost;
     [SerializeField]
     public HitData[] hitData = new HitData[1];
     [SerializeField]
