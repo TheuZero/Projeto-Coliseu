@@ -12,8 +12,9 @@ public class FreezeSpecialBehaviour : MonoBehaviour
     float xSpeed;
     float ySpeed;
     AttackDetection attackDetection;
-    public AttackData attackData;
-    public MovementData movementData;
+    public AttackData[] attackList = new AttackData[0];
+    AttackData attackData;
+    MovementData movementData;
     Vector2 orientation;    
     //temporary
     Animator anim;
@@ -30,16 +31,6 @@ public class FreezeSpecialBehaviour : MonoBehaviour
             anim.SetTrigger("SpecialDash");
         }
     }
-    
-    void AssignMovement(int index){
-        xSpeed = attackData.movementData.moveData[index].XSpeed;
-        ySpeed = attackData.movementData.moveData[index].YSpeed;
-        orientation = new Vector2(attackData.movementData.moveData[index].XOrientation, attackData.movementData.moveData[index].YOrientation);
-    }
-    void MoveCharacter(){
-        transform.Translate(Vector2.right * xSpeed * Time.deltaTime * direction * orientation.x);
-        transform.Translate(Vector2.up * ySpeed * Time.deltaTime * orientation.y);
-    }
     public IEnumerator DashSpecialAttack(int index){
         AssignMovement(index);
         timer = 0.3f;
@@ -51,6 +42,28 @@ public class FreezeSpecialBehaviour : MonoBehaviour
         }
         yield break;
     }
+    void AssignMovement(int index){
+        xSpeed = attackData.movementData.moveData[index].XSpeed;
+        ySpeed = attackData.movementData.moveData[index].YSpeed;
+        orientation = new Vector2(attackData.movementData.moveData[index].XOrientation, attackData.movementData.moveData[index].YOrientation);
+    }
+    void GetDirection(){
+        direction = Mathf.Sign(transform.localScale.x);
+    }
+        
+    void MoveCharacter(){
+        transform.Translate(Vector2.right * xSpeed * Time.deltaTime * direction * orientation.x);
+        transform.Translate(Vector2.up * ySpeed * Time.deltaTime * orientation.y);
+    }
+
+    //invocado na animação, já que é impossivel invocar métodos de scripts de outros objetos.
+    void SetAttack(int index){
+        attackDetection.AttackSideOrigin(transform.localScale.x);
+        attackData = attackList[0];
+        attackDetection.DamageInsert(attackData);
+        attackDetection.SetAttack(index);
+    }
+
     /*public IEnumerator DashSpecialAttack(){
         timer = 0.3f;
         GetDirection();
@@ -62,8 +75,5 @@ public class FreezeSpecialBehaviour : MonoBehaviour
         yield break;
     }*/
 
-    void GetDirection(){
-        direction = Mathf.Sign(transform.localScale.x);
-    }
 }
 

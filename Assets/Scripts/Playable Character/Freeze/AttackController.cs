@@ -50,7 +50,7 @@ public class AttackController : MonoBehaviour
         verification = false;
         if(!icePillar.activeSelf && status.canSpecial){
             anim.SetTrigger("icePillar");
-            StartCoroutine(SpecialFreeze(1));
+            //StartCoroutine(SpecialFreeze(1));
             verification = true;
             status.DisableActions();
         }else{

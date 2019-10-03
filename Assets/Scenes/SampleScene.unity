@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -536,6 +536,18 @@ Transform:
   m_Father: {fileID: 523157037}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799551399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 691611143549034342, guid: 548d0ddeb4ba60e479b830d5b987899a,
+    type: 3}
+  m_PrefabInstance: {fileID: 691611144005427619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c213d6ca5591c41abb512bdb51bcdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1054516621
 GameObject:
   m_ObjectHideFlags: 0
@@ -875,5 +887,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 488719680185390847, guid: 548d0ddeb4ba60e479b830d5b987899a,
+        type: 3}
+      propertyPath: attackList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488719680185390847, guid: 548d0ddeb4ba60e479b830d5b987899a,
+        type: 3}
+      propertyPath: attackList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e755b5954bbe27946a0080ac3cabbef2,
+        type: 2}
+    - target: {fileID: 488719680507072527, guid: 548d0ddeb4ba60e479b830d5b987899a,
+        type: 3}
+      propertyPath: subjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488719680507072527, guid: 548d0ddeb4ba60e479b830d5b987899a,
+        type: 3}
+      propertyPath: subjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 799551399}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 548d0ddeb4ba60e479b830d5b987899a, type: 3}

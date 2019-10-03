@@ -24,34 +24,38 @@ public class Attack : MonoBehaviour
     }
 
     public void Combo1(){
-        attackModifier = 1;
-        attackInfo.hitstun = 0.2f;
-        attackInfo.knockback = 0.2f;
-        attackInfo.knockup = 0;
-        attackInfo.hitlag = 0.1f;
+        attackDetection.attackInfo.damage = 1;
+        attackDetection.attackInfo.hitstun = 0.2f;
+        attackDetection.attackInfo.knockback = 0.2f;
+        attackDetection.attackInfo.knockup = 0;
+        attackDetection.attackInfo.hitlag = 0.1f;
+        attackDetection.AttackSideOrigin(transform.localScale.x);
     }
 
     public void Combo2(){
-        attackModifier = 1.2f;
-        attackInfo.hitstun = 0.3f;
-        attackInfo.knockback = 0.2f;
-        attackInfo.knockup = 0;
-        attackInfo.hitlag = 0.1f;
+        attackDetection.attackInfo.damage = 1.2f;
+        attackDetection.attackInfo.hitstun = 0.3f;
+        attackDetection.attackInfo.knockback = 0.2f;
+        attackDetection.attackInfo.knockup = 0;
+        attackDetection.attackInfo.hitlag = 0.1f;
+        attackDetection.AttackSideOrigin(transform.localScale.x);
     }
 
     public void Combo3(){
-        attackModifier = 2;
-        attackInfo.hitstun = 0.7f;
-        attackInfo.knockback = 0.2f;
-        attackInfo.knockup = 0;
-        attackInfo.hitlag = 0.15f;
+        attackDetection.attackInfo.damage = 2;
+        attackDetection.attackInfo.hitstun = 0.7f;
+        attackDetection.attackInfo.knockback = 0.2f;
+        attackDetection.attackInfo.knockup = 0;
+        attackDetection.attackInfo.hitlag = 0.15f;
+        attackDetection.AttackSideOrigin(transform.localScale.x);
     }
     public void Combo4(){
-        attackModifier = 3;
-        attackInfo.hitstun = 1.5f;
-        attackInfo.knockback = 4.2f;
-        attackInfo.knockup = 3;
-        attackInfo.hitlag = 0.2f;
+        attackDetection.attackInfo.damage = 3;
+        attackDetection.attackInfo.hitstun = 1.5f;
+        attackDetection.attackInfo.knockback = 4.2f;
+        attackDetection.attackInfo.knockup = 3;
+        attackDetection.attackInfo.hitlag = 0.2f;
+        attackDetection.AttackSideOrigin(transform.localScale.x);
     }
 
     public IEnumerator Hitfreeze(float timer){

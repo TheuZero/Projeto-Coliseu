@@ -12,10 +12,24 @@ public class AttackDetection : MonoBehaviour
     HitData[] hitData;
     public float attackModifier;
     public float attack;
+    List<MonoBehaviour> subjects = new List<MonoBehaviour>();
+
     void Start(){
         player = transform.parent.transform.parent.gameObject.transform.parent.gameObject;
         attackClass = player.GetComponent<Attack>();
         anim = player.GetComponent<Animator>();
+        attackInfo = new AttackInfo();
+
+        SubscribeOnHit();
+    }
+
+    void SubscribeOnHit(){
+        subjects.Add(player.GetComponent<FreezeSpecialBehaviour>());
+    }
+    void OnHitNotify(){
+        foreach(MonoBehaviour m in subjects){
+           // m.OnHit();
+        }
     }
 
     void DamageCalc(){
@@ -25,6 +39,10 @@ public class AttackDetection : MonoBehaviour
     public void DamageInsert(AttackData attackData){
         this.attackData = attackData;
     }
+    public void AttackSideOrigin(float side){
+        attackInfo.side = Mathf.Sign(side);
+    }
+    //invocado pela animação
     public void SetAttack(int hitData){
         attackInfo.damage = attackData.hitData[hitData].DmgMultiplier;
         attackInfo.knockback = attackData.hitData[hitData].Knockback;
