@@ -41,14 +41,14 @@ public class MovementationData{
             return ySpeed;
         }
     }
-    public DirectionX XOrientation{
+    public float XOrientation{
         get{
-            return XOrientation;
+            return (float)xOrientation;
         }
     }
-    public DirectionY YOrientation{
+    public float YOrientation{
         get{
-            return yOrientation;
+            return (float)yOrientation;
         }
     }
     

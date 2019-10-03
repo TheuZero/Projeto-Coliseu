@@ -9,7 +9,12 @@ public class FreezeSpecialBehaviour : MonoBehaviour
     float timer;
     float movementSpeed = 7f;
     float direction;
-    AttackDetection attackDetection;    
+    float xSpeed;
+    float ySpeed;
+    AttackDetection attackDetection;
+    public AttackData attackData;
+    public MovementData movementData;
+    Vector2 orientation;    
     //temporary
     Animator anim;
     void Start()
@@ -25,7 +30,28 @@ public class FreezeSpecialBehaviour : MonoBehaviour
             anim.SetTrigger("SpecialDash");
         }
     }
-    public IEnumerator DashSpecialAttack(){
+    
+    void AssignMovement(int index){
+        xSpeed = attackData.movementData.moveData[index].XSpeed;
+        ySpeed = attackData.movementData.moveData[index].YSpeed;
+        orientation = new Vector2(attackData.movementData.moveData[index].XOrientation, attackData.movementData.moveData[index].YOrientation);
+    }
+    void MoveCharacter(){
+        transform.Translate(Vector2.right * xSpeed * Time.deltaTime * direction * orientation.x);
+        transform.Translate(Vector2.up * ySpeed * Time.deltaTime * orientation.y);
+    }
+    public IEnumerator DashSpecialAttack(int index){
+        AssignMovement(index);
+        timer = 0.3f;
+        GetDirection();
+        while(timer > 0){
+            timer -= Time.deltaTime;
+            MoveCharacter();
+            yield return null;
+        }
+        yield break;
+    }
+    /*public IEnumerator DashSpecialAttack(){
         timer = 0.3f;
         GetDirection();
         while(timer > 0){
@@ -33,7 +59,8 @@ public class FreezeSpecialBehaviour : MonoBehaviour
             transform.Translate(Vector2.right * movementSpeed * Time.deltaTime * direction);
             yield return null;
         }
-    }
+        yield break;
+    }*/
 
     void GetDirection(){
         direction = Mathf.Sign(transform.localScale.x);
