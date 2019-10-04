@@ -18,7 +18,7 @@ MonoBehaviour:
   hitData:
   - manaGain: 0
     dmgMultiplier: 2
-    knockback: 8
+    knockback: 4
     knockup: 0
     hitstun: 0
     hitlag: 0

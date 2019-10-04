@@ -26,11 +26,20 @@ public class Movement : MonoBehaviour {
 	public bool isJumping;
 	public bool isRunning;
 
+	//S.O
+	float direction;
+	float xSpeed;
+	float ySpeed;
+	Vector2 orientation;
+
 	public float lastDirection;
 	public GroundDetection groundDetection;
 
 	public Rigidbody2D rb;
+
+	Status status;
 	void Start(){
+		status = GetComponent<Status>();
 		groundDetection = GetComponent<GroundDetection>();
 		rb = GetComponent<Rigidbody2D>();
 	}
@@ -141,5 +150,19 @@ public class Movement : MonoBehaviour {
 			Flip(direction);
 		}
 	}
+
+	public void MoveCharacter(MovementationData moveData){
+		GetDirection();
+		xSpeed = moveData.XSpeed;
+        ySpeed = moveData.YSpeed;
+        orientation = new Vector2(moveData.XOrientation, moveData.YOrientation);
+
+        transform.Translate(Vector2.right * xSpeed * Time.deltaTime * orientation.x * direction * status.timeFactor);
+        transform.Translate(Vector2.up * ySpeed * Time.deltaTime * orientation.y * status.timeFactor);
+    }
+
+	void GetDirection(){
+        direction = Mathf.Sign(transform.localScale.x);
+    }
 
 }

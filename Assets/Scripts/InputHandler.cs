@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //InputHandler ou ActionHandler seria um bom nome?
-public class StateManager : MonoBehaviour
+public class InputHandler : MonoBehaviour
 {
     AttackController attack;
     MovementController movement;

@@ -7,6 +7,7 @@ public class Defense : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
     GroundDetection gd;
+    Status status;
     
     public float HP = 20;
     public float weight = 10;
@@ -27,6 +28,8 @@ public class Defense : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         gd = GetComponent<GroundDetection>();
+        status = GetComponent<Status>();
+
         hitstun = Animator.StringToHash("Hitstun");
         launch = Animator.StringToHash("Launch");
         fall = Animator.StringToHash("Fall");
@@ -55,7 +58,7 @@ public class Defense : MonoBehaviour
     }
     
     public void Damaged(AttackInfo attackInfo){
-        HP -= attackInfo.damage;
+        status.ReduceHp(attackInfo.damage);
         if(hitstun > 0){
             isHitstunned = true;
             hitstunTimer = attackInfo.hitstun;

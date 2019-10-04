@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Status : MonoBehaviour
 {
-    public float hp;
+    float hp;
     public float maxHp;
-    public float mp;
+    float mp;
     public float maxMp;
-    float timeFactor = 1;
+    public float timeFactor = 1;
+
+
     public bool canMove;
     public bool canAttack;
     public bool canSpecial;
+
     Animator anim;
     AnimatorStateInfo stateInfo;
     AnimatorStateInfo previousStateInfo;
@@ -45,18 +48,28 @@ public class Status : MonoBehaviour
         canSpecial = false;  
     }
 
+    public void ReduceHp(float damage){
+        hp -= damage;
+    }
+
     public IEnumerator FreezeCharacter(float duration){
-        timeFactor = 0;
-        anim.speed = 0;
-        yield return new WaitForSeconds(duration);
+        while(duration > 0){
+            duration -= Time.deltaTime;
+            timeFactor = 0;
+            anim.speed = 0;
+            yield return null;
+        }
         timeFactor = 1;
         anim.speed = 1;
     }
 
     public IEnumerator SlowCharacter(float slow, float duration){
-        timeFactor = 1 - slow;
-        anim.speed = 1 - slow;
-        yield return new WaitForSeconds(duration);
+        while(duration > 0){
+            duration -= Time.deltaTime;
+            timeFactor = 1 - slow;
+            anim.speed = 1 - slow;
+            yield return null;
+        }
         timeFactor = 1;
         anim.speed = 1;
     }

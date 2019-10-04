@@ -13,10 +13,7 @@ public class InputOrganizer : MonoBehaviour
 
     public int commandAux = 11;
 
-//    Animator anim;
-//    MovementController movement;
-//    Status status;
-    StateManager state;
+    InputHandler state;
 
 
     string tst;
@@ -25,11 +22,8 @@ public class InputOrganizer : MonoBehaviour
         for(int i = 0; i < buffer.Length; i++){
             buffer[i] = new InputBufferItem();
             aux[i] = new InputBufferItem();
+            state = GetComponent<InputHandler>();
         }
-//        anim = GetComponent<Animator>();
-//        movement = GetComponent<MovementController>();
-//        status = GetComponent<Status>();
-        state = GetComponent<StateManager>();
     }
 
     // Update is called once per frame

@@ -9,7 +9,7 @@ public class DamageDetection : MonoBehaviour
     void Start()
     {
         parent = transform.parent.gameObject;
-        defense = parent.GetComponent<Defense>();
+        defense = parent.transform.parent.transform.parent.GetComponent<Defense>();
     }
     public void TakeDamage(AttackInfo attackInfo){
         defense.Damaged(attackInfo);

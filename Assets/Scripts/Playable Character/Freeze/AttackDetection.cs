@@ -8,6 +8,7 @@ public class AttackDetection : MonoBehaviour
     Attack attackClass;
     Animator anim;
     public AttackInfo attackInfo;
+    Status status;
     AttackData attackData;
     HitData[] hitData;
     public float attackModifier;
@@ -18,6 +19,7 @@ public class AttackDetection : MonoBehaviour
         player = transform.parent.transform.parent.gameObject.transform.parent.gameObject;
         attackClass = player.GetComponent<Attack>();
         anim = player.GetComponent<Animator>();
+        status = player.GetComponent<Status>();
         attackInfo = new AttackInfo();
 
         SubscribeOnHit();
@@ -59,7 +61,7 @@ public class AttackDetection : MonoBehaviour
 //            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
             //col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackClass.attackInfo);
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
-            attackClass.ActivateHitfreeze();
+            StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
         }
     }
 
