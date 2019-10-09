@@ -5,10 +5,10 @@ using UnityEngine;
 public class GroundDetection : MonoBehaviour
 {
     new public BoxCollider2D collider;
-    public LayerMask ground;
+    public LayerMask ground = 9;
     public bool isGroundedCheck;
     public Movement movement;
-    public float rayNumber;
+    public float rayNumber = 4;
     Vector3 rayPosition;
 
     Vector3 max;

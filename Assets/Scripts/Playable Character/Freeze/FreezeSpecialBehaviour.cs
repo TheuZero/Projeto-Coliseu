@@ -41,7 +41,7 @@ public class FreezeSpecialBehaviour : MonoBehaviour
         while(timer > 0){
             timer -= Time.deltaTime * status.timeFactor;
             movement.MoveCharacter(movementationData);
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
         yield break;
     }

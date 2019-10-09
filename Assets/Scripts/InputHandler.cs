@@ -27,15 +27,17 @@ public class InputHandler : MonoBehaviour
     public InputValidation JumpDown;
     public InputValidation JumpHold;
     public InputValidation JumpUp;
+    string charName;
     
 
     bool confirm;
 
     void Start()
     {
+        charName = gameObject.name;
         anim = GetComponent<Animator>();
         animTimers = new BasicAnimTimers();
-        attack = GetComponent<AttackController>();
+        
         movement = GetComponent<MovementController>();
         AddCommands();
         getAnimTimers();
@@ -49,7 +51,16 @@ public class InputHandler : MonoBehaviour
     }
 
     void AddCommands(){
-        AttackDown += attack.ComboVerify;
+        switch(charName){
+            case "Freeze":
+                attack = GetComponent<AttackController>();
+                AttackDown += attack.ComboVerify;
+                break;
+           //case "Riki":
+            
+        }
+
+        
         JumpDown += movement.JumpVerify;
         //JumpHold += movement.JumpHold();
         JumpUp += movement.JumpEnd;
