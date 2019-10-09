@@ -5,35 +5,35 @@ using UnityEngine;
 public class AttackController : MonoBehaviour
 {
     Animator anim;
+    Status status;
+    InputOrganizer input;
+    bool verification;
+
     GameObject icePillar;
     GameObject iceBall;
     float side;
-    Status status;
-    InputOrganizer input;
     ParticleSystem specialEffect;
     ParticleSystem specialScreen;
 
-    bool verification;
+    
 
     void Start()
     {
         anim = GetComponent<Animator>();
         status = GetComponent<Status>();
+        input = GetComponent<InputOrganizer>();
+
         icePillar = transform.parent.transform.GetChild(1).GetChild(0).gameObject;
         iceBall = transform.parent.transform.GetChild(1).GetChild(1).gameObject;
         specialEffect = transform.GetChild(2).transform.GetChild(0).GetComponent<ParticleSystem>();
         specialScreen = transform.GetChild(2).transform.GetChild(1).GetComponent<ParticleSystem>();
-        input = GetComponent<InputOrganizer>();
+       
 
 
         //input.nSpecial = IcePillarVerify;
         //input.attack = Combo;
     }
 
-    void Update()
-    {
-
-    }
     public bool ComboVerify(){
         verification = false;
        

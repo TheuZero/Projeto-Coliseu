@@ -5,7 +5,10 @@ using UnityEngine;
 //InputHandler ou ActionHandler seria um bom nome?
 public class InputHandler : MonoBehaviour
 {
-    AttackController attack;
+    AttackController attackFreeze;
+    RikiAttackController attackRiki;
+
+
     MovementController movement;
     Animator anim;
     BasicAnimTimers animTimers;
@@ -53,27 +56,38 @@ public class InputHandler : MonoBehaviour
     void AddCommands(){
         switch(charName){
             case "Freeze":
-                attack = GetComponent<AttackController>();
-                AttackDown += attack.ComboVerify;
+                attackFreeze = GetComponent<AttackController>();
+                AttackDown += attackFreeze.ComboVerify;
+                TechDown += attackFreeze.IceBallVerify;
+                SpecialDown += attackFreeze.IcePillarVerify;
                 break;
-           //case "Riki":
-            
+           case "Riki":
+                attackRiki = GetComponent<RikiAttackController>();
+                AttackDown += attackRiki.ComboVerify;
+                break;
         }
 
         
         JumpDown += movement.JumpVerify;
         //JumpHold += movement.JumpHold();
         JumpUp += movement.JumpEnd;
-        TechDown += attack.IceBallVerify;
-        SpecialDown += attack.IcePillarVerify;
+
     }
     void RemoveCommands(){
-        AttackDown -= attack.ComboVerify;
-        SpecialDown -= attack.IcePillarVerify;
+        switch(charName){
+            case "Freeze":
+                AttackDown -= attackFreeze.ComboVerify;
+                SpecialDown -= attackFreeze.IcePillarVerify;
+                TechDown -= attackFreeze.IceBallVerify;
+                break;
+            case "Riki":
+                AttackDown -= attackRiki.ComboVerify;
+                break;
+        }
         JumpDown -= movement.JumpVerify;
         //JumpHold -= movement.JumpHold();
         JumpUp -= movement.JumpEnd;
-        TechDown -= attack.IceBallVerify;
+        
     }
 
     public bool WasExecuted(int command, int type){
