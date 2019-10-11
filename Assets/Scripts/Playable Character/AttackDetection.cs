@@ -38,14 +38,13 @@ public class AttackDetection : MonoBehaviour
        attackInfo.damage = attack * attackModifier;
        attackInfo.side = Mathf.Sign(transform.localScale.x);
     }
-    public void DamageInsert(AttackData attackData){
-        this.attackData = attackData;
-    }
+
     public void AttackSideOrigin(float side){
         attackInfo.side = Mathf.Sign(side);
     }
     //invocado pela animação
-    public void SetAttack(int hitData){
+    public void SetAttack(AttackData attackData, int hitData){
+        this.attackData = attackData;
         attackInfo.damage = attackData.hitData[hitData].DmgMultiplier;
         attackInfo.knockback = attackData.hitData[hitData].Knockback;
         attackInfo.knockup = attackData.hitData[hitData].Knockup;

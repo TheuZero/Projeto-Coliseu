@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f01bc18ced0f840862bbd069a1689a, type: 3}
+  m_Name: New AttackData
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  attackName: 
+  manaCost: 0
+  hitData:
+  - manaGain: 0
+    dmgMultiplier: 0
+    knockback: 0
+    knockup: 0
+    hitstun: 0
+    hitlag: 0
+  attackType: 0
+  hitType: 0
+  movementData: {fileID: 11400000, guid: c5a0023b89e46fa439a24335a15bee16, type: 2}

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreezeSpecialBehaviour : MonoBehaviour
+public class RikiSpecialBehaviour : MonoBehaviour
 {
-    Status status;
+     Status status;
 
     float timer;
     float movementSpeed = 7f;
@@ -30,12 +30,19 @@ public class FreezeSpecialBehaviour : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update(){
-        if(Input.GetKeyDown("q")){
-            anim.SetTrigger("SpecialDash");
-        }
+    void AssignMovement(int index){
+        movementationData = attackData.movementData.moveData[index];
     }
-    public IEnumerator DashSpecialAttack(int index){
+
+    //invocado na animação, já que é impossivel invocar métodos de scripts de outros objetos.
+    // montar um dicionario de dados para a lista em vez de array e fazer lookups por ID
+    void SetAttack(int index){
+        attackDetection.AttackSideOrigin(transform.localScale.x);
+        attackData = attackList[0];
+        attackDetection.SetAttack(attackData, index);
+    }
+
+    public IEnumerator SuperBeat(int index){
         AssignMovement(index);
         timer = 0.3f;
         while(timer > 0){
@@ -45,19 +52,10 @@ public class FreezeSpecialBehaviour : MonoBehaviour
         }
         yield break;
     }
-    void AssignMovement(int index){
-        movementationData = attackData.movementData.moveData[index];
+
+    public void Combo(int index){
+        AssignMovement(index);
+        movement.MoveCharacter(movementationData);
     }
-
-    //invocado na animação, já que é impossivel invocar métodos de scripts de outros objetos.
-    void SetAttack(int index){
-        attackDetection.AttackSideOrigin(transform.localScale.x);
-        attackData = attackList[0];
-        attackDetection.SetAttack(attackData, index);
-    }
-}
-
-public class MoveData{
-
 }
 
