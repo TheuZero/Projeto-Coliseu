@@ -1511,6 +1511,7 @@ GameObject:
   - component: {fileID: 1859669721}
   - component: {fileID: 1859669728}
   - component: {fileID: 1859669730}
+  - component: {fileID: 1859669731}
   m_Layer: 10
   m_Name: Riki
   m_TagString: Player
@@ -1812,6 +1813,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3d8733f2a8d78449155f6755f70c4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1859669731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859669715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560e89bc73b88054aafed00d6c5badb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackList:
+  - {fileID: 11400000, guid: 46ec2a57d3449294e90a128f81dacb73, type: 2}
 --- !u!1 &2130413493
 GameObject:
   m_ObjectHideFlags: 0

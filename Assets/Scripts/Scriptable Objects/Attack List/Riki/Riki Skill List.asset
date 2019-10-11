@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d7f97318f7edd498fa3e1760c1bfb0, type: 3}
   m_Name: Riki Skill List
   m_EditorClassIdentifier: 
-  normalAttack: []
+  normalAttack:
+  - {fileID: 11400000, guid: 46ec2a57d3449294e90a128f81dacb73, type: 2}
   skill: []
   specialSkill: []

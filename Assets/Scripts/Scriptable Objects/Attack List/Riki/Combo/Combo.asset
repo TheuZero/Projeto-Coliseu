@@ -10,18 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2f01bc18ced0f840862bbd069a1689a, type: 3}
-  m_Name: New AttackData
+  m_Name: Combo
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  attackName: 
+  attackName: Combo
   manaCost: 0
   hitData:
-  - manaGain: 0
-    dmgMultiplier: 0
-    knockback: 0
+  - manaGain: 2
+    dmgMultiplier: 2
+    knockback: 0.2
     knockup: 0
-    hitstun: 0
-    hitlag: 0
+    hitstun: 0.3
+    hitlag: 0.05
+  - manaGain: 3
+    dmgMultiplier: 2
+    knockback: 0.1
+    knockup: 0
+    hitstun: 0.3
+    hitlag: 0.05
+  - manaGain: 5
+    dmgMultiplier: 4
+    knockback: 2
+    knockup: 4
+    hitstun: 1
+    hitlag: 0.12
   attackType: 0
   hitType: 0
-  movementData: {fileID: 11400000, guid: c5a0023b89e46fa439a24335a15bee16, type: 2}
+  movementData: {fileID: 11400000, guid: 3ea42e8df7032e442a341ea59db3f6c6, type: 2}

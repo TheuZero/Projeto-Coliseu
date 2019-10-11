@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d866816fc1e0d440bfe9f881eb71b0e, type: 3}
-  m_Name: Combo 1
+  m_Name: ComboMovement
   m_EditorClassIdentifier: 
   moveData:
-  - xSpeed: 0
+  - xSpeed: 1
     ySpeed: 0
-    xOrientation: 0
+    xOrientation: 1
     yOrientation: 0

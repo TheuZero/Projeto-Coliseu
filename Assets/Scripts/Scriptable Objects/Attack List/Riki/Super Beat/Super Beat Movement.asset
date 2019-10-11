@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Super Beat Movement
   m_EditorClassIdentifier: 
   moveData:
-  - xSpeed: 0
+  - xSpeed: 5
     ySpeed: 0
-    xOrientation: 0
+    xOrientation: 1
     yOrientation: 0

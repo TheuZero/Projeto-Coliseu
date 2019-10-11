@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   attackName: 
-  manaCost: 0
+  manaCost: 5
   hitData:
   - manaGain: 0
-    dmgMultiplier: 0
-    knockback: 0
-    knockup: 0
-    hitstun: 0
-    hitlag: 0
+    dmgMultiplier: 7
+    knockback: 5
+    knockup: 2
+    hitstun: 1
+    hitlag: 0.2
   attackType: 0
   hitType: 0
   movementData: {fileID: 11400000, guid: c5a0023b89e46fa439a24335a15bee16, type: 2}
