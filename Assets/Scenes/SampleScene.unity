@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1035,13 +1035,14 @@ GameObject:
   m_Component:
   - component: {fileID: 745123991}
   - component: {fileID: 745123992}
+  - component: {fileID: 745123993}
   m_Layer: 11
-  m_Name: Sweet Spot
+  m_Name: Grab
   m_TagString: Hit Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &745123991
 Transform:
   m_ObjectHideFlags: 0
@@ -1082,6 +1083,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
+--- !u!114 &745123993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 745123990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35703d86f3f502641a1db230983a94d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &764423170
 GameObject:
   m_ObjectHideFlags: 0

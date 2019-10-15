@@ -102,7 +102,16 @@ public class Defense : MonoBehaviour
             knockup = 0;
         }
     }
-
+    public IEnumerator Grabbed(Vector3 position, bool grabbed){
+        while(grabbed){
+            transform.position = position;
+            hitstunTimer = 0.4f;
+            yield return new WaitForFixedUpdate();
+        }
+        knockback = 0.3f * weight;
+        knockup = 0.2f * weight;
+        yield break;
+    }
     public void StateUpdate(){
         anim.SetBool(hitstun, isHitstunned);
     }
