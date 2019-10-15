@@ -24,4 +24,4 @@ MonoBehaviour:
     hitlag: 0.2
   attackType: 0
   hitType: 0
-  movementData: {fileID: 11400000, guid: c5a0023b89e46fa439a24335a15bee16, type: 2}
+  movementData: {fileID: 11400000, guid: 56d52c1567f4b714d8a2d15befa1b278, type: 2}

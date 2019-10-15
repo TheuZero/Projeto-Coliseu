@@ -30,8 +30,8 @@ MonoBehaviour:
     hitlag: 0.05
   - manaGain: 5
     dmgMultiplier: 4
-    knockback: 2
-    knockup: 4
+    knockback: 6
+    knockup: 8
     hitstun: 1
     hitlag: 0.12
   attackType: 0

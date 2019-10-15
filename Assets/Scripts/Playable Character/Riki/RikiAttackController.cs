@@ -29,6 +29,12 @@ public class RikiAttackController : MonoBehaviour
     }
 
     public bool SuperBeatVerify(){
+        verification = false;
+        if(status.canSpecial && gd.isGrounded){ 
+            status.DisableActions();
+            anim.SetTrigger("superBeat");
+            verification = true;
+        }
         return verification;
     }
 }

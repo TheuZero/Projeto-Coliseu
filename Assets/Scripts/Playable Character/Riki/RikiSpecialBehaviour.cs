@@ -16,6 +16,7 @@ public class RikiSpecialBehaviour : MonoBehaviour
     //scriptable objects
     public AttackData[] attackList = new AttackData[0];
     AttackData attackData;
+    AttackData actualAttackData;
     MovementationData movementationData;
     Vector2 orientation;
 
@@ -31,31 +32,41 @@ public class RikiSpecialBehaviour : MonoBehaviour
     }
 
     void AssignMovement(int index){
-        movementationData = attackData.movementData.moveData[index];
+        movementationData = actualAttackData.movementData.moveData[index];
     }
 
     //invocado na animação, já que é impossivel invocar métodos de scripts de outros objetos.
     // montar um dicionario de dados para a lista em vez de array e fazer lookups por ID
+
+    //por enquanto esse metodo vai ser invocado pelos outros no codigo que irão ser invocado pelo animator
     void SetAttack(int index){
         attackDetection.AttackSideOrigin(transform.localScale.x);
-        attackData = attackList[0];
-        attackDetection.SetAttack(attackData, index);
+        //attackData = attackList[0];
+        attackDetection.SetAttack(actualAttackData, index);
     }
 
-    public IEnumerator SuperBeat(int index){
+    public void SetComboAttackData(int index){
+        actualAttackData = attackList[0];
+        SetAttack(index);
+    }
+    public void ComboMove(int index){
         AssignMovement(index);
-        timer = 0.3f;
+        movement.MoveCharacter(movementationData);
+    }
+    
+    public void SetSuperBeatAttack(int index){
+        actualAttackData = attackList[1];
+        SetAttack(index);
+    }
+    public IEnumerator SuperBeatMove(int index){
+        AssignMovement(index);
+        timer = 0.4f;
         while(timer > 0){
             timer -= Time.deltaTime * status.timeFactor;
             movement.MoveCharacter(movementationData);
             yield return new WaitForFixedUpdate();
         }
         yield break;
-    }
-
-    public void Combo(int index){
-        AssignMovement(index);
-        movement.MoveCharacter(movementationData);
     }
 }
 

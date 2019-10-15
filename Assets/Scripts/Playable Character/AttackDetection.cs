@@ -16,8 +16,8 @@ public class AttackDetection : MonoBehaviour
     List<MonoBehaviour> subjects = new List<MonoBehaviour>();
 
     void Start(){
-        player = transform.parent.transform.parent.gameObject.transform.parent.gameObject;
-        attackClass = player.GetComponent<Attack>();
+        player = transform.parent.transform.parent.transform.parent.gameObject;
+        //attackClass = player.GetComponent<Attack>();
         anim = player.GetComponent<Animator>();
         status = player.GetComponent<Status>();
         attackInfo = new AttackInfo();
@@ -36,7 +36,7 @@ public class AttackDetection : MonoBehaviour
 
     void DamageCalc(){
        attackInfo.damage = attack * attackModifier;
-       attackInfo.side = Mathf.Sign(transform.localScale.x);
+       AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
     }
 
     public void AttackSideOrigin(float side){
@@ -51,12 +51,14 @@ public class AttackDetection : MonoBehaviour
         attackInfo.hitstun = attackData.hitData[hitData].Hitstun;
         attackInfo.hitlag = attackData.hitData[hitData].Hitlag;
     }
+    
     void OnTriggerEnter2D(Collider2D col){
         if(col == null){
             Debug.Log("wtf");
         }
         if(col.gameObject.tag == "Hurt Box"){
-            attackClass.DamageCalc();
+
+            DamageCalc();
 //            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
             //col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackClass.attackInfo);
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
