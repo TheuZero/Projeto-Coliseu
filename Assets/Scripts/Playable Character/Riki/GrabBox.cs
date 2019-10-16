@@ -15,28 +15,30 @@ public class GrabBox : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag == "Hurt Box"){
             controller.isGrabbing = true;
-            //StartCoroutine(GrabDuration());
+            grabTimer = 2f;
+            Debug.Log("Agarrou");
         }
     }
     void OnTriggerStay2D(Collider2D col){
         if(col.gameObject.tag == "Hurt Box"){
             col.gameObject.GetComponent<DamageDetection>().Grabbed(transform.position, true, Mathf.Sign(player.transform.localScale.x));
+            GrabDuration(col);
         }
     }
     void OnTriggerExit2D(Collider2D col){
         if(col.gameObject.tag == "Hurt Box"){
             col.gameObject.GetComponent<DamageDetection>().Grabbed(transform.position, false, Mathf.Sign(player.transform.localScale.x));
             controller.isGrabbing = false;
+            Debug.Log("saiu");
         }
     }
 
-    IEnumerator GrabDuration(){
-        grabTimer = 2f;
-        while(grabTimer > 0){
+    void GrabDuration(Collider2D col){
+        if(grabTimer > 0){
             grabTimer -= Time.deltaTime;
-            yield return new WaitForFixedUpdate();
+        }else{
+            col.gameObject.GetComponent<DamageDetection>().GrabCancel();
+            controller.isGrabbing = false;
         }
-        controller.isGrabbing = false;
-        yield break;
     }
 }

@@ -35,8 +35,7 @@ public class AttackDetection : MonoBehaviour
     }
 
     void DamageCalc(){
-       attackInfo.damage = attack * attackModifier;
-       AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
+       
     }
 
     public void AttackSideOrigin(float side){
@@ -50,6 +49,7 @@ public class AttackDetection : MonoBehaviour
         attackInfo.knockup = attackData.hitData[hitData].Knockup;
         attackInfo.hitstun = attackData.hitData[hitData].Hitstun;
         attackInfo.hitlag = attackData.hitData[hitData].Hitlag;
+        Debug.Log("AAAAAAAAAAAAAAA O ATAQUE É DE: " + attackInfo.damage);
     }
     
     void OnTriggerEnter2D(Collider2D col){
@@ -58,7 +58,7 @@ public class AttackDetection : MonoBehaviour
         }
         if(col.gameObject.tag == "Hurt Box"){
 
-            DamageCalc();
+            AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
 //            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
             //col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackClass.attackInfo);
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);

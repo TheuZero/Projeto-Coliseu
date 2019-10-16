@@ -119,6 +119,10 @@ public class Defense : MonoBehaviour
             knockback = 0.3f * weight;
         }
     }
+    public void GrabCancel(){
+        entityCollider.SetActive(true);
+        knockback = 0.3f * weight;
+    }
     public void StateUpdate(){
         anim.SetBool(hitstun, isHitstunned);
     }

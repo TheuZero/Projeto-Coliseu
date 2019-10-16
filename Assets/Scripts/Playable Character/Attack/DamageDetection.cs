@@ -12,11 +12,16 @@ public class DamageDetection : MonoBehaviour
         defense = parent.transform.parent.transform.parent.GetComponent<Defense>();
     }
     public void TakeDamage(AttackInfo attackInfo){
-        defense.Damaged(attackInfo);
+        defense.GrabCancel();
+        
         Debug.Log(parent.name + "Has taken " + attackInfo.damage + " damage, " + attackInfo.hitstun + " hitstun, " + attackInfo.hitlag + " hitlag");
         Debug.Log("and" + attackInfo.knockback + "knock back and " + attackInfo.knockup);
+        defense.Damaged(attackInfo);
     }
     public void Grabbed(Vector3 position, bool grabbed, float side){
         defense.Grabbed(position, grabbed, side);
+    }
+    public void GrabCancel(){
+        defense.GrabCancel();
     }
 }
