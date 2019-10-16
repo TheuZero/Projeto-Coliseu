@@ -10,30 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2f01bc18ced0f840862bbd069a1689a, type: 3}
-  m_Name: Combo
+  m_Name: Grab
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  attackName: Combo
+  attackName: Grab
   manaCost: 0
   hitData:
-  - manaGain: 2
+  - manaGain: 0
     dmgMultiplier: 2
-    knockback: 0.2
+    knockback: 0
     knockup: 0
-    hitstun: 0.3
-    hitlag: 0.05
-  - manaGain: 3
-    dmgMultiplier: 2
-    knockback: 0.1
-    knockup: 0
-    hitstun: 0.3
-    hitlag: 0.05
-  - manaGain: 5
-    dmgMultiplier: 4
-    knockback: 4
-    knockup: 5
-    hitstun: 1
-    hitlag: 0.12
+    hitstun: 0
+    hitlag: 0
   attackType: 0
   hitType: 0
-  movementData: {fileID: 11400000, guid: 3ea42e8df7032e442a341ea59db3f6c6, type: 2}
+  movementData: {fileID: 11400000, guid: b86c9767104b27745983e87273aced3f, type: 2}

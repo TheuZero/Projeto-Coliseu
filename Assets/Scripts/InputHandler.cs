@@ -64,6 +64,8 @@ public class InputHandler : MonoBehaviour
            case "Riki":
                 attackRiki = GetComponent<RikiAttackController>();
                 AttackDown += attackRiki.ComboVerify;
+                TechDown += attackRiki.GrabVerify;
+                TechDown += attackRiki.GrabThrow;
                 SpecialDown += attackRiki.SuperBeatVerify;
                 break;
         }

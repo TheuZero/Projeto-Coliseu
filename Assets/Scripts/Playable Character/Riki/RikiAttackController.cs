@@ -10,6 +10,8 @@ public class RikiAttackController : MonoBehaviour
     GroundDetection gd;
     bool verification;
 
+    public bool isGrabbing = false;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -36,5 +38,34 @@ public class RikiAttackController : MonoBehaviour
             verification = true;
         }
         return verification;
+    }
+    public bool GrabThrow(){
+        verification = false;
+        if(isGrabbing && gd.isGrounded){
+            verification = true;
+            anim.SetTrigger("superBeat");
+            isGrabbing = false;
+            anim.SetBool("isGrabbing", false);
+        }
+        return verification;
+    }
+
+    public bool GrabVerify(){
+        verification = false;
+        if(status.canSpecial && gd.isGrounded){ 
+            status.canMove = false;
+            status.canSpecial = false;
+            anim.SetTrigger("grab");
+            verification = true;
+        }
+        return verification;
+    }
+
+    void StateUpdate(){
+        anim.SetBool("isGrabbing", isGrabbing);
+    }
+
+    void FixedUpdate(){
+        StateUpdate();
     }
 }

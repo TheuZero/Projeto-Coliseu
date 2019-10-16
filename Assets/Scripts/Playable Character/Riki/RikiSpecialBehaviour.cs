@@ -58,6 +58,25 @@ public class RikiSpecialBehaviour : MonoBehaviour
         actualAttackData = attackList[1];
         SetAttack(index);
     }
+
+    public void SetGrab(int index){
+        actualAttackData = attackList[2];
+        SetAttack(index);
+    }
+    public void SetThrowData(int index){
+        actualAttackData = attackList[3];
+        SetAttack(index);
+    }
+    public IEnumerator GrabMove(int index){
+        AssignMovement(index);
+        timer = 0.2f;
+        while(timer > 0){
+            timer -= Time.deltaTime * status.timeFactor;
+            movement.MoveCharacter(movementationData);
+            yield return new WaitForFixedUpdate();
+        }
+        yield break;
+    }
     public IEnumerator SuperBeatMove(int index){
         AssignMovement(index);
         timer = 0.4f;
