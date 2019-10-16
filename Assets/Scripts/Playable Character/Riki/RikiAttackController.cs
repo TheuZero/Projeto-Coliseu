@@ -26,6 +26,9 @@ public class RikiAttackController : MonoBehaviour
             status.canMove = false;
             anim.SetTrigger("isAttacking");
             verification = true;
+        }else if(isGrabbing){
+            anim.SetTrigger("isAttacking");
+            verification = true;
         }
         return verification;
     }
@@ -43,9 +46,9 @@ public class RikiAttackController : MonoBehaviour
         verification = false;
         if(isGrabbing && gd.isGrounded){
             verification = true;
-            anim.SetTrigger("superBeat");
-            isGrabbing = false;
             anim.SetBool("isGrabbing", false);
+            anim.SetTrigger("grab");
+            isGrabbing = false;
         }
         return verification;
     }
@@ -53,8 +56,7 @@ public class RikiAttackController : MonoBehaviour
     public bool GrabVerify(){
         verification = false;
         if(status.canSpecial && gd.isGrounded){ 
-            status.canMove = false;
-            status.canSpecial = false;
+            status.DisableActions();
             anim.SetTrigger("grab");
             verification = true;
         }

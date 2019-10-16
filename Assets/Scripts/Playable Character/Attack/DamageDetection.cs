@@ -16,7 +16,7 @@ public class DamageDetection : MonoBehaviour
         Debug.Log(parent.name + "Has taken " + attackInfo.damage + " damage, " + attackInfo.hitstun + " hitstun, " + attackInfo.hitlag + " hitlag");
         Debug.Log("and" + attackInfo.knockback + "knock back and " + attackInfo.knockup);
     }
-    public void Grabbed(Vector3 position, bool grabbed){
-        StartCoroutine(defense.Grabbed(position, grabbed));
+    public void Grabbed(Vector3 position, bool grabbed, float side){
+        defense.Grabbed(position, grabbed, side);
     }
 }

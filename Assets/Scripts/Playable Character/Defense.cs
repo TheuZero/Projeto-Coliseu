@@ -9,7 +9,7 @@ public class Defense : MonoBehaviour
     GroundDetection gd;
     Status status;
     
-    public float HP = 20;
+    //public float HP = 20;
     public float weight = 10;
     float defense;
     bool isHitstunned;
@@ -23,12 +23,14 @@ public class Defense : MonoBehaviour
     int hitstun;
     int launch;
     int fall;
+    GameObject entityCollider;
 
     void Start(){
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         gd = GetComponent<GroundDetection>();
         status = GetComponent<Status>();
+        entityCollider = transform.GetChild(1).GetChild(1).GetChild(2).gameObject;
 
         hitstun = Animator.StringToHash("Hitstun");
         launch = Animator.StringToHash("Launch");
@@ -102,15 +104,20 @@ public class Defense : MonoBehaviour
             knockup = 0;
         }
     }
-    public IEnumerator Grabbed(Vector3 position, bool grabbed){
-        while(grabbed){
-            transform.position = position;
-            hitstunTimer = 0.4f;
-            yield return new WaitForFixedUpdate();
+    public void Grabbed(Vector3 position, bool grabbed, float side){
+        if(transform.localScale.x == side){
+            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y);
         }
-        knockback = 0.3f * weight;
-        knockup = 0.2f * weight;
-        yield break;
+        Vector3 finalPos = position;
+        if(grabbed){
+            entityCollider.SetActive(false);
+            
+            transform.position = finalPos;
+            hitstunTimer = 0.4f;
+        }else if(!grabbed){
+            entityCollider.SetActive(true);
+            knockback = 0.3f * weight;
+        }
     }
     public void StateUpdate(){
         anim.SetBool(hitstun, isHitstunned);
