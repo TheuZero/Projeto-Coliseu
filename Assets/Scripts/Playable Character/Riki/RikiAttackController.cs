@@ -46,8 +46,8 @@ public class RikiAttackController : MonoBehaviour
         verification = false;
         if(isGrabbing && gd.isGrounded){
             verification = true;
-            anim.SetBool("isGrabbing", false);
             anim.SetTrigger("grab");
+            anim.SetBool("isGrabbing", false);
             isGrabbing = false;
         }
         return verification;
