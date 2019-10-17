@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Status : MonoBehaviour
 {
     float hp;
@@ -18,6 +19,10 @@ public class Status : MonoBehaviour
     Animator anim;
     AnimatorStateInfo stateInfo;
     AnimatorStateInfo previousStateInfo;
+
+    [SerializeField]
+    public List<IHpListener> hpListeners = new List<IHpListener>();
+
     int baseTag;
     void Start()
     {
@@ -73,4 +78,19 @@ public class Status : MonoBehaviour
         timeFactor = 1;
         anim.speed = 1;
     }
+
+    public void AttachHpListeners(IHpListener listener){
+
+    }
+    public void DetachHpListeners(List<IHpListener> listener){
+        foreach (IHpListener listeners in listener){
+            hpListeners.Remove(listeners);
+        }
+    }
+    public void NotifyOnHpChange(List<IHpListener> listener){
+        foreach (IHpListener listeners in listener){
+            listeners.OnHpChange(hp, maxHp);
+        }
+    }
 }
+
