@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Status : MonoBehaviour
+public class Status : MonoBehaviour, IHpNotifier
 {
-    float hp;
-    public float maxHp;
+    public int playerNumber;
+    public float hp;
+    public float maxHp = 30;
     float mp;
     public float maxMp;
     public float timeFactor = 1;
@@ -26,6 +27,7 @@ public class Status : MonoBehaviour
     int baseTag;
     void Start()
     {
+        hp = maxHp;
         anim = GetComponent<Animator>();
         baseTag = Animator.StringToHash("Base");
     }
@@ -33,7 +35,9 @@ public class Status : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown("q")){
+            ReduceHp(5f);
+        }
     }
     void FixedUpdate(){
         stateInfo = anim.GetCurrentAnimatorStateInfo(0);
@@ -55,6 +59,7 @@ public class Status : MonoBehaviour
 
     public void ReduceHp(float damage){
         hp -= damage;
+        NotifyOnHpChange(hpListeners, playerNumber);
     }
 
     public IEnumerator FreezeCharacter(float duration){
@@ -80,17 +85,23 @@ public class Status : MonoBehaviour
     }
 
     public void AttachHpListeners(IHpListener listener){
-
+        hpListeners.Add(listener);
+    }
+    public void AttachListHpListeners(List<IHpListener> listeners){
+        foreach (IHpListener listener in listeners){
+            hpListeners.Add(listener);
+        }
     }
     public void DetachHpListeners(List<IHpListener> listener){
         foreach (IHpListener listeners in listener){
             hpListeners.Remove(listeners);
         }
     }
-    public void NotifyOnHpChange(List<IHpListener> listener){
+    public void NotifyOnHpChange(List<IHpListener> listener, int playerNumber){
         foreach (IHpListener listeners in listener){
-            listeners.OnHpChange(hp, maxHp);
+            listeners.OnHpChange(hp, maxHp, playerNumber);
         }
     }
+
 }
 

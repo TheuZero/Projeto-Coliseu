@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface IHpListener
 {
-    void OnHpChange(float hp, float maxHp);
+    void OnHpChange(float hp, float maxHp, float playerNumber);
 }

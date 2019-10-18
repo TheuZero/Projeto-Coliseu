@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Special Hit Box
   - Entity Hit Box
+  - HpBar
   layers:
   - Default
   - TransparentFX

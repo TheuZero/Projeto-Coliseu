@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public interface HpNotifier
+public interface IHpNotifier
 {   
     void AttachHpListeners(IHpListener listener);
-    void DetachHpListeners(IHpListener listener);
-    void NotifyOnHpChange(List<IHpListener> listener);
+    void DetachHpListeners(List<IHpListener> listener);
+    void NotifyOnHpChange(List<IHpListener> listener, int playerNumber);
 }
