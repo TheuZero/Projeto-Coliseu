@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   attackName: Grab
+  cooldown: 5
   manaCost: 0
   hitData:
   - manaGain: 0

@@ -12,8 +12,8 @@ public class Movement : MonoBehaviour {
 	public float jumpSpeed = 4;
 	public float jumpTimer = 0f;
 	public float jumpMaxTimer = 0.2f;
-	public float jumpSquat = 0.1f;
-	public float maxJumpSquat = 0.1f;
+	public float jumpSquat = 0;
+	public float maxJumpSquat = 0.15f;
 	public float dashTimer = 0f;
 	public float defaultDashTimer = 0.4f;
 	public float airDashTimer = 0f;
@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour {
 	public bool isAirDashing;
 	public bool isJumping;
 	public bool isRunning;
+	public bool initiateJump;
 
 	//S.O
 	float direction;
@@ -62,6 +63,21 @@ public class Movement : MonoBehaviour {
 		}
 	}
 
+	IEnumerator StartJumping(){
+		jumpSquat = maxJumpSquat;
+		while(jumpSquat > 0){
+			initiateJump = true;
+			jumpSquat -= Time.deltaTime;
+			yield return new WaitForFixedUpdate();
+		}
+		initiateJump = false;
+		ActivateJump();
+		yield break;
+	}
+	public void JumpStart(){
+		if(!initiateJump)
+		StartCoroutine(StartJumping());
+	}
 	public void ActivateJump(){
 		transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
 		isJumping = true;
@@ -80,6 +96,11 @@ public class Movement : MonoBehaviour {
 	}
 	public void JumpResetTimer(){
 		jumpTimer = 0;
+		if(initiateJump){
+			isJumping = true;
+		}else{
+			isJumping = false;
+		}
 	}
 
 	public void JumpTimerLimit(){
@@ -164,5 +185,6 @@ public class Movement : MonoBehaviour {
 	void GetDirection(){
         direction = Mathf.Sign(transform.localScale.x);
     }
+
 
 }

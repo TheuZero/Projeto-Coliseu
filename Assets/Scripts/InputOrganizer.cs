@@ -148,14 +148,15 @@ public class InputBufferItem{
 }
 static class InputValues{
     public static int none = 0;
-    public static int moveX = 1;
-//    public static int dash = 1;
-    public static int jump = 2;
-    public static int attack = 3;
-    public static int nSpecial = 4;
-    public static int moveY = 5;
-    public static int tech = 6;
-    public const int defense = 7;
+    public static int moveXpos = 1;
+    public static int moveXneg = 2;
+    public static int jump = 3;
+    public static int attack = 4;
+    public static int nSpecial = 5;
+    public static int moveY = 6;
+    public static int moveYneg = 7;
+    public static int tech = 8;
+    public const int defense = 9;
 
     //montar uma lista de valores para cada tipo de ataque, especialmente se eles dependerem de dois botões simultaneamente.
     //montar uma comparação de valores recebidos dos input com os da classe e reagir de acordo no InputOrganizer, assim que for possível completar, tirar da lista,

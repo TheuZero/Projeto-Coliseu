@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   attackName: 
+  cooldown: 2
   manaCost: 5
   hitData:
   - manaGain: 0

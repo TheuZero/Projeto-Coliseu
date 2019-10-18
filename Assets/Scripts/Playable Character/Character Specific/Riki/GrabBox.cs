@@ -22,6 +22,7 @@ public class GrabBox : MonoBehaviour
     void OnTriggerStay2D(Collider2D col){
         if(col.gameObject.tag == "Hurt Box"){
             col.gameObject.GetComponent<DamageDetection>().Grabbed(transform.position, true, Mathf.Sign(player.transform.localScale.x));
+            controller.isGrabbing = true;
             GrabDuration(col);
         }
     }

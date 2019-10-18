@@ -57,7 +57,8 @@ public class MovementController : MonoBehaviour {
 		bool executed = false;
 		if(groundDetection.isGrounded && status.canMove){
 				status.canAttack = false;			
-				movement.ActivateJump();
+				//movement.ActivateJump();
+				movement.JumpStart();
 				executed = true;
 			}
 		return executed;
@@ -76,7 +77,9 @@ public class MovementController : MonoBehaviour {
 		}
 
 		if(Input.GetButton("Jump")){
-			movement.Jump(rb);
+			if(status.canMove){
+				movement.Jump(rb);
+			}
 		}
 		if(groundDetection.isGrounded){
 			movement.JumpResetTimer();

@@ -64,9 +64,10 @@ public class InputHandler : MonoBehaviour
            case "Riki":
                 attackRiki = GetComponent<RikiAttackController>();
                 AttackDown += attackRiki.ComboVerify;
-                TechDown += attackRiki.GrabVerify;
-                TechDown += attackRiki.GrabThrow;
+                TechDown += attackRiki.TechVerify;
                 SpecialDown += attackRiki.SuperBeatVerify;
+                break;
+            case "Cauboi":
                 break;
         }
 
@@ -95,7 +96,15 @@ public class InputHandler : MonoBehaviour
 
     public bool WasExecuted(int command, int type){
         confirm = true;
-        if(command == InputValues.moveX){
+        if(command == InputValues.moveXpos){
+            if(type == InputType.down){
+                confirm = true;
+            }else if(type == InputType.hold){
+                confirm = true;
+            }else if(type == InputType.up){
+                confirm = true;
+            }
+        }else if(command == InputValues.moveXneg){
             if(type == InputType.down){
                 confirm = true;
             }else if(type == InputType.hold){

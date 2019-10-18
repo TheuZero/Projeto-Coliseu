@@ -22,11 +22,8 @@ public class RikiAttackController : MonoBehaviour
 
     public bool ComboVerify(){
         verification = false;
-        if(status.canAttack && gd.isGrounded){ 
+        if(status.canAttack && gd.isGrounded || isGrabbing){ 
             status.canMove = false;
-            anim.SetTrigger("isAttacking");
-            verification = true;
-        }else if(isGrabbing){
             anim.SetTrigger("isAttacking");
             verification = true;
         }
@@ -42,22 +39,25 @@ public class RikiAttackController : MonoBehaviour
         }
         return verification;
     }
+    /* 
     public bool GrabThrow(){
         verification = false;
         if(isGrabbing && gd.isGrounded){
             verification = true;
             anim.SetTrigger("grab");
             anim.SetBool("isGrabbing", false);
-            isGrabbing = false;
+            
         }
         return verification;
-    }
+    }*/
 
-    public bool GrabVerify(){
+    public bool TechVerify(){
         verification = false;
-        if(status.canSpecial && gd.isGrounded){ 
+        if(status.canSpecial && gd.isGrounded || isGrabbing && gd.isGrounded){ 
             status.DisableActions();
             anim.SetTrigger("grab");
+            anim.SetBool("isGrabbing", false);
+            isGrabbing = false;
             verification = true;
         }
         return verification;
