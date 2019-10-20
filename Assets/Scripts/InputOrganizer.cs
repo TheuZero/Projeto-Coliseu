@@ -65,6 +65,7 @@ public class InputOrganizer : MonoBehaviour
             buffer[i].used = aux[i - 1].used;
             buffer[i].type = aux[i - 1].type ;
         }
+
     }
 
     private void FlushBuffer(){
@@ -81,17 +82,29 @@ public class InputOrganizer : MonoBehaviour
 
     private void CheckCommand(){
         for(int i = buffer.Length - 1; i >= 0; i--){
-            if(!buffer[i].used){
+            if(buffer[i].type != InputType.hold && !buffer[i].used){
                 if(Execute(buffer[i].command, buffer[i].type)){
                     buffer[i].used = true;
                     flushTimer = 0;
+                    return;
+                    break;
+                    
                 }
+            }
+        }
+        for(int i = buffer.Length - 1; i >= 0; i--){
+            if(buffer[i].type == InputType.hold && !buffer[i].used){
+                buffer[i].used = true;
+                Execute(buffer[i].command, buffer[i].type);
+                flushTimer = 0;
+                return;
                 break;
             }
         }
+
     }
     
-    /*private void CheckCommand(){
+/*     private void CheckCommand(){
         if(buffer[commandAux].used){
             commandAux--;
         }else{
@@ -102,6 +115,9 @@ public class InputOrganizer : MonoBehaviour
         }
     }*/
 
+    private void BypassBuffer(){
+
+    }
     private bool Execute(int command, int type){
         //bool confirm = false;
 

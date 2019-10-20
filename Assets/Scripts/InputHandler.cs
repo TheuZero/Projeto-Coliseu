@@ -24,9 +24,12 @@ public class InputHandler : MonoBehaviour
     public OffensiveInputValidation TechDown;
     public OffensiveInputValidation TechHold;
     public OffensiveInputValidation TechUp;
-    public InputValidation MoveDown;
-    public InputValidation MoveHold;
-    public InputValidation MoveUp;
+    public InputValidation MoveLeftDown;
+    public InputValidation MoveLeftHold;
+    public InputValidation MoveLeftUp;
+    public InputValidation MoveRightDown;
+    public InputValidation MoveRightHold;
+    public InputValidation MoveRightUp;
     public InputValidation JumpDown;
     public InputValidation JumpHold;
     public InputValidation JumpUp;
@@ -70,8 +73,12 @@ public class InputHandler : MonoBehaviour
             case "Cauboi":
                 break;
         }
-
-        
+        MoveRightDown = movement.WalkRight;
+        MoveRightHold = movement.WalkRight;
+        MoveRightUp = movement.CancelWalk;
+        MoveLeftDown = movement.WalkLeft;
+        MoveLeftHold = movement.WalkLeft;
+        MoveLeftUp = movement.CancelWalk;
         JumpDown += movement.JumpVerify;
         //JumpHold += movement.JumpHold();
         JumpUp += movement.JumpEnd;
@@ -98,19 +105,19 @@ public class InputHandler : MonoBehaviour
         confirm = true;
         if(command == InputValues.moveXpos){
             if(type == InputType.down){
-                confirm = true;
+                return confirm = MoveRightDown();
             }else if(type == InputType.hold){
-                confirm = true;
+                return confirm = MoveRightHold();
             }else if(type == InputType.up){
-                confirm = true;
+                return confirm = MoveRightUp();
             }
         }else if(command == InputValues.moveXneg){
             if(type == InputType.down){
-                confirm = true;
+                return confirm = MoveLeftDown();
             }else if(type == InputType.hold){
-                confirm = true;
+                return confirm = MoveLeftHold();
             }else if(type == InputType.up){
-                confirm = true;
+                return confirm = MoveLeftUp();
             }
         }
         else if(command == InputValues.jump){

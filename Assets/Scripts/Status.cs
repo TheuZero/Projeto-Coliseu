@@ -38,17 +38,20 @@ public class Status : MonoBehaviour, IHpNotifier
         if(Input.GetKeyDown("q")){
             ReduceHp(5f);
         }
-    }
-    void FixedUpdate(){
         stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        if(stateInfo.fullPathHash != previousStateInfo.fullPathHash){
+        //if(stateInfo.fullPathHash != previousStateInfo.fullPathHash){
             if(stateInfo.tagHash == baseTag){
                 canMove = true;
                 canAttack = true;
                 canSpecial = true;
+            }else{
+                canMove = false;
             }
-        }
+        //}
         previousStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+    }
+    void FixedUpdate(){
+        
     }
 
     public void DisableActions(){

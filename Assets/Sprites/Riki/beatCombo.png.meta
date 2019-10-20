@@ -1,14 +1,21 @@
 fileFormatVersion: 2
-guid: bcd2429971ecb9744a7a3fa7c963f623
+guid: e76e72188995d704fa99fcc4b7ff72b0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: superBeat_0
-    21300002: superBeat_1
-    21300004: superBeat_2
-    21300006: superBeat_3
-    21300008: superBeat_4
-    21300010: superBeat_5
-    21300012: superBeat_6
+    21300000: beatCombo_0
+    21300002: beatCombo_1
+    21300004: beatCombo_2
+    21300006: beatCombo_3
+    21300008: beatCombo_4
+    21300010: beatCombo_5
+    21300012: beatCombo_6
+    21300014: beatCombo_7
+    21300016: beatCombo_8
+    21300018: beatCombo_9
+    21300020: beatCombo_10
+    21300022: beatCombo_11
+    21300024: beatCombo_12
+    21300026: beatCombo_13
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -124,7 +131,87 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: superBeat_0
+      name: beatCombo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57697d27c5a5cf248a4f4d245ffc1128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beatCombo_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f71f51a5aed980459649cb3b8ea9706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beatCombo_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c3bd1638f6b1f4b9b9dd3572058c8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beatCombo_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c5d29e87b55344fbe89f30fe55efaf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beatCombo_4
       rect:
         serializedVersion: 2
         x: 0
@@ -138,13 +225,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b1090519e8ab3d4381f16e42d18aa68
+      spriteID: c3a593b826bc37b4fb545f533dea0ffe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: superBeat_1
+      name: beatCombo_5
       rect:
         serializedVersion: 2
         x: 256
@@ -158,13 +245,53 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48c5d86df71550041b4a50b289c008cf
+      spriteID: 471ab77d8a0077947bbf43e84aaa4edd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: superBeat_2
+      name: beatCombo_6
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 229645e2e8d762e4ba4a11bfe980431e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beatCombo_7
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ac3b5b27717b54f9e0fed45fa4890c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beatCombo_8
       rect:
         serializedVersion: 2
         x: 0
@@ -178,13 +305,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8d8552abc021b54ab35d850f719ff52
+      spriteID: 40e7dd60169726a4589ac76e67ae4e97
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: superBeat_3
+      name: beatCombo_9
       rect:
         serializedVersion: 2
         x: 256
@@ -198,13 +325,53 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b54edcbd824b6e41bb1eb1470414565
+      spriteID: 0b6c47b6dfe90d84d9a66b01064867cc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: superBeat_4
+      name: beatCombo_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ed9cffb0bd5ec4f9fd3890c92b34d8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beatCombo_11
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075c17e9d02940d44bcc1a78480690bf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beatCombo_12
       rect:
         serializedVersion: 2
         x: 0
@@ -218,13 +385,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87000a2f328344c41bd038a8fd3490ec
+      spriteID: ffecdb0b03dec5749bb4f2d03a21563c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: superBeat_5
+      name: beatCombo_13
       rect:
         serializedVersion: 2
         x: 256
@@ -238,7 +405,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83895a4d8d27ec9469e8cd6bfb71eb69
+      spriteID: 636970ec5d952814ca1471967b9b6942
       vertices: []
       indices: 
       edges: []
@@ -246,7 +413,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 55250864b60ee3c42a9debff1e6a3e83
+    spriteID: 2e89d5cc9f9dbf049bc7977ea1b2e03d
     vertices: []
     indices: 
     edges: []

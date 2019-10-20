@@ -13,7 +13,9 @@ public class MovementController : MonoBehaviour {
 	float doubleTapDashTimer = 0.4f;
 	float lastPressed;
 	public GroundDetection groundDetection;
-	
+	float lastDirectionPressed;
+
+	//hashes
 	int isGrounded;
 	int isWalking;
 	int isDashing;
@@ -87,16 +89,46 @@ public class MovementController : MonoBehaviour {
 			movement.JumpResetTimer();
 		}
 		StateUpdate();
+
+		if(anim.GetBool(isWalking)){
+			anim.SetBool(isWalking, false);
+		}
 	}
 
-	void Walk(float direction){
+	public bool WalkRight(){
 		confirm = false;
+		lastDirectionPressed = 1;
 		if(status.canMove){
-			movement.GroundMovement(direction);
+			movement.GroundMovement(1);
 			anim.SetBool(isWalking, true);
+			confirm = true;
 		}else{
 			anim.SetBool(isWalking,false);
 		}
+		return confirm;
+	}
+	public bool WalkLeft(){
+		confirm = false;
+		lastDirectionPressed = -1;
+		if(status.canMove){
+			movement.GroundMovement(-1);
+			anim.SetBool(isWalking, true);
+			confirm = true;
+		}else{
+			//anim.SetBool(isWalking,false);
+		}
+		return confirm;
+	}
+	public void ContinuousWalk(){
+		if(anim.GetBool(isWalking)){
+			movement.GroundMovement(lastDirectionPressed);
+		}
+	}
+	public bool CancelWalk(){
+		confirm = false;
+		anim.SetBool(isWalking, false);
+		confirm = true;
+		return confirm;
 	}
 
 	void StateUpdate(){
