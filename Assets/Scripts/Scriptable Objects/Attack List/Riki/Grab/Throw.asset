@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   attackName: 
+  cooldown: 0
   manaCost: 0
   hitData:
   - manaGain: 0
     dmgMultiplier: 4
     knockback: 4
     knockup: 2
-    hitstun: 0
+    hitstun: 0.3
     hitlag: 0
   attackType: 0
   hitType: 0

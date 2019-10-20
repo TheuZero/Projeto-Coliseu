@@ -126,14 +126,19 @@ public class Movement : MonoBehaviour {
 	}
 
 	public void Dash(float direction){
-		if(isDashing){
-			dashTimer -= Time.deltaTime;
-			gravityTimer -= Time.deltaTime;
-			if (dashTimer > 0){
-				transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * direction) * (4 * dashTimer));
-			}else if(dashTimer < 0.1){
-				isDashing = false;
+		if(status.canMove){
+			if(isDashing){
+				dashTimer -= Time.deltaTime;
+				gravityTimer -= Time.deltaTime;
+				if (dashTimer > 0){
+					transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * direction) * (4 * dashTimer));
+				}else if(dashTimer < 0.1){
+					isDashing = false;
+				}
 			}
+		}else{
+			isDashing = false;
+			dashTimer = 0;
 		}
 	}
 

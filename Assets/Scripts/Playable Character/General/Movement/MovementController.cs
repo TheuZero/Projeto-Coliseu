@@ -23,6 +23,7 @@ public class MovementController : MonoBehaviour {
 	InputOrganizer input;
 	Status status;
 	
+	bool confirm;
 
 	void Start () {
 		groundDetection = GetComponent<GroundDetection>();
@@ -68,13 +69,14 @@ public class MovementController : MonoBehaviour {
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
 			movement.Running(Input.GetAxisRaw("Horizontal"));
-			if(status.canMove){
+		}
+			/*if(status.canMove){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));
 				anim.SetBool(isWalking, true);
 			}
 		}else{
 			anim.SetBool(isWalking, false);
-		}
+		}*/
 
 		if(Input.GetButton("Jump")){
 			if(status.canMove){
@@ -85,6 +87,16 @@ public class MovementController : MonoBehaviour {
 			movement.JumpResetTimer();
 		}
 		StateUpdate();
+	}
+
+	void Walk(float direction){
+		confirm = false;
+		if(status.canMove){
+			movement.GroundMovement(direction);
+			anim.SetBool(isWalking, true);
+		}else{
+			anim.SetBool(isWalking,false);
+		}
 	}
 
 	void StateUpdate(){

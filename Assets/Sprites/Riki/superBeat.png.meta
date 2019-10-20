@@ -52,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -128,9 +128,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 204
-        width: 128
-        height: 68
+        y: 522
+        width: 246
+        height: 246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,7 +138,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d789a4e5e4f6af49be00643ac35efb8
+      spriteID: 4af68d8da18bade448ef956492597935
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       name: superBeat_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 204
-        width: 128
-        height: 68
+        x: 246
+        y: 522
+        width: 246
+        height: 246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,7 +158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0988de5974d569a4eb32f6ea95470e45
+      spriteID: d4cb1eb3f826bb14d8faa0b4a6ba63d5
       vertices: []
       indices: 
       edges: []
@@ -168,9 +168,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 136
-        width: 128
-        height: 68
+        y: 276
+        width: 246
+        height: 246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,7 +178,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f4082d9abd6c294c9009bbf0bf1ae5c
+      spriteID: e04487b736b3fd64a93510af55726d9b
       vertices: []
       indices: 
       edges: []
@@ -187,10 +187,10 @@ TextureImporter:
       name: superBeat_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 136
-        width: 128
-        height: 68
+        x: 246
+        y: 276
+        width: 246
+        height: 246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,7 +198,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b5da4361e0a90c41a01310c26e370cf
+      spriteID: 6b602c8cf2f58a3408a1d3e0410c3e26
       vertices: []
       indices: 
       edges: []
@@ -208,9 +208,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 68
-        width: 128
-        height: 68
+        y: 30
+        width: 246
+        height: 246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,7 +218,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b40454ac1112b04681392a6ebfffb9a
+      spriteID: a857aab275129e94dac66b55a4e10756
       vertices: []
       indices: 
       edges: []
@@ -227,10 +227,10 @@ TextureImporter:
       name: superBeat_5
       rect:
         serializedVersion: 2
-        x: 128
-        y: 68
-        width: 128
-        height: 68
+        x: 246
+        y: 30
+        width: 246
+        height: 246
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -238,27 +238,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02434f6e75073ca4bb8bb7b647c379a1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: superBeat_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 68
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 959795d141eac0f40b1f540243fc9f24
+      spriteID: e6d1c0d6c01200c4bb432276e2e68b70
       vertices: []
       indices: 
       edges: []

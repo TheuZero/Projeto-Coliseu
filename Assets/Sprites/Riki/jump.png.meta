@@ -53,7 +53,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 58
+  spritePixelsToUnits: 110
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,17 +129,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 204
-        width: 128
-        height: 68
+        y: 512
+        width: 256
+        height: 256
       alignment: 9
-      pivot: {x: 0.5, y: 0.57}
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0db30b4770fccec419f09fa07ec80a08
+      spriteID: 802239c63bc1e5c4bbc6f5cd1c4d04d0
       vertices: []
       indices: 
       edges: []
@@ -148,18 +148,18 @@ TextureImporter:
       name: jump_1
       rect:
         serializedVersion: 2
-        x: 128
-        y: 204
-        width: 128
-        height: 68
+        x: 256
+        y: 512
+        width: 256
+        height: 256
       alignment: 9
-      pivot: {x: 0.5, y: 0.57}
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17f47bf8955163048956cfe00fbfd756
+      spriteID: f67c8120e1a99364196a66e9bfac06ff
       vertices: []
       indices: 
       edges: []
@@ -169,17 +169,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 136
-        width: 128
-        height: 68
+        y: 256
+        width: 256
+        height: 256
       alignment: 9
-      pivot: {x: 0.5, y: 0.57}
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f1c0f6e640aa324db73ba8f7a4ca1c8
+      spriteID: e69e3b1799fde5643902e3c6a9aeba43
       vertices: []
       indices: 
       edges: []
@@ -188,18 +188,18 @@ TextureImporter:
       name: jump_3
       rect:
         serializedVersion: 2
-        x: 128
-        y: 136
-        width: 128
-        height: 68
+        x: 256
+        y: 256
+        width: 256
+        height: 256
       alignment: 9
-      pivot: {x: 0.5, y: 0.57}
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b075ad06b20f634b98485a4195a962b
+      spriteID: 9729c6fe26875df47a983a39d9397ec4
       vertices: []
       indices: 
       edges: []
@@ -209,77 +209,17 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 68
-        width: 128
-        height: 68
-      alignment: 9
-      pivot: {x: 0.5, y: 0.57}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9033ed841b1543944bf9fbe6b24b8a39
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 68
-        width: 128
-        height: 68
-      alignment: 9
-      pivot: {x: 0.5, y: 0.57}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 443f7081d40d8374e89fe89114912076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_6
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 0
-        width: 128
-        height: 68
+        width: 256
+        height: 256
       alignment: 9
-      pivot: {x: 0.5, y: 0.57}
+      pivot: {x: 0.5, y: 0.55}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5501227d70e85a746a202e09669d5e09
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_7
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 68
-      alignment: 9
-      pivot: {x: 0.5, y: 0.57}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7610d5689c79739458b40536ea174640
+      spriteID: c32eae66aa308204fa1746aa8e7d235d
       vertices: []
       indices: 
       edges: []

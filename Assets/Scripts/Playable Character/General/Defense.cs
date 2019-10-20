@@ -111,8 +111,8 @@ public class Defense : MonoBehaviour
         Vector3 finalPos = position;
         if(grabbed){
             entityCollider.SetActive(false);
-            
             transform.position = finalPos;
+            isHitstunned = true;
             hitstunTimer = 0.4f;
         }else if(!grabbed){
             entityCollider.SetActive(true);
