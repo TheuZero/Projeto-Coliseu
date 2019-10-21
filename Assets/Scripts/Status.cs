@@ -25,11 +25,14 @@ public class Status : MonoBehaviour, IHpNotifier
     public List<IHpListener> hpListeners = new List<IHpListener>();
 
     int baseTag;
+
+    MovementController movementController;
     void Start()
     {
         hp = maxHp;
         anim = GetComponent<Animator>();
         baseTag = Animator.StringToHash("Base");
+        movementController = GetComponent<MovementController>();
     }
 
     // Update is called once per frame
@@ -58,6 +61,7 @@ public class Status : MonoBehaviour, IHpNotifier
         canAttack = false;
         canMove = false;
         canSpecial = false;  
+        movementController.CancelWalk();
     }
 
     public void ReduceHp(float damage){

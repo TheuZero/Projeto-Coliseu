@@ -70,7 +70,7 @@ public class MovementController : MonoBehaviour {
 
 	void FixedUpdate(){
 		if(Input.GetAxisRaw("Horizontal") != 0 ){
-			movement.Running(Input.GetAxisRaw("Horizontal"));
+			//movement.Running(Input.GetAxisRaw("Horizontal"));
 		}
 			/*if(status.canMove){
 				movement.GroundMovement(Input.GetAxisRaw("Horizontal"));
@@ -89,10 +89,6 @@ public class MovementController : MonoBehaviour {
 			movement.JumpResetTimer();
 		}
 		StateUpdate();
-
-		if(anim.GetBool(isWalking)){
-			anim.SetBool(isWalking, false);
-		}
 	}
 
 	public bool WalkRight(){
@@ -102,6 +98,7 @@ public class MovementController : MonoBehaviour {
 			movement.GroundMovement(1);
 			anim.SetBool(isWalking, true);
 			confirm = true;
+			movement.Running(1);
 		}else{
 			anim.SetBool(isWalking,false);
 		}
@@ -112,6 +109,7 @@ public class MovementController : MonoBehaviour {
 		lastDirectionPressed = -1;
 		if(status.canMove){
 			movement.GroundMovement(-1);
+			movement.Running(-1);
 			anim.SetBool(isWalking, true);
 			confirm = true;
 		}else{
@@ -128,6 +126,7 @@ public class MovementController : MonoBehaviour {
 		confirm = false;
 		anim.SetBool(isWalking, false);
 		confirm = true;
+		movement.CancelRun();
 		return confirm;
 	}
 

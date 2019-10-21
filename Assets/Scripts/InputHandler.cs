@@ -73,10 +73,10 @@ public class InputHandler : MonoBehaviour
             case "Cauboi":
                 break;
         }
-        MoveRightDown = movement.WalkRight;
+        //MoveRightDown = movement.WalkRight;
         MoveRightHold = movement.WalkRight;
         MoveRightUp = movement.CancelWalk;
-        MoveLeftDown = movement.WalkLeft;
+        //MoveLeftDown = movement.WalkLeft;
         MoveLeftHold = movement.WalkLeft;
         MoveLeftUp = movement.CancelWalk;
         JumpDown += movement.JumpVerify;

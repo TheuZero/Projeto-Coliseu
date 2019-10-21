@@ -177,6 +177,10 @@ public class Movement : MonoBehaviour {
 		}
 	}
 
+	public void CancelRun(){
+		isRunning = false;
+	}
+
 	public void MoveCharacter(MovementationData moveData){
 		GetDirection();
 		xSpeed = moveData.XSpeed;

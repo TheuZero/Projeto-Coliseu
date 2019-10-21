@@ -52,18 +52,23 @@ public class InputOrganizer : MonoBehaviour
     }
 
     public void InputCommand(int command, int type){
-        for (int i = 0; i < aux.Length; i++){
-            aux[i].command = buffer[i].command;
-            aux[i].used = buffer[i].used;
-            aux[i].type = buffer[i].type ;
+        if(type == InputType.hold || type == InputType.up){
+            state.WasExecuted(command, type);
         }
-        buffer[0].command = command;
-        buffer[0].used = false;
-        buffer[0].type = type;
-        for (int i = 1; i < buffer.Length; i ++){
-            buffer[i].command = aux[i - 1].command;
-            buffer[i].used = aux[i - 1].used;
-            buffer[i].type = aux[i - 1].type ;
+        else{
+            for (int i = 0; i < aux.Length; i++){
+                aux[i].command = buffer[i].command;
+                aux[i].used = buffer[i].used;
+                aux[i].type = buffer[i].type ;
+            }
+            buffer[0].command = command;
+            buffer[0].used = false;
+            buffer[0].type = type;
+            for (int i = 1; i < buffer.Length; i ++){
+                buffer[i].command = aux[i - 1].command;
+                buffer[i].used = aux[i - 1].used;
+                buffer[i].type = aux[i - 1].type ;
+            }
         }
 
     }
@@ -86,12 +91,13 @@ public class InputOrganizer : MonoBehaviour
                 if(Execute(buffer[i].command, buffer[i].type)){
                     buffer[i].used = true;
                     flushTimer = 0;
-                    return;
+                    //return;
                     break;
                     
                 }
             }
         }
+        /*
         for(int i = buffer.Length - 1; i >= 0; i--){
             if(buffer[i].type == InputType.hold && !buffer[i].used){
                 buffer[i].used = true;
@@ -100,7 +106,7 @@ public class InputOrganizer : MonoBehaviour
                 return;
                 break;
             }
-        }
+        }*/
 
     }
     
