@@ -11,7 +11,7 @@ public class CameraBehaviour : MonoBehaviour
     
     Camera mainCam;
     public float defaultCameraSize = 2.5f;
-
+    public float maxCameraSize = 5f;
     void Start()
     {
         /*while(GameObject.FindGameObjectWithTag("Player") != null){
@@ -32,17 +32,24 @@ public class CameraBehaviour : MonoBehaviour
             transform.position = new Vector3(players[0].transform.position.x, players[0].transform.position.y + yDifference, -10);
         }else if(players.Length == 2){
             transform.position = new Vector3((players[0].transform.position.x + players[1].transform.position.x)/2, players[0].transform.position.y + yDifference, -10); 
-            /*Debug.Log(playersRelativeCamPos[1].x);
-            if(playersRelativeCamPos[0].x > 0.9f || playersRelativeCamPos[1].x > 0.9f){
-                mainCam.orthographicSize += Time.deltaTime; 
+            Debug.Log(playersRelativeCamPos[1].x);
+           
+            /*if(playersRelativeCamPos[0].x > 0.9f || playersRelativeCamPos[1].x > 0.9f){
+                mainCam.orthographicSize += Time.deltaTime * 4; 
             }
             if(playersRelativeCamPos[1].x > 0.9f){
-                mainCam.orthographicSize += Time.deltaTime; 
+                mainCam.orthographicSize += Time.deltaTime * 4; 
             }
-            if(mainCam.orthographicSize >= defaultCameraSize){
-                if(playersRelativeCamPos[0].x > 0.85f){
-                    mainCam.orthographicSize -= Time.deltaTime;
+            if(mainCam.orthographicSize > defaultCameraSize){
+                if(playersRelativeCamPos[0].x < 0.80f){
+                    mainCam.orthographicSize -= Time.deltaTime * 4;
                 }
+                if(playersRelativeCamPos[1].x < 0.80f){
+                    mainCam.orthographicSize -= Time.deltaTime * 4;
+                }
+            }
+            if(mainCam.orthographicSize < defaultCameraSize){
+                mainCam.orthographicSize = defaultCameraSize;
             }*/
         }
     }
