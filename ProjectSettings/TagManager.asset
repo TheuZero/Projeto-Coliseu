@@ -13,6 +13,8 @@ TagManager:
   - Special Hit Box
   - Entity Hit Box
   - HpBar
+  - "Bot\xF5es (UI)"
+  - Menu (UI)
   layers:
   - Default
   - TransparentFX

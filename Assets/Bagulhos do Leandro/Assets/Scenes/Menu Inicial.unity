@@ -1639,7 +1639,7 @@ GameObject:
   - component: {fileID: 215361462}
   m_Layer: 5
   m_Name: Button (5)
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1775,8 +1775,8 @@ RectTransform:
   m_Father: {fileID: 427182042}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.3, y: 0}
+  m_AnchorMax: {x: 0.3, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1831,7 +1831,7 @@ GameObject:
   - component: {fileID: 238987839}
   m_Layer: 5
   m_Name: Button (3)
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1949,7 +1949,7 @@ GameObject:
   - component: {fileID: 245875741}
   m_Layer: 5
   m_Name: Button (7)
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2067,7 +2067,7 @@ GameObject:
   - component: {fileID: 250428239}
   m_Layer: 5
   m_Name: Button
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2703,8 +2703,8 @@ GameObject:
   - component: {fileID: 302871644}
   - component: {fileID: 302871643}
   m_Layer: 5
-  m_Name: Canvas(Audio)
-  m_TagString: Untagged
+  m_Name: Canvas_AudioConfig
+  m_TagString: Menu (UI)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2878,7 +2878,7 @@ GameObject:
   - component: {fileID: 328203776}
   m_Layer: 0
   m_Name: jogar
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3199,8 +3199,8 @@ GameObject:
   - component: {fileID: 389710581}
   - component: {fileID: 389710580}
   m_Layer: 5
-  m_Name: "Canvas(MenuConfigura\xE7\xE3o)"
-  m_TagString: Untagged
+  m_Name: Canvas_MenuConfig
+  m_TagString: Menu (UI)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3372,7 +3372,7 @@ GameObject:
   - component: {fileID: 414561928}
   m_Layer: 5
   m_Name: Defesa
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3553,6 +3553,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &438605691
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 438605693}
+  - component: {fileID: 438605692}
+  m_Layer: 0
+  m_Name: Forward Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &438605692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438605691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6469fccc8bf8eb74caf8d1c44afab55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &438605693
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438605691}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &439823042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,7 +3766,7 @@ GameObject:
   - component: {fileID: 468299108}
   m_Layer: 0
   m_Name: PVP
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3840,7 +3883,7 @@ GameObject:
   - component: {fileID: 499763637}
   m_Layer: 0
   m_Name: Record
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4034,7 +4077,7 @@ GameObject:
   - component: {fileID: 512796838}
   m_Layer: 5
   m_Name: Controles
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4218,9 +4261,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1547445092}
-  - {fileID: 1578498106}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530830821
 GameObject:
@@ -4310,7 +4352,7 @@ GameObject:
   - component: {fileID: 566124556}
   m_Layer: 5
   m_Name: Button (6)
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4506,7 +4548,7 @@ GameObject:
   - component: {fileID: 581710550}
   m_Layer: 5
   m_Name: Ataque Especial
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5418,7 +5460,7 @@ GameObject:
   - component: {fileID: 744760739}
   m_Layer: 0
   m_Name: Sair
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5615,8 +5657,8 @@ GameObject:
   - component: {fileID: 774319603}
   - component: {fileID: 774319602}
   m_Layer: 0
-  m_Name: Canvas_Inicial
-  m_TagString: Untagged
+  m_Name: Canvas_InitialMenu
+  m_TagString: Menu (UI)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5946,7 +5988,7 @@ GameObject:
   - component: {fileID: 820205226}
   m_Layer: 5
   m_Name: Confimar
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6086,7 +6128,7 @@ GameObject:
   - component: {fileID: 827333580}
   m_Layer: 5
   m_Name: Video
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6438,7 +6480,7 @@ GameObject:
   - component: {fileID: 916543182}
   m_Layer: 5
   m_Name: Cancelar
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6738,7 +6780,7 @@ GameObject:
   - component: {fileID: 937346532}
   m_Layer: 5
   m_Name: Audio
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6974,7 +7016,7 @@ GameObject:
   - component: {fileID: 967191607}
   m_Layer: 5
   m_Name: Button (2)
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7609,8 +7651,8 @@ GameObject:
   - component: {fileID: 1114888684}
   - component: {fileID: 1114888683}
   m_Layer: 5
-  m_Name: Canvas(controle)
-  m_TagString: Untagged
+  m_Name: Canvas_ControllerConfig
+  m_TagString: Menu (UI)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7709,7 +7751,7 @@ GameObject:
   - component: {fileID: 1115892057}
   m_Layer: 5
   m_Name: Button (1)
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7828,8 +7870,8 @@ GameObject:
   - component: {fileID: 1172236433}
   - component: {fileID: 1172236432}
   m_Layer: 0
-  m_Name: Canvas_His
-  m_TagString: Untagged
+  m_Name: Canvas_PlayArcade
+  m_TagString: Menu (UI)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7961,7 +8003,7 @@ GameObject:
   - component: {fileID: 1183761843}
   m_Layer: 5
   m_Name: Ataque Normal
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8446,7 +8488,7 @@ GameObject:
   - component: {fileID: 1266075515}
   m_Layer: 5
   m_Name: Up
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9184,7 +9226,7 @@ GameObject:
   - component: {fileID: 1375549624}
   m_Layer: 5
   m_Name: Jump
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9869,7 +9911,7 @@ GameObject:
   - component: {fileID: 1468291347}
   m_Layer: 5
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10180,7 +10222,7 @@ GameObject:
   - component: {fileID: 1509529882}
   m_Layer: 0
   m_Name: Jogar
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10335,7 +10377,7 @@ GameObject:
   - component: {fileID: 1536684789}
   m_Layer: 5
   m_Name: Confirmar
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10669,25 +10711,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1547445091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4e471fae67853c4fbfbb4576f6e6197, type: 3}
+  m_Script: {fileID: 11500000, guid: fe7a7de9c6a4c3a44ba799540caa39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s: q
-  tes: {fileID: 0}
-  can_his: {fileID: 1172236427}
-  can_ini: {fileID: 774319597}
-  can_pvp: {fileID: 1970017788}
-  can_record: {fileID: 1818103088}
-  can_op: {fileID: 389710579}
-  can_controle: {fileID: 1114888681}
-  can_Audio: {fileID: 302871641}
-  can_Video: {fileID: 1707223416}
-  p1_Atack: a
-  p1_AtackEs: s
-  p1_down: k
-  p1_up: i
-  p1_left: j
-  p1_right: l
+  menus:
+  - {fileID: 774319597}
+  - {fileID: 1172236427}
+  - {fileID: 1970017788}
+  - {fileID: 389710579}
+  - {fileID: 1114888681}
+  - {fileID: 1707223416}
+  - {fileID: 302871641}
 --- !u!114 &1547445094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10811,7 +10845,7 @@ GameObject:
   - component: {fileID: 1555312816}
   m_Layer: 0
   m_Name: Voltar
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10952,104 +10986,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1574716528}
   m_CullTransparentMesh: 0
---- !u!1 &1578498105
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1578498106}
-  - component: {fileID: 1578498109}
-  - component: {fileID: 1578498108}
-  - component: {fileID: 1578498107}
-  m_Layer: 5
-  m_Name: cv-Matheus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1578498106
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578498105}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 519420032}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
---- !u!114 &1578498107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578498105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
---- !u!114 &1578498108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578498105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
-  m_PhysicalUnit: 3
-  m_FallbackScreenDPI: 96
-  m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
---- !u!223 &1578498109
-Canvas:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578498105}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
-  m_ReceivesEvents: 1
-  m_OverrideSorting: 0
-  m_OverridePixelPerfect: 0
-  m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_TargetDisplay: 0
 --- !u!1 &1583786669
 GameObject:
   m_ObjectHideFlags: 0
@@ -11162,7 +11098,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.3, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11641,7 +11577,7 @@ GameObject:
   - component: {fileID: 1692873437}
   m_Layer: 5
   m_Name: Down
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11721,7 +11657,7 @@ GameObject:
   - component: {fileID: 1703976982}
   m_Layer: 5
   m_Name: Button (4)
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11917,8 +11853,8 @@ GameObject:
   - component: {fileID: 1707223419}
   - component: {fileID: 1707223418}
   m_Layer: 5
-  m_Name: Canvas(video)
-  m_TagString: Untagged
+  m_Name: Canvas_VideoConfig
+  m_TagString: Menu (UI)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11930,8 +11866,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707223416}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 79938810}
@@ -12567,7 +12503,7 @@ GameObject:
   - component: {fileID: 1782997141}
   m_Layer: 5
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12988,7 +12924,7 @@ GameObject:
   - component: {fileID: 1938229869}
   m_Layer: 5
   m_Name: voltar
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13187,7 +13123,7 @@ GameObject:
   - component: {fileID: 1970017793}
   m_Layer: 0
   m_Name: Canvas_PVP
-  m_TagString: Untagged
+  m_TagString: Menu (UI)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13395,7 +13331,7 @@ GameObject:
   - component: {fileID: 1993836494}
   m_Layer: 5
   m_Name: Cancelar
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13535,7 +13471,7 @@ GameObject:
   - component: {fileID: 2001634513}
   m_Layer: 0
   m_Name: Op
-  m_TagString: Untagged
+  m_TagString: "Bot\xF5es (UI)"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
