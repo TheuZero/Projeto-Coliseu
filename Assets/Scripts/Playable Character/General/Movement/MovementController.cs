@@ -14,6 +14,7 @@ public class MovementController : MonoBehaviour {
 	float lastPressed;
 	public GroundDetection groundDetection;
 	float lastDirectionPressed;
+	public bool canDoubleJump;
 
 	//hashes
 	int isGrounded;
@@ -24,6 +25,7 @@ public class MovementController : MonoBehaviour {
 	int baseTag;
 	InputOrganizer input;
 	Status status;
+
 	
 	bool confirm;
 
@@ -59,12 +61,22 @@ public class MovementController : MonoBehaviour {
 	public bool JumpVerify(){
 		bool executed = false;
 		if(groundDetection.isGrounded && status.canMove){
-				status.canAttack = false;			
-				//movement.ActivateJump();
-				movement.JumpStart();
-				executed = true;
-			}
+			status.canAttack = false;			
+			//movement.ActivateJump();
+			movement.JumpStart();
+			executed = true;
+		}else if(!groundDetection.isGrounded && status.canMove && canDoubleJump){
+			movement.DoubleJumpStart();
+			canDoubleJump = false;
+			executed = true;
+		}
 		return executed;
+	}
+	public bool ContinuousJump(){
+		if(status.canMove){
+			movement.Jump(rb);
+		}
+		return true;
 	}
 
 
@@ -79,11 +91,12 @@ public class MovementController : MonoBehaviour {
 		}else{
 			anim.SetBool(isWalking, false);
 		}*/
+		if(groundDetection.isGrounded){
+			canDoubleJump = true;
+		}
 
 		if(Input.GetButton("Jump")){
-			if(status.canMove){
-				movement.Jump(rb);
-			}
+
 		}
 		if(groundDetection.isGrounded){
 			movement.JumpResetTimer();

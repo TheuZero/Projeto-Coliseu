@@ -20,12 +20,16 @@ public class Movement : MonoBehaviour {
 	public float defaultAirDashTimer = 0.4f;
 	public float gravityTimer = 0.2f;
 	public float defaultGravityTimer = 0.2f;
+	public float doubleJumpTimer = 0.15f;
+	public float defaultDoubleJumpTimer = 0.15f;
 	//states
 	public bool isDashing;
 	public bool isAirDashing;
 	public bool isJumping;
 	public bool isRunning;
 	public bool initiateJump;
+	public bool doubleJumping;
+	public bool doubleJump;
 
 	//S.O
 	float direction;
@@ -78,6 +82,24 @@ public class Movement : MonoBehaviour {
 		if(!initiateJump)
 		StartCoroutine(StartJumping());
 	}
+	public void DoubleJumpStart(){
+		if(!doubleJumping)
+		StartCoroutine(DoubleJump());
+	} 
+	IEnumerator DoubleJump(){
+		doubleJumpTimer = defaultDoubleJumpTimer;
+		while(doubleJumpTimer > 0 && status.canMove){
+			isJumping = true;
+			rb.velocity = new Vector2(0,0);
+			doubleJumping = true;
+			doubleJumpTimer -= Time.deltaTime;
+			transform.Translate(Vector2.up * Time.deltaTime * status.timeFactor * jumpSpeed);
+			yield return new WaitForFixedUpdate();
+		}
+		isJumping = false;
+		doubleJumping = false;
+		yield break;
+	}
 	public void ActivateJump(){
 		transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
 		isJumping = true;
@@ -89,7 +111,7 @@ public class Movement : MonoBehaviour {
 				jumpTimer += Time.deltaTime;
 				transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
 				rb.velocity = new Vector2(rb.velocity.x, 0);
-			}else{
+			}else if(!doubleJumping){
 				isJumping = false;
 			}
 		}

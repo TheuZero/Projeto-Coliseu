@@ -23,12 +23,16 @@ public class RikiSpecialBehaviour : MonoBehaviour
     Movement movement;    
     //temporary
     Animator anim;
+    Rigidbody2D rb;
+    GroundDetection gd;
     void Start()
     {
         status = GetComponent<Status>();
         attackDetection = transform.GetChild(1).GetChild(0).GetChild(0).GetComponent<AttackDetection>();
         movement = GetComponent<Movement>();
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        gd = GetComponent<GroundDetection>();
     }
 
     void AssignMovement(int index){
@@ -67,6 +71,11 @@ public class RikiSpecialBehaviour : MonoBehaviour
         actualAttackData = attackList[3];
         SetAttack(index);
     }
+
+    public void SetDiveKickData(int index){
+        actualAttackData = attackList[4];
+        SetAttack(index);
+    }
     public IEnumerator GrabMove(int index){
         AssignMovement(index);
         timer = 0.2f;
@@ -82,6 +91,16 @@ public class RikiSpecialBehaviour : MonoBehaviour
         timer = 0.4f;
         while(timer > 0){
             timer -= Time.deltaTime * status.timeFactor;
+            movement.MoveCharacter(movementationData);
+            yield return new WaitForFixedUpdate();
+        }
+        yield break;
+    }
+
+    public IEnumerator DiveKickMove(int index){
+        AssignMovement(index);
+        while(!gd.isGrounded){
+            rb.velocity = new Vector2(0,0);
             movement.MoveCharacter(movementationData);
             yield return new WaitForFixedUpdate();
         }

@@ -90,7 +90,7 @@ public class Controller : MonoBehaviour
 			input.InputCommand(jumpCommand, InputType.down);
 		}
         if(Input.GetKey(jumpInput)){
-            //input.InputCommand(jumpCommand, InputType.hold);
+            input.InputCommand(jumpCommand, InputType.hold);
         }
 		if(Input.GetKeyUp(jumpInput)){
 			input.InputCommand(jumpCommand, InputType.up);

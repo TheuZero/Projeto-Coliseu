@@ -80,7 +80,7 @@ public class InputHandler : MonoBehaviour
         MoveLeftHold = movement.WalkLeft;
         MoveLeftUp = movement.CancelWalk;
         JumpDown += movement.JumpVerify;
-        //JumpHold += movement.JumpHold();
+        JumpHold += movement.ContinuousJump;
         JumpUp += movement.JumpEnd;
 
     }
@@ -105,33 +105,35 @@ public class InputHandler : MonoBehaviour
         confirm = true;
         if(command == InputValues.moveXpos){
             if(type == InputType.down){
-                return confirm = MoveRightDown();
+                //return confirm = MoveRightDown();
+                return true;
             }else if(type == InputType.hold){
                 return confirm = MoveRightHold();
             }else if(type == InputType.up){
                 return confirm = MoveRightUp();
             }
-        }else if(command == InputValues.moveXneg){
+        }if(command == InputValues.moveXneg){
             if(type == InputType.down){
-                return confirm = MoveLeftDown();
+                //return confirm = MoveLeftDown();
+                return true;
             }else if(type == InputType.hold){
                 return confirm = MoveLeftHold();
             }else if(type == InputType.up){
                 return confirm = MoveLeftUp();
             }
         }
-        else if(command == InputValues.jump){
+        if(command == InputValues.jump){
             if(type == InputType.down){
                 confirm = JumpDown();
             }else if(type == InputType.hold){
-                //confirm = JumpHold();
-                confirm = true;
+                
+                confirm = JumpHold();
             }else if(type == InputType.up){
                 confirm = JumpUp();
             }
 
         }
-        else if(command == InputValues.attack){
+        if(command == InputValues.attack){
             if(type == InputType.down){
                 confirm = AttackDown();
             }else if(type == InputType.hold){
@@ -142,7 +144,7 @@ public class InputHandler : MonoBehaviour
                 confirm = true;
             }
         }
-        else if(command == InputValues.moveY){
+        if(command == InputValues.moveY){
             if(type == InputType.down){
                 confirm = true;
             }else if(type == InputType.hold){
@@ -151,7 +153,7 @@ public class InputHandler : MonoBehaviour
                 confirm = true;
             }
         }
-        else if(command == InputValues.nSpecial){
+        if(command == InputValues.nSpecial){
             if(type == InputType.down){
                 confirm = SpecialDown();
             }else if(type == InputType.hold){
@@ -162,7 +164,7 @@ public class InputHandler : MonoBehaviour
                 confirm = true;
             }
         }
-        else if(command == InputValues.tech){
+        if(command == InputValues.tech){
             if(type == InputType.down){
                 confirm = TechDown();
             }else if(type == InputType.hold){

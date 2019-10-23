@@ -32,7 +32,7 @@ public class RikiAttackController : MonoBehaviour
 
     public bool SuperBeatVerify(){
         verification = false;
-        if(status.canSpecial && gd.isGrounded){ 
+        if(status.canSpecial){ 
             status.DisableActions();
             anim.SetTrigger("superBeat");
             verification = true;
