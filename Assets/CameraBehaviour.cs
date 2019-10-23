@@ -58,4 +58,22 @@ public class CameraBehaviour : MonoBehaviour
             playersRelativeCamPos[i] = Camera.main.WorldToViewportPoint(players[i].transform.position);
         }
     }
+
+    public class PlayerPosition{
+        public PlayerPosition(GameObject playerObj){
+            cameraRelativePosition = playerObj.transform.position;
+        }
+        Vector3 cameraRelativePosition;
+        public float cameraXSide;
+        public float cameraYSide;
+
+        public void setRelativePosition(Vector3 relativePosition){
+            cameraRelativePosition = relativePosition;
+            if(cameraRelativePosition.x >= 0.5f){
+                cameraXSide = 1;
+            }else{
+                cameraXSide = -1;
+            }
+        }
+    }
 }
