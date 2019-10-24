@@ -5377,11 +5377,15 @@ MonoBehaviour:
   defaultAirDashTimer: 0.4
   gravityTimer: 0.2
   defaultGravityTimer: 0.2
+  doubleJumpTimer: 0.15
+  defaultDoubleJumpTimer: 0.15
   isDashing: 0
   isAirDashing: 0
   isJumping: 0
   isRunning: 0
   initiateJump: 0
+  doubleJumping: 0
+  doubleJump: 0
   lastDirection: 0
   groundDetection: {fileID: 0}
   rb: {fileID: 0}
@@ -5399,6 +5403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movement: {fileID: 0}
   groundDetection: {fileID: 0}
+  canDoubleJump: 0
 --- !u!114 &5171965130876460556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5538,7 +5543,6 @@ Transform:
   m_Children:
   - {fileID: 5171965129946601601}
   - {fileID: 5171965129828917313}
-  - {fileID: 5171965131147106144}
   m_Father: {fileID: 5171965130974636361}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10429,60 +10433,3 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
---- !u!1 &5171965131147106147
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5171965131147106144}
-  - component: {fileID: 5171965131147106145}
-  m_Layer: 11
-  m_Name: Sour Spot
-  m_TagString: Hit Box
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &5171965131147106144
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5171965131147106147}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5171965130922769496}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5171965131147106145
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5171965131147106147}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
-  m_EdgeRadius: 0
