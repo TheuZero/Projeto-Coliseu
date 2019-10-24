@@ -2702,6 +2702,7 @@ GameObject:
   - component: {fileID: 302871645}
   - component: {fileID: 302871644}
   - component: {fileID: 302871643}
+  - component: {fileID: 302871646}
   m_Layer: 5
   m_Name: Canvas_AudioConfig
   m_TagString: Menu (UI)
@@ -2789,6 +2790,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &302871646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 302871641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 438605692}
+  acessibleMenus: []
+  actualButtons:
+  - {fileID: 1536684789}
+  - {fileID: 916543182}
 --- !u!1 &311308069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3198,6 +3216,7 @@ GameObject:
   - component: {fileID: 389710582}
   - component: {fileID: 389710581}
   - component: {fileID: 389710580}
+  - component: {fileID: 389710584}
   m_Layer: 5
   m_Name: Canvas_MenuConfig
   m_TagString: Menu (UI)
@@ -3285,6 +3304,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &389710584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389710579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 438605692}
+  acessibleMenus: []
+  actualButtons:
+  - {fileID: 512796838}
+  - {fileID: 937346532}
+  - {fileID: 827333580}
+  - {fileID: 1938229869}
 --- !u!1 &403227506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,6 +3620,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6469fccc8bf8eb74caf8d1c44afab55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1leftInput: 276
+  p1rightInput: 275
+  p1upInput: 273
+  p1downInput: 274
+  p1jumpInput: 32
+  p1attackInput: 122
+  p1defendInput: 0
+  p1specialInput: 99
+  p1techInput: 120
+  p2leftInput: 97
+  p2rightInput: 100
+  p2upInput: 119
+  p2downInput: 115
+  p2jumpInput: 102
+  p2attackInput: 101
+  p2defendInput: 0
+  p2specialInput: 103
+  p2techInput: 114
 --- !u!4 &438605693
 Transform:
   m_ObjectHideFlags: 0
@@ -5656,6 +5712,7 @@ GameObject:
   - component: {fileID: 774319599}
   - component: {fileID: 774319603}
   - component: {fileID: 774319602}
+  - component: {fileID: 774319604}
   m_Layer: 0
   m_Name: Canvas_InitialMenu
   m_TagString: Menu (UI)
@@ -5777,6 +5834,26 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 328203772}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &774319604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774319597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 438605692}
+  acessibleMenus: []
+  actualButtons:
+  - {fileID: 328203776}
+  - {fileID: 468299108}
+  - {fileID: 499763637}
+  - {fileID: 2001634513}
+  - {fileID: 744760739}
 --- !u!1 &796609346
 GameObject:
   m_ObjectHideFlags: 0
@@ -7650,6 +7727,7 @@ GameObject:
   - component: {fileID: 1114888685}
   - component: {fileID: 1114888684}
   - component: {fileID: 1114888683}
+  - component: {fileID: 1114888686}
   m_Layer: 5
   m_Name: Canvas_ControllerConfig
   m_TagString: Menu (UI)
@@ -7737,6 +7815,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1114888686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114888681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 438605692}
+  acessibleMenus: []
+  actualButtons:
+  - {fileID: 820205226}
+  - {fileID: 1993836494}
 --- !u!1 &1115892055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7867,8 +7962,9 @@ GameObject:
   - component: {fileID: 1172236431}
   - component: {fileID: 1172236430}
   - component: {fileID: 1172236429}
-  - component: {fileID: 1172236433}
+  - component: {fileID: 1172236434}
   - component: {fileID: 1172236432}
+  - component: {fileID: 1172236433}
   m_Layer: 0
   m_Name: Canvas_PlayArcade
   m_TagString: Menu (UI)
@@ -7990,6 +8086,23 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 1509529879}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1172236434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172236427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 438605692}
+  acessibleMenus: []
+  actualButtons:
+  - {fileID: 1555312815}
+  - {fileID: 1509529881}
 --- !u!1 &1183761841
 GameObject:
   m_ObjectHideFlags: 0
@@ -9656,7 +9769,7 @@ GameObject:
   - component: {fileID: 1413410142}
   - component: {fileID: 1413410145}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Mark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10220,6 +10333,7 @@ GameObject:
   - component: {fileID: 1509529880}
   - component: {fileID: 1509529883}
   - component: {fileID: 1509529882}
+  - component: {fileID: 1509529881}
   m_Layer: 0
   m_Name: Jogar
   m_TagString: "Bot\xF5es (UI)"
@@ -10247,6 +10361,48 @@ RectTransform:
   m_AnchoredPosition: {x: -100, y: -232}
   m_SizeDelta: {x: 173, y: 63.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1509529881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509529879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1509529882}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1509529882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10843,6 +10999,7 @@ GameObject:
   - component: {fileID: 1555312814}
   - component: {fileID: 1555312817}
   - component: {fileID: 1555312816}
+  - component: {fileID: 1555312815}
   m_Layer: 0
   m_Name: Voltar
   m_TagString: "Bot\xF5es (UI)"
@@ -10870,6 +11027,48 @@ RectTransform:
   m_AnchoredPosition: {x: 215, y: -232}
   m_SizeDelta: {x: 173, y: 63.7}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1555312815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555312813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1555312816}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1555312816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11852,6 +12051,7 @@ GameObject:
   - component: {fileID: 1707223420}
   - component: {fileID: 1707223419}
   - component: {fileID: 1707223418}
+  - component: {fileID: 1707223421}
   m_Layer: 5
   m_Name: Canvas_VideoConfig
   m_TagString: Menu (UI)
@@ -11939,6 +12139,23 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1707223421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707223416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 438605692}
+  acessibleMenus: []
+  actualButtons:
+  - {fileID: 1720265453}
+  - {fileID: 196053966}
 --- !u!1 &1709293937
 GameObject:
   m_ObjectHideFlags: 0
@@ -12284,7 +12501,7 @@ GameObject:
   - component: {fileID: 1747786150}
   - component: {fileID: 1747786149}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Mark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13119,6 +13336,7 @@ GameObject:
   - component: {fileID: 1970017792}
   - component: {fileID: 1970017791}
   - component: {fileID: 1970017790}
+  - component: {fileID: 1970017795}
   - component: {fileID: 1970017794}
   - component: {fileID: 1970017793}
   m_Layer: 0
@@ -13242,6 +13460,21 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1970017795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970017788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 438605692}
+  acessibleMenus: []
+  actualButtons: []
 --- !u!1 &1991714489
 GameObject:
   m_ObjectHideFlags: 0
@@ -13960,7 +14193,7 @@ GameObject:
   - component: {fileID: 2093197779}
   - component: {fileID: 2093197778}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Mark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
