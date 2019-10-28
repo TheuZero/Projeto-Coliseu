@@ -7,6 +7,7 @@ public class InputHandler : MonoBehaviour
 {
     AttackController attackFreeze;
     RikiAttackController attackRiki;
+    CauboiAttackController attackCauboi;
 
 
     MovementController movement;
@@ -64,13 +65,18 @@ public class InputHandler : MonoBehaviour
                 TechDown += attackFreeze.IceBallVerify;
                 SpecialDown += attackFreeze.IcePillarVerify;
                 break;
-           case "Riki":
+            case "Riki":
                 attackRiki = GetComponent<RikiAttackController>();
                 AttackDown += attackRiki.ComboVerify;
                 TechDown += attackRiki.TechVerify;
                 SpecialDown += attackRiki.SuperBeatVerify;
                 break;
             case "Cauboi":
+                attackCauboi = GetComponent<CauboiAttackController>();
+                AttackDown += attackCauboi.ComboVerify;
+                TechDown += attackCauboi.TechVerify;
+                SpecialDown += attackCauboi.SuperBeatVerify;
+                Debug.Log("cauboi");
                 break;
         }
         //MoveRightDown = movement.WalkRight;
@@ -134,6 +140,7 @@ public class InputHandler : MonoBehaviour
 
         }
         if(command == InputValues.attack){
+            Debug.Log("atacouu");
             if(type == InputType.down){
                 confirm = AttackDown();
             }else if(type == InputType.hold){

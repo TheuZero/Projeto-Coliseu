@@ -13,6 +13,7 @@ public class MenuReferences : MonoBehaviour
         videoConfig = 5,
         audioConfig = 6
     }
+    public ControllerButtons buttons;
     public GameObject[] menus;
     void Start()
     {

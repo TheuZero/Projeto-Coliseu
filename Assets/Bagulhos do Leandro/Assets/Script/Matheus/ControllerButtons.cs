@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class ControllerButtons : MonoBehaviour
 {
-    public KeyCode p1leftInput = KeyCode.LeftArrow;
-    public KeyCode p1rightInput = KeyCode.RightArrow;
-    public KeyCode p1upInput = KeyCode.UpArrow;
-    public KeyCode p1downInput = KeyCode.DownArrow;
-    public KeyCode p1jumpInput = KeyCode.Space;
-    public KeyCode p1attackInput = KeyCode.Z;
-    public KeyCode p1defendInput;
-    public KeyCode p1specialInput = KeyCode.C;
-    public KeyCode p1techInput = KeyCode.X;
+    public KeyCode p1LeftInput = KeyCode.LeftArrow;
+    public KeyCode p1RightInput = KeyCode.RightArrow;
+    public KeyCode p1UpInput = KeyCode.UpArrow;
+    public KeyCode p1DownInput = KeyCode.DownArrow;
+    public KeyCode p1JumpInput = KeyCode.Space;
+    public KeyCode p1AttackInput = KeyCode.Z;
+    public KeyCode p1DefendInput;
+    public KeyCode p1SpecialInput = KeyCode.C;
+    public KeyCode p1TechInput = KeyCode.X;
 
-    public KeyCode p2leftInput = KeyCode.A;
-    public KeyCode p2rightInput = KeyCode.D;
-    public KeyCode p2upInput = KeyCode.W;
-    public KeyCode p2downInput = KeyCode.S;
-    public KeyCode p2jumpInput = KeyCode.F;
-    public KeyCode p2attackInput = KeyCode.E;
-    public KeyCode p2defendInput;
-    public KeyCode p2specialInput = KeyCode.G;
-    public KeyCode p2techInput = KeyCode.R;
+    public KeyCode p2LeftInput = KeyCode.A;
+    public KeyCode p2RightInput = KeyCode.D;
+    public KeyCode p2UpInput = KeyCode.W;
+    public KeyCode p2DownInput = KeyCode.S;
+    public KeyCode p2JumpInput = KeyCode.F;
+    public KeyCode p2AttackInput = KeyCode.E;
+    public KeyCode p2DefendInput;
+    public KeyCode p2SpecialInput = KeyCode.G;
+    public KeyCode p2TechInput = KeyCode.R;
     void Start()
     {
         

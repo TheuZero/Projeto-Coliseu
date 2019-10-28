@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: c53d888935f01884398de8a481c47e53
+guid: c9adebee6838a9346a41bba3f4232b8e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: idle_0
-    21300002: idle_1
-    21300004: idle_2
-    21300006: idle_3
-    21300008: idle_4
-    21300010: idle_5
+    21300000: pushKick_0
+    21300002: pushKick_1
+    21300004: pushKick_2
+    21300006: pushKick_3
+    21300008: pushKick_4
+    21300010: pushKick_5
+    21300012: pushKick_6
+    21300014: pushKick_7
+    21300016: pushKick_8
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -123,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0
+      name: pushKick_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,13 +140,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4a82348d2f39d1448865ec90c5dd05f
+      spriteID: 3cf4adeb0b7d26e4582e4a484ed7d0c8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_1
+      name: pushKick_1
       rect:
         serializedVersion: 2
         x: 256
@@ -157,13 +160,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03a067cd8d964e0498785825c7615c03
+      spriteID: 561f9df91b9f5bc49818b4500f8aff3a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_2
+      name: pushKick_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f3e1afaec9b734e8a637f1db688028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pushKick_3
       rect:
         serializedVersion: 2
         x: 0
@@ -177,13 +200,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92565f4da28fae24092ed678a87b80e8
+      spriteID: ce10a6fc88a24b74aa3772548a941371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_3
+      name: pushKick_4
       rect:
         serializedVersion: 2
         x: 256
@@ -197,13 +220,33 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9ed6ed0a8a29f741852f7138886fdb7
+      spriteID: c464e09a8ef8456479c21248ee6fd5fb
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_4
+      name: pushKick_5
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c3313f3b4145545bcbc0116c597e0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pushKick_6
       rect:
         serializedVersion: 2
         x: 0
@@ -217,13 +260,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 953433e76fc13ab47934545a2183640e
+      spriteID: 33ef7dba84447c748bab70d469b0e96a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: idle_5
+      name: pushKick_7
       rect:
         serializedVersion: 2
         x: 256
@@ -237,7 +280,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e18b56ef0bd6294f994c16fa2713380
+      spriteID: da653f218f0cc4747b2509f97afa487f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pushKick_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1f35f1da17bf24da5256ea9cb244c9
       vertices: []
       indices: 
       edges: []
@@ -245,7 +308,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1ad99410d09981246a9748f7c94bb568
+    spriteID: 5523a8334b070f64bb624d9d74274854
     vertices: []
     indices: 
     edges: []

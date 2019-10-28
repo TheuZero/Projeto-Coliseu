@@ -1121,8 +1121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -27.2, y: 23.4}
-  m_SizeDelta: {x: 554.6, y: 689.9}
+  m_AnchoredPosition: {x: 34.4, y: 10.3}
+  m_SizeDelta: {x: 743.4, y: 371.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168702437
 MonoBehaviour:
@@ -2804,9 +2804,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
   acessibleMenus: []
-  actualButtons:
-  - {fileID: 1536684789}
-  - {fileID: 916543182}
+  verticalButtons: []
+  horizontalButtons: []
+  mark: {fileID: 0}
 --- !u!1 &311308069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,11 +3318,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
   acessibleMenus: []
-  actualButtons:
-  - {fileID: 512796838}
-  - {fileID: 937346532}
-  - {fileID: 827333580}
-  - {fileID: 1938229869}
+  verticalButtons: []
+  horizontalButtons: []
+  mark: {fileID: 1413410142}
 --- !u!1 &403227506
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,24 +3618,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6469fccc8bf8eb74caf8d1c44afab55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1leftInput: 276
-  p1rightInput: 275
-  p1upInput: 273
-  p1downInput: 274
-  p1jumpInput: 32
-  p1attackInput: 122
-  p1defendInput: 0
-  p1specialInput: 99
-  p1techInput: 120
-  p2leftInput: 97
-  p2rightInput: 100
-  p2upInput: 119
-  p2downInput: 115
-  p2jumpInput: 102
-  p2attackInput: 101
-  p2defendInput: 0
-  p2specialInput: 103
-  p2techInput: 114
+  p1LeftInput: 276
+  p1RightInput: 275
+  p1UpInput: 273
+  p1DownInput: 274
+  p1JumpInput: 32
+  p1AttackInput: 122
+  p1DefendInput: 0
+  p1SpecialInput: 99
+  p1TechInput: 120
+  p2LeftInput: 97
+  p2RightInput: 100
+  p2UpInput: 119
+  p2DownInput: 115
+  p2JumpInput: 102
+  p2AttackInput: 101
+  p2DefendInput: 0
+  p2SpecialInput: 103
+  p2TechInput: 114
 --- !u!4 &438605693
 Transform:
   m_ObjectHideFlags: 0
@@ -5847,13 +5845,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
-  acessibleMenus: []
-  actualButtons:
+  acessibleMenus:
+  - {fileID: 1172236427}
+  - {fileID: 1970017788}
+  - {fileID: 389710579}
+  - {fileID: 0}
+  verticalButtons:
   - {fileID: 328203776}
   - {fileID: 468299108}
   - {fileID: 499763637}
   - {fileID: 2001634513}
   - {fileID: 744760739}
+  horizontalButtons: []
+  mark: {fileID: 1747786150}
 --- !u!1 &796609346
 GameObject:
   m_ObjectHideFlags: 0
@@ -7829,9 +7833,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
   acessibleMenus: []
-  actualButtons:
-  - {fileID: 820205226}
-  - {fileID: 1993836494}
+  verticalButtons: []
+  horizontalButtons: []
+  mark: {fileID: 0}
 --- !u!1 &1115892055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7963,7 +7967,6 @@ GameObject:
   - component: {fileID: 1172236430}
   - component: {fileID: 1172236429}
   - component: {fileID: 1172236434}
-  - component: {fileID: 1172236432}
   - component: {fileID: 1172236433}
   m_Layer: 0
   m_Name: Canvas_PlayArcade
@@ -8052,25 +8055,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1172236432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1172236427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: p1_Ataque
-  m_CancelButton: p1_AtaqueS
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1172236433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8100,9 +8084,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
   acessibleMenus: []
-  actualButtons:
-  - {fileID: 1555312815}
+  verticalButtons:
   - {fileID: 1509529881}
+  - {fileID: 1555312815}
+  horizontalButtons: []
+  mark: {fileID: 2093197779}
 --- !u!1 &1183761841
 GameObject:
   m_ObjectHideFlags: 0
@@ -9767,7 +9753,6 @@ GameObject:
   - component: {fileID: 1413410144}
   - component: {fileID: 1413410143}
   - component: {fileID: 1413410142}
-  - component: {fileID: 1413410145}
   m_Layer: 5
   m_Name: Mark
   m_TagString: Untagged
@@ -9874,27 +9859,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413410140}
   m_CullTransparentMesh: 0
---- !u!114 &1413410145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413410140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f97b623694e8e814d9ee671dd6ab8c4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  can_Con: {fileID: 1114888681}
-  can_video: {fileID: 1707223416}
-  can_Audio: {fileID: 302871641}
-  can_ini: {fileID: 774319597}
-  btn: {fileID: 1413410142}
-  p1_Atack: a
-  p1_AtackEs: s
-  p1_down: k
-  p1_up: i
 --- !u!1 &1438284010
 GameObject:
   m_ObjectHideFlags: 0
@@ -10870,6 +10834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7a7de9c6a4c3a44ba799540caa39dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons: {fileID: 438605692}
   menus:
   - {fileID: 774319597}
   - {fileID: 1172236427}
@@ -12153,9 +12118,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
   acessibleMenus: []
-  actualButtons:
-  - {fileID: 1720265453}
-  - {fileID: 196053966}
+  verticalButtons: []
+  horizontalButtons: []
+  mark: {fileID: 0}
 --- !u!1 &1709293937
 GameObject:
   m_ObjectHideFlags: 0
@@ -12499,7 +12464,6 @@ GameObject:
   - component: {fileID: 1747786152}
   - component: {fileID: 1747786151}
   - component: {fileID: 1747786150}
-  - component: {fileID: 1747786149}
   m_Layer: 0
   m_Name: Mark
   m_TagString: Untagged
@@ -12527,28 +12491,6 @@ RectTransform:
   m_AnchoredPosition: {x: -100.9, y: 217.79999}
   m_SizeDelta: {x: 66.6, y: 76.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1747786149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747786147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35634b0036044e640a5582faea73be33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  can_his: {fileID: 1172236427}
-  can_ini: {fileID: 774319597}
-  can_pvp: {fileID: 1970017788}
-  can_record: {fileID: 1818103088}
-  can_op: {fileID: 389710579}
-  btnInicial: {fileID: 1747786150}
-  p1_Atack: a
-  p1_AtackEs: s
-  p1_down: k
-  p1_up: i
 --- !u!114 &1747786150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13474,7 +13416,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
   acessibleMenus: []
-  actualButtons: []
+  verticalButtons: []
+  horizontalButtons: []
+  mark: {fileID: 0}
 --- !u!1 &1991714489
 GameObject:
   m_ObjectHideFlags: 0
@@ -14191,7 +14135,6 @@ GameObject:
   - component: {fileID: 2093197781}
   - component: {fileID: 2093197780}
   - component: {fileID: 2093197779}
-  - component: {fileID: 2093197778}
   m_Layer: 0
   m_Name: Mark
   m_TagString: Untagged
@@ -14219,26 +14162,6 @@ RectTransform:
   m_AnchoredPosition: {x: -220.8, y: -232}
   m_SizeDelta: {x: 68.6, y: 68.9}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2093197778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2093197776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd4ba49d7a9976140aa97003de8e507e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tes: {fileID: 774319597}
-  can_ini: {fileID: 774319597}
-  can_his: {fileID: 1172236427}
-  btn: {fileID: 2093197779}
-  p1_Atack: a
-  p1_AtackEs: s
-  p1_left: j
-  p1_right: l
 --- !u!114 &2093197779
 MonoBehaviour:
   m_ObjectHideFlags: 0
