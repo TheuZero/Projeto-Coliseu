@@ -10,13 +10,25 @@ public class ReferenceHolder : MonoBehaviour
     public List<IHpListener> hpListeners = new List<IHpListener>();
     void Start()
     {
-        hpListeners.Add(GameObject.FindGameObjectWithTag("HpBar").GetComponent<HpBarBehaviour>());
-        hpNotifiers.Add(GameObject.Find("Riki").GetComponent<Status>());
+        players = GameObject.FindGameObjectsWithTag("Player");
+        hpBars = GameObject.FindGameObjectsWithTag("HpBar");
+        
+        for(int i = 0; i < hpBars.Length; i++){
+            hpListeners.Add(hpBars[i].GetComponent<HpBarBehaviour>());
+        }
+        
+        for(int i = 0; i < players.Length; i++){
+            hpNotifiers.Add(players[i].GetComponent<Status>());
+        }
+
         PassListenerList(hpListeners);
     }
     void PassListenerList(List<IHpListener> listeners){
-        foreach(IHpListener listener in listeners){
+        /*foreach(IHpListener listener in listeners){
             hpNotifiers[0].AttachHpListeners(listener);
+        }*/
+        for(int i = 0; i < hpNotifiers.Length; i++){
+            hpNotifiers[i].AttachHpListeners(hpListeners[i]);
         }
     }
 
