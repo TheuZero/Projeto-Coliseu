@@ -8,7 +8,9 @@ public class ReferenceHolder : MonoBehaviour
     public GameObject[] players;
     public List<IHpNotifier> hpNotifiers = new List<IHpNotifier>();
     public List<IHpListener> hpListeners = new List<IHpListener>();
-    void Start()
+    
+
+    void Awake()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
         hpBars = GameObject.FindGameObjectsWithTag("HpBar");
