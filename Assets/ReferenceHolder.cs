@@ -27,12 +27,12 @@ public class ReferenceHolder : MonoBehaviour
         /*foreach(IHpListener listener in listeners){
             hpNotifiers[0].AttachHpListeners(listener);
         }*/
-        for(int i = 0; i < hpNotifiers.Length; i++){
+        for(int i = 0; i < hpNotifiers.Count; i++){
             hpNotifiers[i].AttachHpListeners(hpListeners[i]);
         }
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         //hpListeners[0].OnHpChange(15, 30, 0);
