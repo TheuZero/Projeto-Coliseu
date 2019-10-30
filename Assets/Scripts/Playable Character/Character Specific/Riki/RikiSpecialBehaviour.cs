@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class RikiSpecialBehaviour : MonoBehaviour
 {
-     Status status;
+    Status status;
 
     float timer;
-    float movementSpeed = 7f;
-    float direction;
-    float xSpeed;
-    float ySpeed;
+
     AttackDetection attackDetection;
     
     //scriptable objects
     public AttackData[] attackList = new AttackData[0];
-    AttackData attackData;
     AttackData actualAttackData;
     MovementationData movementationData;
-    Vector2 orientation;
 
     Movement movement;    
     //temporary
