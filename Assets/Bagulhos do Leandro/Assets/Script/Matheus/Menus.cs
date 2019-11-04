@@ -10,15 +10,15 @@ public class Menus : MonoBehaviour
     public ControllerButtons controller;
     public GameObject[] acessibleMenus;
     public Button[] verticalButtons;
-    public Button[] horizontalButtons;
-    public Button[,] buttonMatrix;
+    //public Button[] horizontalButtons;
+    //public Button[,] buttonMatrix;
     public Button mark;
     int verticalIndex = 0;
-    int horizontalIndex = 0;
+    //int horizontalIndex = 0;
     void OnEnable()
     {
         verticalIndex = 0;
-        horizontalIndex = 0;
+        //horizontalIndex = 0;
         menuReferences = transform.parent.GetComponent<MenuReferences>();
         controller = menuReferences.buttons;
     }
@@ -32,8 +32,11 @@ public class Menus : MonoBehaviour
         if(Input.GetKeyDown(controller.p1DownInput)){
             SelectVerticalButton(1);
         }
-        if(Input.GetKeyDown(controller.p1LeftInput)){
+        /*if(Input.GetKeyDown(controller.p1LeftInput)){
 
+        }*/
+        if(Input.GetKeyDown(controller.p1AttackInput)){
+            verticalButtons[verticalIndex].onClick.Invoke();
         }
     }
     void SelectVerticalButton(int index){
@@ -57,12 +60,22 @@ public class Menus : MonoBehaviour
             verticalIndex = 0;
         }
         
-        if(horizontalIndex < 0){
+        /*if(horizontalIndex < 0){
             horizontalIndex = horizontalButtons.Length - 1;
         }
         if(horizontalIndex >= horizontalButtons.Length){
             horizontalIndex = 0;
-        }
+        }*/
     }
+
+    public void GoToMenuScreen(GameObject tela){
+        tela.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
+    public void Exit(){
+        Application.Quit();
+    }
+
 
 }
