@@ -31,9 +31,9 @@ TagManager:
   - Hurt Box
   - Ledge
   - Enemy
-  - Character Collider
-  - 
-  - 
+  - Character Collider (Player)
+  - Character Collider (Enemy)
+  - Enemy FoV
   - 
   - 
   - 

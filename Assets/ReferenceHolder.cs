@@ -9,6 +9,7 @@ public class ReferenceHolder : MonoBehaviour
     public List<IHpNotifier> hpNotifiers = new List<IHpNotifier>();
     public List<IHpListener> hpListeners = new List<IHpListener>();
     
+    float temporaryHp = 30;
 
     void Awake()
     {
@@ -37,6 +38,8 @@ public class ReferenceHolder : MonoBehaviour
     
     void Update()
     {
-        //hpListeners[0].OnHpChange(15, 30, 0);
+        if(Input.GetKeyDown("q")){
+            hpListeners[0].OnHpChange(temporaryHp--, 30, 0);
+        }
     }
 }

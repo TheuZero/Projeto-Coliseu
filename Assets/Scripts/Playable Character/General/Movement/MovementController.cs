@@ -51,6 +51,7 @@ public class MovementController : MonoBehaviour {
 
 		if(Input.GetButtonDown("Horizontal")){
 			DashCheck();
+			Debug.Log("Arrumar o dash de acordo com o buffer");
 		}
 		if(Input.GetAxisRaw("Horizontal") == 0){
 			movement.isRunning = false;
