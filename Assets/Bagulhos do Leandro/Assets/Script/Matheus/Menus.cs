@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class Menus : MonoBehaviour
 {
+    public enum Orientation{
+        vertical,
+        horizontal
+    }
     MenuReferences menuReferences;
 
     public ControllerButtons controller;
     public GameObject[] acessibleMenus;
     public Button[] verticalButtons;
+    public Orientation orientation;
     //public Button[] horizontalButtons;
     //public Button[,] buttonMatrix;
     public Button mark;
@@ -25,12 +30,20 @@ public class Menus : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(Input.GetKeyDown(controller.p1UpInput)){
-            SelectVerticalButton(-1);
-        }
-        if(Input.GetKeyDown(controller.p1DownInput)){
-            SelectVerticalButton(1);
+    {   if(orientation == Orientation.vertical){
+            if(Input.GetKeyDown(controller.p1UpInput)){
+                SelectVerticalButton(-1);
+            }
+            if(Input.GetKeyDown(controller.p1DownInput)){
+                SelectVerticalButton(1);
+            }
+        }else{
+            if(Input.GetKeyDown(controller.p1LeftInput)){
+                SelectVerticalButton(-1);
+            }
+            if(Input.GetKeyDown(controller.p1RightInput)){
+                SelectVerticalButton(1);
+            }
         }
         /*if(Input.GetKeyDown(controller.p1LeftInput)){
 

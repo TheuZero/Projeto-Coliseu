@@ -890,7 +890,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 348330985}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -936,7 +936,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 90158836}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1896221669}
+        m_MethodName: SetSpawnCharacter
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &90158836
@@ -2082,7 +2093,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 348330985}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2128,7 +2139,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 235596094}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1896221669}
+        m_MethodName: SetSpawnCharacter
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &235596094
@@ -3122,6 +3144,7 @@ MonoBehaviour:
   controller: {fileID: 438605692}
   acessibleMenus: []
   verticalButtons: []
+  orientation: 0
   mark: {fileID: 0}
 --- !u!114 &302871647
 MonoBehaviour:
@@ -3581,8 +3604,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 235596092}
   - {fileID: 90158834}
+  - {fileID: 235596092}
   - {fileID: 1759939714}
   m_Father: {fileID: 953372003}
   m_RootOrder: 0
@@ -3709,6 +3732,7 @@ MonoBehaviour:
   controller: {fileID: 438605692}
   acessibleMenus: []
   verticalButtons: []
+  orientation: 0
   mark: {fileID: 1413410142}
 --- !u!114 &389710585
 MonoBehaviour:
@@ -6605,6 +6629,7 @@ MonoBehaviour:
   - {fileID: 499763637}
   - {fileID: 2001634513}
   - {fileID: 744760739}
+  orientation: 0
   mark: {fileID: 1747786150}
 --- !u!1 &796609346
 GameObject:
@@ -8540,6 +8565,7 @@ MonoBehaviour:
   controller: {fileID: 438605692}
   acessibleMenus: []
   verticalButtons: []
+  orientation: 0
   mark: {fileID: 0}
 --- !u!114 &1114888687
 MonoBehaviour:
@@ -8705,9 +8731,9 @@ GameObject:
   - component: {fileID: 1172236431}
   - component: {fileID: 1172236430}
   - component: {fileID: 1172236429}
-  - component: {fileID: 1172236434}
   - component: {fileID: 1172236433}
   - component: {fileID: 1172236432}
+  - component: {fileID: 1172236435}
   m_Layer: 0
   m_Name: Canvas_PlayArcade
   m_TagString: Menu (UI)
@@ -8830,7 +8856,7 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 1509529879}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!114 &1172236434
+--- !u!114 &1172236435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8839,15 +8865,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1172236427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cd7259e4530f5244afc48d758c67558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 90158835}
+  - {fileID: 235596093}
   controller: {fileID: 438605692}
-  acessibleMenus: []
-  verticalButtons:
-  - {fileID: 1509529881}
-  - {fileID: 1555312815}
-  mark: {fileID: 0}
+  cursor:
+  - {fileID: 1253999656}
+  - {fileID: 1638088174}
+  cursorConfirm:
+  - {fileID: 1253999656}
+  - {fileID: 1638088174}
+  characterManager: {fileID: 1896221669}
+  playerNum: 2
 --- !u!1 &1183761841
 GameObject:
   m_ObjectHideFlags: 0
@@ -9186,7 +9218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11027,7 +11059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1509529880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11629,7 +11661,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 884188f8f3bd2b24abddfb04c9aafc8d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f57eba4f53cb32745893792a2ec5e576, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -11733,7 +11765,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1555312814
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12957,6 +12989,7 @@ MonoBehaviour:
   controller: {fileID: 438605692}
   acessibleMenus: []
   verticalButtons: []
+  orientation: 0
   mark: {fileID: 0}
 --- !u!114 &1707223422
 MonoBehaviour:
@@ -14584,6 +14617,7 @@ MonoBehaviour:
   controller: {fileID: 438605692}
   acessibleMenus: []
   verticalButtons: []
+  orientation: 0
   mark: {fileID: 0}
 --- !u!1 &1991714489
 GameObject:
