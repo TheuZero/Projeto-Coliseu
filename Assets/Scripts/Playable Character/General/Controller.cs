@@ -27,8 +27,6 @@ public class Controller : MonoBehaviour
     {
         input = GetComponent<InputOrganizer>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(attackInput)){

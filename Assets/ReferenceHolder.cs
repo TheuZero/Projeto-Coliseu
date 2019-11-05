@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.IO;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,9 +15,13 @@ public class ReferenceHolder : MonoBehaviour
 
     void Awake()
     {
-        players = GameObject.FindGameObjectsWithTag("Player");
+        try{
+            players = GameObject.Find("Forward Data").GetComponent<CharacterManager>().instantiatedPlayer.ToArray();
+        }catch(Exception e){//players = GameObject.FindGameObjectsWithTag("Player");
+            Debug.Log("Não foi encontrado dados vindo do menu");
+            players = GameObject.FindGameObjectsWithTag("Player");
+        }
         hpBars = GameObject.FindGameObjectsWithTag("HpBar");
-        
         for(int i = 0; i < hpBars.Length; i++){
             hpListeners.Add(hpBars[i].GetComponent<HpBarBehaviour>());
         }
@@ -24,6 +30,7 @@ public class ReferenceHolder : MonoBehaviour
             hpNotifiers.Add(players[i].GetComponent<Status>());
         }
 
+        EnableHpBars(players);
         PassListenerList(hpListeners);
     }
     void PassListenerList(List<IHpListener> listeners){
@@ -35,7 +42,11 @@ public class ReferenceHolder : MonoBehaviour
         }
     }
 
-    
+    void EnableHpBars(GameObject[] players){
+        for(int i = 0; i < players.Length; i++){
+            hpBars[i].SetActive(true);
+        }
+    }
     void Update()
     {
         if(Input.GetKeyDown("q")){
