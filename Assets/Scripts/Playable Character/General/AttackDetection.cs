@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AttackDetection : MonoBehaviour
 {
+    GameModeManager gameMode;
     GameObject player;
     Attack attackClass;
     Animator anim;
@@ -58,6 +59,13 @@ public class AttackDetection : MonoBehaviour
         }
         if(col.gameObject.tag == "Hurt Box"){
 
+            AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
+//            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
+            //col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackClass.attackInfo);
+            col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
+            StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
             AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
 //            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
             //col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackClass.attackInfo);

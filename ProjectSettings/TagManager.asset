@@ -15,6 +15,7 @@ TagManager:
   - HpBar
   - "Bot\xF5es (UI)"
   - Menu (UI)
+  - Hurt Box (Player)
   layers:
   - Default
   - TransparentFX

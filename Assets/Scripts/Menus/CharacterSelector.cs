@@ -25,15 +25,18 @@ public class CharacterSelector : MonoBehaviour
 
     void Start(){
         actualScreen = gameObject;
-        if(actualScreen == arcade){
 
-        }else if(actualScreen == pvp){
-            
-        }
         playerIndex = new int[playerNum];
         playerControlEnabled = new bool[playerNum];
         for(int i = 0; i < playerControlEnabled.Length; i++){
             playerControlEnabled[i] = true;
+        }
+    }
+    void OnEnable(){
+        if(actualScreen == arcade){
+            gameMode.currentGameMode = GameModeManager.GameMode.Arcade;
+        }else if(actualScreen == pvp){
+            gameMode.currentGameMode = GameModeManager.GameMode.PVP;
         }
     }
     void Update(){
