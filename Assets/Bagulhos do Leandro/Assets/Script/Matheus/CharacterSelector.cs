@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelector : MonoBehaviour
 {
+    public GameObject pvp;
+    public GameObject arcade;
+    GameObject actualScreen;
     public Button[] buttons;
     public ControllerButtons controller;
     public GameObject[] cursor;
@@ -20,6 +23,12 @@ public class CharacterSelector : MonoBehaviour
     bool p2Active = true;
 
     void Start(){
+        actualScreen = gameObject;
+        if(actualScreen == arcade){
+
+        }else if(actualScreen == pvp){
+            
+        }
         playerIndex = new int[playerNum];
         playerControlEnabled = new bool[playerNum];
         for(int i = 0; i < playerControlEnabled.Length; i++){
