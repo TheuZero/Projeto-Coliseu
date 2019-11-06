@@ -135,5 +135,29 @@ public class Controller : MonoBehaviour
             input.InputCommand(moveXnegCommand, InputType.hold);
         }
     }
+    public void SetCommands(ControllerButtons buttons, int playerNum){
+        if(playerNum == 0){
+            leftInput 	= buttons.p1LeftInput;
+            rightInput 	= buttons.p1RightInput;
+            upInput 	= buttons.p1UpInput;
+            downInput 	= buttons.p1DownInput;
+            jumpInput 	= buttons.p1JumpInput;
+            attackInput = buttons.p1AttackInput;
+            defendInput = buttons.p1DefendInput; 
+            specialInput = buttons.p1SpecialInput;
+            techInput 	= buttons.p1TechInput;
+        }else if(playerNum == 1){
+            leftInput 	= buttons.p2LeftInput;
+            rightInput 	= buttons.p2RightInput;
+            upInput 	= buttons.p2UpInput;
+            downInput 	= buttons.p2DownInput;
+            jumpInput 	= buttons.p2JumpInput;
+            attackInput = buttons.p2AttackInput;
+            defendInput  = buttons.p2DefendInput; 
+            specialInput = buttons.p2SpecialInput;
+            techInput 	= buttons.p2TechInput;
+        }
+
+    }
     
 }

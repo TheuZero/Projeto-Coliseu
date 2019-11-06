@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ReferenceHolder : MonoBehaviour
 {
+    public CharacterManager characterManager;
+    public GameObject[] hpUi;
     public GameObject[] hpBars;
     public GameObject[] players;
     public List<IHpNotifier> hpNotifiers = new List<IHpNotifier>();
@@ -16,9 +18,14 @@ public class ReferenceHolder : MonoBehaviour
     void Awake()
     {
         try{
-            players = GameObject.Find("Forward Data").GetComponent<CharacterManager>().instantiatedPlayer.ToArray();
+            characterManager = GameObject.Find("Character Data Manager").GetComponent<CharacterManager>();
+            characterManager.Spawn(transform.GetChild(0));
+            players = new GameObject[characterManager.instantiatedPlayer.Count];
+            for(int i = 0; i < players.Length; i++){
+                players[i] = transform.GetChild(0).transform.GetChild(i).transform.GetChild(0).gameObject;
+            }
         }catch(Exception e){//players = GameObject.FindGameObjectsWithTag("Player");
-            Debug.Log("Não foi encontrado dados vindo do menu");
+            Debug.Log("Não foi encontrado dados vindo do menu" + e);
             players = GameObject.FindGameObjectsWithTag("Player");
         }
         hpBars = GameObject.FindGameObjectsWithTag("HpBar");
@@ -28,6 +35,7 @@ public class ReferenceHolder : MonoBehaviour
         
         for(int i = 0; i < players.Length; i++){
             hpNotifiers.Add(players[i].GetComponent<Status>());
+            hpUi[i].SetActive(true);
         }
 
         EnableHpBars(players);
