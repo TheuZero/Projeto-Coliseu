@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelector : MonoBehaviour
 {
+    public GameObject initialMenu;
     public GameModeManager gameMode;
     public GameObject pvp;
     public GameObject arcade;
@@ -19,9 +20,11 @@ public class CharacterSelector : MonoBehaviour
     
     public int playerNum = 2;
     int[] playerIndex;
-    bool[] playerControlEnabled;
-    bool p2Selected = false;
-    bool p2Active = true;
+    public bool[] playerControlEnabled;
+    public bool p2Selected = false;
+    public bool p2Active = true;
+
+    int sceneIndex;
 
     void Start(){
         actualScreen = gameObject;
@@ -30,13 +33,18 @@ public class CharacterSelector : MonoBehaviour
         playerControlEnabled = new bool[playerNum];
         for(int i = 0; i < playerControlEnabled.Length; i++){
             playerControlEnabled[i] = true;
-        }
+        }        
+        DisablePlayer(1);
     }
     void OnEnable(){
         if(actualScreen == arcade){
             gameMode.currentGameMode = GameModeManager.GameMode.Arcade;
-        }else if(actualScreen == pvp){
+            sceneIndex = 1;
+            DisablePlayer(1);
+        }else{
             gameMode.currentGameMode = GameModeManager.GameMode.PVP;
+            sceneIndex = 2;
+            EnablePlayer(1);
         }
     }
     void Update(){
@@ -58,7 +66,7 @@ public class CharacterSelector : MonoBehaviour
             }
         }else{
             if(Input.GetKeyDown(controller.p1AttackInput)){
-                StartGame(1);
+                StartGame(sceneIndex);
             }
             if(Input.GetKeyDown(controller.p1TechInput)){
                 Cancel(0);
@@ -75,14 +83,14 @@ public class CharacterSelector : MonoBehaviour
             }
             if(Input.GetKeyDown(controller.p2AttackInput)){
                 Confirm(1);
-                characterManager.SetSpawnCharacter(1, playerIndex[0]);
+                characterManager.SetSpawnCharacter(1, playerIndex[1]);
             }
             if(Input.GetKeyDown(controller.p2TechInput)){
                 Cancel(1);
             }
         }else{
             if(Input.GetKeyDown(controller.p2AttackInput)){
-                
+                Confirm(1);
             }
             if(Input.GetKeyDown(controller.p2TechInput)){
                 Cancel(1);
@@ -117,30 +125,38 @@ public class CharacterSelector : MonoBehaviour
         
     }
     void Confirm(int playerNum){
-        if(playerNum > 1){
-            if(!playerControlEnabled[playerNum]){
-                playerControlEnabled[playerNum] = true;
-                HighLightButtons(playerNum);
-            }
+        if(playerNum > 0 && !p2Active){
+            EnablePlayer(playerNum);
         }else{
             cursorConfirm[playerNum].transform.localPosition = buttons[playerIndex[playerNum]].transform.localPosition;
             playerControlEnabled[playerNum] = false;
         }
     }
-    void Cancel(int playerNum){
-        if(playerNum > 1){
-            if(playerControlEnabled[playerNum]){
-                playerControlEnabled[playerNum] = false;
-                cursor[playerNum].transform.localPosition = new Vector2(10000,10000);
-            }
-        }
+    void EnablePlayer(int playerNum){
         playerControlEnabled[playerNum] = true;
-        cursorConfirm[playerNum].transform.localPosition = new Vector2(10000,10000);
+        HighLightButtons(playerNum);
+        p2Active = true;
     }
-    void HighLightSelectedButton(){
 
+    void Cancel(int playerNum){
+        if(playerNum > 0 && playerControlEnabled[playerNum]){
+            DisablePlayer(playerNum);
+        }else{
+            if(playerControlEnabled[playerNum]){
+                initialMenu.SetActive(true);
+                gameObject.SetActive(false);
+            }
+            playerControlEnabled[playerNum] = true;
+            cursorConfirm[playerNum].transform.localPosition = new Vector2(10000,10000);
+        }
     }
-    
+    void DisablePlayer(int playerNum){
+        if(playerControlEnabled[playerNum]){
+            playerControlEnabled[playerNum] = false;
+            cursor[playerNum].transform.localPosition = new Vector2(10000,10000);
+            p2Active = false;
+        }
+    }
 
     public void GoToMenuScreen(GameObject go){
         go.SetActive(true);
@@ -154,8 +170,24 @@ public class CharacterSelector : MonoBehaviour
         }
     }
     void StartGame(int sceneIndex){
-        if(!playerControlEnabled[1])
+        if(CanStart())
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
+    }
+
+    bool CanStart(){
+        if(gameMode.currentGameMode == GameModeManager.GameMode.PVP && p2Active){
+            if(!playerControlEnabled[0] && !playerControlEnabled[1]){
+                return true;
+            }
+        }else if(gameMode.currentGameMode == GameModeManager.GameMode.Arcade){
+            if(!playerControlEnabled[0] && !playerControlEnabled[1]){
+                return true;
+            }
+            if(!playerControlEnabled[0] && !p2Active){
+                return true;
+            }
+        }
+        return false;
     }
 
 }

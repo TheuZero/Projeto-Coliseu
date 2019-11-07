@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SingleGlobalData : MonoBehaviour
 {
-    SingleGlobalData self;
+    static SingleGlobalData self;
     CharacterManager characters;
     void Start()
     {

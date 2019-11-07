@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7740e864608e4d9a5efba11da94f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   attackModifier: 0
   attack: 0
 --- !u!1 &5171965130105187946
@@ -5514,6 +5515,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a82125c6e6bd62243a7d37c09f4a9fe2, type: 2}
   - {fileID: 11400000, guid: 9d1938dff77014d4f9e1af7e832b461a, type: 2}
   - {fileID: 11400000, guid: 48c51d6d19058e141abe1caf5dbac47d, type: 2}
+  - {fileID: 11400000, guid: 892e5789fa6083c4282fae2b797c590b, type: 2}
 --- !u!1 &5171965130922769499
 GameObject:
   m_ObjectHideFlags: 0

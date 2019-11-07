@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackDetection : MonoBehaviour
 {
     GameModeManager gameMode;
-    GameObject player;
+    public GameObject player;
     Attack attackClass;
     Animator anim;
     public AttackInfo attackInfo;
@@ -17,8 +17,11 @@ public class AttackDetection : MonoBehaviour
     List<MonoBehaviour> subjects = new List<MonoBehaviour>();
 
     void Start(){
-        player = transform.parent.transform.parent.transform.parent.gameObject;
+        if(player == null){
+            player = transform.parent.transform.parent.transform.parent.gameObject;
+        }
         //attackClass = player.GetComponent<Attack>();
+        gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
         anim = player.GetComponent<Animator>();
         status = player.GetComponent<Status>();
         attackInfo = new AttackInfo();
@@ -67,8 +70,11 @@ public class AttackDetection : MonoBehaviour
         }
         if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
             AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
-//            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
-            //col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackClass.attackInfo);
+            col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
+            StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.Arcade && player.tag == "Enemy"){
+            AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
             StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
         }

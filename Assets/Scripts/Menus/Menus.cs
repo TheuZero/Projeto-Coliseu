@@ -10,9 +10,7 @@ public class Menus : MonoBehaviour
         horizontal
     }
     MenuReferences menuReferences;
-
     public ControllerButtons controller;
-    public GameObject[] acessibleMenus;
     public Button[] verticalButtons;
     public Orientation orientation;
     //public Button[] horizontalButtons;
@@ -23,14 +21,15 @@ public class Menus : MonoBehaviour
     void OnEnable()
     {
         verticalIndex = 0;
-        //horizontalIndex = 0;
+        HighLightVerticalButtons();
         menuReferences = transform.parent.GetComponent<MenuReferences>();
         controller = menuReferences.buttons;
     }
 
     // Update is called once per frame
     void Update()
-    {   if(orientation == Orientation.vertical){
+    {   
+        if(orientation == Orientation.vertical){
             if(Input.GetKeyDown(controller.p1UpInput)){
                 SelectVerticalButton(-1);
             }

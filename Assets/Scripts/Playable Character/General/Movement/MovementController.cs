@@ -49,10 +49,6 @@ public class MovementController : MonoBehaviour {
 	void Update () {
 		stateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-		if(Input.GetButtonDown("Horizontal")){
-			DashCheck();
-			Debug.Log("Arrumar o dash de acordo com o buffer");
-		}
 		if(Input.GetAxisRaw("Horizontal") == 0){
 			movement.isRunning = false;
 		}
@@ -104,6 +100,14 @@ public class MovementController : MonoBehaviour {
 		}
 		StateUpdate();
 	}
+	public bool TapRight(){
+		DashCheck(1);
+		return true;
+	}
+	public bool TapLeft(){
+		DashCheck(-1);
+		return true;
+	}
 
 	public bool WalkRight(){
 		confirm = false;
@@ -154,18 +158,18 @@ public class MovementController : MonoBehaviour {
 		}
 	}
 
-	void DashCheck(){
-		if(lastKeyPressed == Input.GetAxisRaw("Horizontal") && Time.time - lastPressed < doubleTapDashTimer ){
+	void DashCheck(float lastKeyDir){
+		Debug.Log("dash check chamado");
+		if(lastKeyPressed == lastKeyDir && Time.time - lastPressed < doubleTapDashTimer ){
 			if(stateInfo.IsTag("Base")){
-				movement.ActivateDash(Input.GetAxisRaw("Horizontal"));
+				movement.ActivateDash(lastKeyDir);
 			}
 			//anim.SetTrigger(isDashing);
 			lastKeyPressed = 0;
 		}else{
+			Debug.Log("dash check atribuido");
 			lastPressed = Time.time;
-			if(Input.GetAxisRaw("Horizontal") != 0){
-				lastKeyPressed = Input.GetAxisRaw("Horizontal");
-			}
+			lastKeyPressed = lastKeyDir;
 		}		
 	}
 

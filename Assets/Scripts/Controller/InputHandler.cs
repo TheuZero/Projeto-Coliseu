@@ -79,10 +79,10 @@ public class InputHandler : MonoBehaviour
                 Debug.Log("cauboi");
                 break;
         }
-        //MoveRightDown = movement.WalkRight;
+        MoveRightDown = movement.TapRight;
         MoveRightHold = movement.WalkRight;
         MoveRightUp = movement.CancelWalk;
-        //MoveLeftDown = movement.WalkLeft;
+        MoveLeftDown = movement.TapLeft;
         MoveLeftHold = movement.WalkLeft;
         MoveLeftUp = movement.CancelWalk;
         JumpDown += movement.JumpVerify;
@@ -111,7 +111,7 @@ public class InputHandler : MonoBehaviour
         confirm = true;
         if(command == InputValues.moveXpos){
             if(type == InputType.down){
-                //return confirm = MoveRightDown();
+                return confirm = MoveRightDown();
                 return true;
             }else if(type == InputType.hold){
                 return confirm = MoveRightHold();
@@ -120,7 +120,7 @@ public class InputHandler : MonoBehaviour
             }
         }if(command == InputValues.moveXneg){
             if(type == InputType.down){
-                //return confirm = MoveLeftDown();
+                return confirm = MoveLeftDown();
                 return true;
             }else if(type == InputType.hold){
                 return confirm = MoveLeftHold();

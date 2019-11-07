@@ -25,7 +25,7 @@ public class CharacterManager : MonoBehaviour
     public void Spawn(Transform transform){
         toSpawn = assignedCharacter.Values.ToArray();       
         for(int i = 0; i < toSpawn.Length; i++){
-            instantiatedPlayer.Add(Instantiate(toSpawn[i], new Vector3(5 * (i * 2),0,0), Quaternion.identity, transform));
+            instantiatedPlayer.Add(Instantiate(toSpawn[i], new Vector3(3 + 7 * (i * 2),0,0), Quaternion.identity, transform));
         }
         for(int i = 0; i < instantiatedPlayer.Count; i++){
             instantiatedPlayer[i].transform.GetChild(0).GetComponent<Status>().playerNumber = i;

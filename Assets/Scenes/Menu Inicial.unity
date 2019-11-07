@@ -3298,7 +3298,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
-  acessibleMenus: []
   verticalButtons: []
   orientation: 0
   mark: {fileID: 0}
@@ -3965,8 +3964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
-  acessibleMenus: []
-  verticalButtons: []
+  verticalButtons:
+  - {fileID: 512796838}
+  - {fileID: 937346532}
+  - {fileID: 827333580}
+  - {fileID: 1938229869}
   orientation: 0
   mark: {fileID: 1413410142}
 --- !u!114 &389710585
@@ -7054,7 +7056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &774319598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7182,11 +7184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
-  acessibleMenus:
-  - {fileID: 1172236427}
-  - {fileID: 1970017788}
-  - {fileID: 389710579}
-  - {fileID: 0}
   verticalButtons:
   - {fileID: 328203776}
   - {fileID: 468299108}
@@ -9066,7 +9063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1114888682
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9160,7 +9157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
-  acessibleMenus: []
   verticalButtons: []
   orientation: 0
   mark: {fileID: 0}
@@ -9438,7 +9434,7 @@ MonoBehaviour:
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_ForceModuleActive: 1
 --- !u!114 &1172236433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9466,6 +9462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd7259e4530f5244afc48d758c67558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialMenu: {fileID: 774319597}
   gameMode: {fileID: 1904118742}
   pvp: {fileID: 1970017788}
   arcade: {fileID: 1172236427}
@@ -9481,6 +9478,9 @@ MonoBehaviour:
   - {fileID: 491341615}
   characterManager: {fileID: 1896221669}
   playerNum: 2
+  playerControlEnabled: 
+  p2Selected: 0
+  p2Active: 1
 --- !u!1 &1183761841
 GameObject:
   m_ObjectHideFlags: 0
@@ -13144,11 +13144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
-  acessibleMenus:
-  - {fileID: 1172236427}
-  - {fileID: 1970017788}
-  - {fileID: 389710579}
-  - {fileID: 0}
   verticalButtons:
   - {fileID: 0}
   - {fileID: 0}
@@ -14134,7 +14129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 438605692}
-  acessibleMenus: []
   verticalButtons: []
   orientation: 0
   mark: {fileID: 0}
@@ -15997,6 +15991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd7259e4530f5244afc48d758c67558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialMenu: {fileID: 774319597}
   gameMode: {fileID: 1904118742}
   pvp: {fileID: 1970017788}
   arcade: {fileID: 1172236427}
@@ -16012,6 +16007,9 @@ MonoBehaviour:
   - {fileID: 1015885707}
   characterManager: {fileID: 1896221669}
   playerNum: 2
+  playerControlEnabled: 
+  p2Selected: 0
+  p2Active: 1
 --- !u!1 &1991714489
 GameObject:
   m_ObjectHideFlags: 0
