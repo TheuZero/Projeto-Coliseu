@@ -56,10 +56,10 @@ public class Projectile : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D col){
         
-            hitCounter -= 1;
-            if(hitCounter <= 0){
-                gameObject.SetActive(false);
-            }
+        hitCounter -= 1;
+        if(hitCounter <= 0){
+            gameObject.SetActive(false);
+        }
         
     }
 }

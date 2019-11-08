@@ -12,10 +12,11 @@ public class SingleGlobalData : MonoBehaviour
             self = this;
             DontDestroyOnLoad(this.gameObject);
         }else{
-            DestroyImmediate(this.gameObject);
-            characters.instantiatedPlayer.Clear();
+            
+            characters.instantiatedPlayer = new List<GameObject>();
             Score.score = 0;
             Score.killNumber = 0;
+            DestroyImmediate(this.gameObject);
         }
     }
 }

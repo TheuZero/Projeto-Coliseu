@@ -15,21 +15,21 @@ public class GrabBox : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if(col.gameObject.tag == "Hurt Box (Enemy)" || col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
+        if(CanHit(col)){
             controller.isGrabbing = true;
             grabTimer = 2f;
             Debug.Log("Agarrou");
         }
     }
     void OnTriggerStay2D(Collider2D col){
-        if(col.gameObject.tag == "Hurt Box (Enemy)" || col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
+        if(CanHit(col)){
             col.gameObject.GetComponent<DamageDetection>().Grabbed(transform.position, true, Mathf.Sign(player.transform.localScale.x));
             controller.isGrabbing = true;
             GrabDuration(col);
         }
     }
     void OnTriggerExit2D(Collider2D col){
-        if(col.gameObject.tag == "Hurt Box (Enemy)" || col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
+        if(CanHit(col)){
             col.gameObject.GetComponent<DamageDetection>().Grabbed(transform.position, false, Mathf.Sign(player.transform.localScale.x));
             controller.isGrabbing = false;
             Debug.Log("saiu");
@@ -43,5 +43,17 @@ public class GrabBox : MonoBehaviour
             col.gameObject.GetComponent<DamageDetection>().GrabCancel();
             controller.isGrabbing = false;
         }
+    }
+     bool CanHit(Collider2D col){
+        if(col.gameObject.tag == "Hurt Box" && gameObject.tag != "Hit Box (Enemy)"){
+            return true;
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
+            return true;
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.Arcade && player.tag == "Enemy"){
+            return true;
+        }
+        return false;
     }
 }

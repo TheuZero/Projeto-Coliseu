@@ -9,6 +9,7 @@ public class ProjectileAI : MonoBehaviour
     float defaultProjectileTimer = 4.5f;
     void Start()
     {
+        projectileTimer = defaultProjectileTimer;
         anim = transform.GetChild(0).GetComponent<Animator>();
     }
 

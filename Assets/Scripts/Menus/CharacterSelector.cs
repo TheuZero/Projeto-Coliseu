@@ -28,7 +28,7 @@ public class CharacterSelector : MonoBehaviour
 
     void Start(){
         actualScreen = gameObject;
-
+        gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
         playerIndex = new int[playerNum];
         playerControlEnabled = new bool[playerNum];
         for(int i = 0; i < playerControlEnabled.Length; i++){

@@ -3,10 +3,12 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ReferenceHolder : MonoBehaviour
 {
     public CharacterManager characterManager;
+    public TextMeshProUGUI gameOverText;
     public GameObject[] hpUi;
     public GameObject[] hpBars;
     public GameObject[] players;
@@ -17,6 +19,8 @@ public class ReferenceHolder : MonoBehaviour
 
     void Awake()
     {
+        gameOverText = GameObject.Find("Game Over").GetComponent<TextMeshProUGUI>();
+        gameOverText.gameObject.SetActive(false);
         try{
             characterManager = GameObject.Find("Character Data Manager").GetComponent<CharacterManager>();
             characterManager.Spawn(transform.GetChild(0));

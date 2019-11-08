@@ -24,13 +24,13 @@ MonoBehaviour:
     hitstun: 0.3
     hitlag: 0.07
   - manaGain: 10
-    dmgMultiplier: 4
+    dmgMultiplier: 6
     knockback: 0.15
     knockup: 0
     hitstun: 0.4
     hitlag: 0.15
   - manaGain: 15
-    dmgMultiplier: 6
+    dmgMultiplier: 8
     knockback: 4
     knockup: 6
     hitstun: 0

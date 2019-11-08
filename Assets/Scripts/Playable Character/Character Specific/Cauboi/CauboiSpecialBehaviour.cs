@@ -48,6 +48,14 @@ public class CauboiSpecialBehaviour : MonoBehaviour
         actualAttackData = attackList[0];
         SetAttack(index);
     }
+    public void SetSuperBeatData(int index){
+        actualAttackData = attackList[1];
+        SetAttack(index);
+    }
+    public void SetGrabKickData(int index){
+        actualAttackData = attackList[2];
+        SetAttack(index);
+    }
     public void ComboMove(int index){
         AssignMovement(index);
         movement.MoveCharacter(movementationData);

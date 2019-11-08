@@ -189,6 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7740e864608e4d9a5efba11da94f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   attackModifier: 0
   attack: 0
 --- !u!1 &3771227323781838598
@@ -717,6 +718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacc9ab730596ab4fa3d29cbdea614d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMode: {fileID: 0}
   playerNumber: 0
   hp: 30
   maxHp: 30

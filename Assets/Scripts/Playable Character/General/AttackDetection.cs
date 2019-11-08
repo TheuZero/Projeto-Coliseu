@@ -65,7 +65,7 @@ public class AttackDetection : MonoBehaviour
         if(col == null){
             Debug.Log("wtf");
         }
-        if(col.gameObject.tag == "Hurt Box" && gameObject.tag != "Hit Box (Enemy)"){
+        if(CanHit(col)){
 
             AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
 //            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
@@ -73,7 +73,7 @@ public class AttackDetection : MonoBehaviour
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
             StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
         }
-        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
+        /*if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
             AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
             StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
@@ -82,8 +82,20 @@ public class AttackDetection : MonoBehaviour
             AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
             StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
-        }
+        }*/
     }
 
+    bool CanHit(Collider2D col){
+        if(col.gameObject.tag == "Hurt Box" && gameObject.tag != "Hit Box (Enemy)"){
+            return true;
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
+            return true;
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.Arcade && player.tag == "Enemy"){
+            return true;
+        }
+        return false;
+    }
 
 }

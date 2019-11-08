@@ -17,6 +17,7 @@ TagManager:
   - Menu (UI)
   - Hurt Box (Player)
   - Hit Box (Enemy)
+  - GameOver
   layers:
   - Default
   - TransparentFX

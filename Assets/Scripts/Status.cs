@@ -6,7 +6,7 @@ using System;
 [System.Serializable]
 public class Status : MonoBehaviour, IHpNotifier
 {
-    GameModeManager gameMode;
+    public GameModeManager gameMode;
     public int playerNumber;
     public float hp = 1;
     public float maxHp = 30;
@@ -39,13 +39,17 @@ public class Status : MonoBehaviour, IHpNotifier
             try{
                 gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
                 gameMode.playersAlive++;
+                maxHp = 100;
+                hp = maxHp;
             }catch(Exception e){
                 Debug.Log("Não foi encontrado o game mode (status)");
             }
         }
     }
 
-    // Update is called once per frame
+    void OnDestroy(){
+        
+    }
     void Update()
     {
         if(Input.GetKeyDown("q")){
@@ -78,8 +82,10 @@ public class Status : MonoBehaviour, IHpNotifier
         hp -= damage;
         NotifyOnHpChange(hpListeners, playerNumber);
         if(hp <= 0){
+            if(gameObject.tag == "Player"){
+                gameMode.PlayerDead(playerNumber);
+            }
             Destroy(gameObject.transform.parent.gameObject);
-            gameMode.playersAlive -= 1;
         }
     }
 

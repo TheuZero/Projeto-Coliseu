@@ -20,7 +20,7 @@ MonoBehaviour:
   - manaGain: 0
     dmgMultiplier: 10
     knockback: 8
-    knockup: 1
+    knockup: 2
     hitstun: 0
     hitlag: 0
   attackType: 0
