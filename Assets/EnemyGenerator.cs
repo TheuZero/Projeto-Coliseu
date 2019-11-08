@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour
 {
     public GameObject[] enemy;
+    public List<GameObject> enemySpawn = new List<GameObject>();
     public GameObject boss;
     int maxEnemy = 4;
     float spawnTimer = 8f;
@@ -13,6 +14,8 @@ public class EnemyGenerator : MonoBehaviour
     public bool bossSpawned;
 
     bool SpawnCooldown = false;
+    bool canSpawn = true;
+
 
     void Update(){
         if(!SpawnCooldown)
@@ -33,9 +36,9 @@ public class EnemyGenerator : MonoBehaviour
 
     void Spawn(int enemyNum){
         if(enemyNum == 0)
-            Instantiate(enemy[0], spawnPositions[RandomIndex(spawnPositions.Length)], Quaternion.identity, this.gameObject.transform);
+            enemySpawn.Add(Instantiate(enemy[0], spawnPositions[RandomIndex(spawnPositions.Length)], Quaternion.identity, this.gameObject.transform));
         else if(enemyNum == 1){
-            Instantiate(enemy[1], spawnPositions[RandomIndex(projectileEnemySpawn.Length)], Quaternion.identity, this.gameObject.transform);
+            enemySpawn.Add(Instantiate(enemy[1], spawnPositions[RandomIndex(projectileEnemySpawn.Length)], Quaternion.identity, this.gameObject.transform));
         }
     }
     int RandomIndex(int length){

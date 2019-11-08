@@ -20,12 +20,19 @@ public class Controller : MonoBehaviour
     public KeyCode defendInput;
     public KeyCode specialInput = KeyCode.C;
     public KeyCode techInput = KeyCode.X;
+    public KeyCode pauseInput = KeyCode.P;
+
+
+    public ReferenceHolder referenceHolder;
+    public GameObject pauseScreen;
 
     InputOrganizer input;
     // Start is called before the first frame update
     void Start()
     {
         input = GetComponent<InputOrganizer>();
+        referenceHolder = GameObject.Find("Reference Master").GetComponent<ReferenceHolder>();
+        pauseScreen = referenceHolder.pauseScreen;
     }
     void Update()
     {
@@ -125,6 +132,9 @@ public class Controller : MonoBehaviour
         if(Input.GetKeyUp(downInput)){
             
         }
+        if(Input.GetKeyDown(pauseInput)){
+            pauseScreen.SetActive(true);
+        }
     }
 
     void FixedUpdate(){
@@ -146,6 +156,7 @@ public class Controller : MonoBehaviour
             defendInput = buttons.p1DefendInput; 
             specialInput = buttons.p1SpecialInput;
             techInput 	= buttons.p1TechInput;
+            pauseInput  = buttons.p1PauseInput;
         }else if(playerNum == 1){
             leftInput 	= buttons.p2LeftInput;
             rightInput 	= buttons.p2RightInput;
@@ -156,6 +167,7 @@ public class Controller : MonoBehaviour
             defendInput  = buttons.p2DefendInput; 
             specialInput = buttons.p2SpecialInput;
             techInput 	= buttons.p2TechInput;
+            pauseInput  = buttons.p2PauseInput;
         }
 
     }

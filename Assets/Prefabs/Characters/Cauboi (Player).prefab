@@ -304,7 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3771227323962280518}
   - component: {fileID: 3771227323962280516}
-  - component: {fileID: 3771227323962280519}
+  - component: {fileID: 3484906300945810211}
   m_Layer: 11
   m_Name: Grab
   m_TagString: Hit Box
@@ -352,7 +352,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
---- !u!114 &3771227323962280519
+--- !u!114 &3484906300945810211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3771227323962280537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35703d86f3f502641a1db230983a94d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 532595ea83cffa54aab62601e3cc773b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3771227323972666251
@@ -801,6 +801,9 @@ MonoBehaviour:
   defendInput: 0
   specialInput: 99
   techInput: 120
+  pauseInput: 112
+  referenceHolder: {fileID: 0}
+  pauseScreen: {fileID: 0}
 --- !u!114 &3771227324512616293
 MonoBehaviour:
   m_ObjectHideFlags: 0

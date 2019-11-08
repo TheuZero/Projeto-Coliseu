@@ -13,6 +13,7 @@ public class ControllerButtons : MonoBehaviour
     public KeyCode p1DefendInput;
     public KeyCode p1SpecialInput = KeyCode.C;
     public KeyCode p1TechInput = KeyCode.X;
+    public KeyCode p1PauseInput = KeyCode.P;
 
     public KeyCode p2LeftInput = KeyCode.A;
     public KeyCode p2RightInput = KeyCode.D;
@@ -23,6 +24,7 @@ public class ControllerButtons : MonoBehaviour
     public KeyCode p2DefendInput;
     public KeyCode p2SpecialInput = KeyCode.G;
     public KeyCode p2TechInput = KeyCode.R;
+    public KeyCode p2PauseInput = KeyCode.U;
     void Start()
     {
         

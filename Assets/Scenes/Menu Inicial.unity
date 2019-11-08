@@ -4311,6 +4311,7 @@ MonoBehaviour:
   p1DefendInput: 0
   p1SpecialInput: 99
   p1TechInput: 120
+  p1PauseInput: 112
   p2LeftInput: 97
   p2RightInput: 100
   p2UpInput: 119
@@ -4320,6 +4321,7 @@ MonoBehaviour:
   p2DefendInput: 0
   p2SpecialInput: 103
   p2TechInput: 114
+  p2PauseInput: 117
 --- !u!4 &438605693
 Transform:
   m_ObjectHideFlags: 0
@@ -9561,6 +9563,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf3c511e0f16fb340b6480868eab09dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuRef: {fileID: 0}
   can_ini: {fileID: 774319597}
   can_record: {fileID: 1818103088}
   p1_Atack: a
@@ -13010,18 +13015,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1598297911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Script: {fileID: 11500000, guid: 817833905ecb7564cb5c7792bfc52b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 438605692}
-  verticalButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  orientation: 0
-  mark: {fileID: 0}
+  buttons: {fileID: 438605692}
+  initialMenu: {fileID: 774319597}
 --- !u!114 &1598297914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15196,6 +15194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentGameMode: 1
+  referenceHolder: {fileID: 0}
   text: {fileID: 0}
   playersAlive: 0
 --- !u!1 &1905241618

@@ -14,13 +14,15 @@ public class ReferenceHolder : MonoBehaviour
     public GameObject[] players;
     public List<IHpNotifier> hpNotifiers = new List<IHpNotifier>();
     public List<IHpListener> hpListeners = new List<IHpListener>();
-    
+    public GameObject pauseScreen;
     float temporaryHp = 30;
 
     void Awake()
     {
         gameOverText = GameObject.Find("Game Over").GetComponent<TextMeshProUGUI>();
         gameOverText.gameObject.SetActive(false);
+        pauseScreen = GameObject.Find("Pause Menu");
+        pauseScreen.SetActive(false);
         try{
             characterManager = GameObject.Find("Character Data Manager").GetComponent<CharacterManager>();
             characterManager.Spawn(transform.GetChild(0));
