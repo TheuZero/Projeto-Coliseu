@@ -28,7 +28,7 @@ public class ReferenceHolder : MonoBehaviour
             Debug.Log("Não foi encontrado dados vindo do menu" + e);
             players = GameObject.FindGameObjectsWithTag("Player");
         }
-        hpBars = GameObject.FindGameObjectsWithTag("HpBar");
+        //hpBars = GameObject.FindGameObjectsWithTag("HpBar");
         for(int i = 0; i < hpBars.Length; i++){
             hpListeners.Add(hpBars[i].GetComponent<HpBarBehaviour>());
         }
@@ -57,8 +57,6 @@ public class ReferenceHolder : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown("q")){
-            hpListeners[0].OnHpChange(temporaryHp--, 30, 0);
-        }
+        
     }
 }

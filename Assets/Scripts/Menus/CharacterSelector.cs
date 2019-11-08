@@ -37,14 +37,15 @@ public class CharacterSelector : MonoBehaviour
         DisablePlayer(1);
     }
     void OnEnable(){
+        actualScreen = gameObject;
         if(actualScreen == arcade){
             gameMode.currentGameMode = GameModeManager.GameMode.Arcade;
             sceneIndex = 1;
-            DisablePlayer(1);
+            //DisablePlayer(1);
         }else{
             gameMode.currentGameMode = GameModeManager.GameMode.PVP;
             sceneIndex = 2;
-            EnablePlayer(1);
+            //EnablePlayer(1);
         }
     }
     void Update(){

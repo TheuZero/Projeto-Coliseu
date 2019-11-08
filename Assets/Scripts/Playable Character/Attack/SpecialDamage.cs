@@ -31,4 +31,17 @@ public class SpecialDamage : MonoBehaviour
         attackInfo.hitstun = attackData.hitData[hitData].Hitstun;
         attackInfo.hitlag = attackData.hitData[hitData].Hitlag;
     }
+
+    void OnTriggerEnter2D(Collider2D col){
+        if(IsTarget(col)){
+            col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
+        }
+        Debug.Log("colidiu");
+    }
+    bool IsTarget(Collider2D col){
+        if(gameObject.tag == "Hit Box (Enemy)" && col.gameObject.tag == "Hurt Box (Player)"){
+            return true;
+        }
+        return false;
+    }
 }

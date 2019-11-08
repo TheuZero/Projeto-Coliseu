@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HpBarBehaviour : MonoBehaviour, IHpListener
 {
-    int hpBarIndex = 0;
+    public int hpBarIndex = 0;
     Image hpBar;
     void Start(){
         hpBar = GetComponent<Image>();

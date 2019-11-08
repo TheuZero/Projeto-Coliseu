@@ -27,20 +27,22 @@ public class Alert : MonoBehaviour
         
     }
     public void Follow(Vector2 target){
-        if(player.transform.position.x - target.x > 0.4f){
-            movement.WalkLeft();
-        }else if(player.transform.position.x - target.x < -0.4f){
-            movement.WalkRight();
-        }else{
-            movement.CancelWalk();
-            Attack(player.transform.position.x - target.x);
+        cooldownTimer -= Time.deltaTime;
+        if(cooldownTimer <= 0){
+            if(player.transform.position.x - target.x > 0.4f){
+                movement.WalkLeft();
+            }else if(player.transform.position.x - target.x < -0.4f){
+                movement.WalkRight();
+            }else{
+                movement.CancelWalk();
+                Attack(player.transform.position.x - target.x);
+            }
+            Debug.Log(player.transform.position.x - target.x );
         }
-        Debug.Log(player.transform.position.x - target.x );
     }
 
     public void Attack(float direction){
-        if(attack.ComboVerify()){
-            comboCounter++;
-        }
+        attack.SuperBeatVerify();
+        cooldownTimer = 2.0f;
     }
 }

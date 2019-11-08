@@ -14,6 +14,8 @@ public class SingleGlobalData : MonoBehaviour
         }else{
             DestroyImmediate(this.gameObject);
             characters.instantiatedPlayer.Clear();
+            Score.score = 0;
+            Score.killNumber = 0;
         }
     }
 }

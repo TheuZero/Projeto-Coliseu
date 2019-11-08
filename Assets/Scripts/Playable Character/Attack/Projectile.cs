@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public ParticleSystem particle;
     public float speed = 6;
     public float duration = 6f;
     public float side;
@@ -16,6 +17,7 @@ public class Projectile : MonoBehaviour
     void Awake(){
         attackInfo = new AttackInfo();
         player = transform.parent.transform.parent.transform.GetChild(0).gameObject;
+        particle = GetComponent<ParticleSystem>();
     }
     void OnEnable(){
         StartCoroutine("Duration");
@@ -30,9 +32,11 @@ public class Projectile : MonoBehaviour
     }
 
     void SpawnReference(){
+
         Vector2 projectileSize = transform.localScale;
         side = player.transform.localScale.x * (Mathf.Abs(projectileSize.x));
-        gameObject.transform.position = new Vector2(player.transform.position.x + side * 0.8f, player.transform.position.y);
+        particle.startRotation = Mathf.Sign(player.transform.localScale.x) * 1.5708f;
+        gameObject.transform.position = new Vector2(player.transform.position.x + side * 0.8f, player.transform.position.y + 0.2f);
         gameObject.transform.localScale = new Vector2(side, gameObject.transform.localScale.y);
     }
 
@@ -46,16 +50,16 @@ public class Projectile : MonoBehaviour
     }*/
 
     IEnumerator Duration(){
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(duration);
         gameObject.SetActive(false);
     }
     
     void OnTriggerEnter2D(Collider2D col){
-        if(col.gameObject.tag == "Hurt Box"){
+        
             hitCounter -= 1;
             if(hitCounter <= 0){
                 gameObject.SetActive(false);
             }
-        }
+        
     }
 }

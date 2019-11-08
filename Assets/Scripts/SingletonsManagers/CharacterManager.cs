@@ -32,9 +32,4 @@ public class CharacterManager : MonoBehaviour
             instantiatedPlayer[i].transform.GetChild(0).GetComponent<Controller>().SetCommands(buttons, i);
         }   
     }
-    void Update(){
-        if(Input.GetKey("q")){
-            Spawn(gameObject.transform);
-        }
-    }
 }

@@ -23,7 +23,8 @@ public class Menus : MonoBehaviour
         verticalIndex = 0;
         HighLightVerticalButtons();
         menuReferences = transform.parent.GetComponent<MenuReferences>();
-        controller = menuReferences.buttons;
+        //controller = menuReferences.buttons;
+        controller = GameObject.Find("Forward Data").GetComponent<ControllerButtons>();
     }
 
     // Update is called once per frame

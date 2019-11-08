@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AttackDetection : MonoBehaviour
 {
@@ -21,7 +22,11 @@ public class AttackDetection : MonoBehaviour
             player = transform.parent.transform.parent.transform.parent.gameObject;
         }
         //attackClass = player.GetComponent<Attack>();
-        gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
+        try{
+            gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
+        }catch(Exception e){
+            Debug.Log("Gamemode não encontrado, debug");
+        }
         anim = player.GetComponent<Animator>();
         status = player.GetComponent<Status>();
         attackInfo = new AttackInfo();
@@ -60,7 +65,7 @@ public class AttackDetection : MonoBehaviour
         if(col == null){
             Debug.Log("wtf");
         }
-        if(col.gameObject.tag == "Hurt Box"){
+        if(col.gameObject.tag == "Hurt Box" && gameObject.tag != "Hit Box (Enemy)"){
 
             AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
 //            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");

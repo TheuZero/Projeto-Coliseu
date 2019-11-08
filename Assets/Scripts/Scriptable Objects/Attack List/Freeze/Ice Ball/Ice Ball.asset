@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300344, guid: abfbabfb92e9db249b4f217f2fb24a1f, type: 3}
   attackName: Ice Ball
+  cooldown: 0
   manaCost: 0
   hitData:
   - manaGain: 0
-    dmgMultiplier: 2
+    dmgMultiplier: 4
     knockback: 4
     knockup: 0
-    hitstun: 0
+    hitstun: 0.7
     hitlag: 0
   attackType: 1
   hitType: 1

@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 2980893842945471130}
   - component: {fileID: 8812430754887645589}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Menu Inicial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9339623, g: 0.2511125, b: 0.2511125, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -194,7 +194,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2980893842945471130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2147059324}
+        m_MethodName: GoToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &2657760041922562827
@@ -210,7 +221,7 @@ GameObject:
   - component: {fileID: 721300405642263904}
   - component: {fileID: 3631106470766734459}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Continuar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +305,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.9339623, g: 0.2511125, b: 0.2511125, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -312,7 +323,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 721300405642263904}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2147059324}
+        m_MethodName: DisablePause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &6748462973786513528
@@ -554,7 +576,7 @@ GameObject:
   - component: {fileID: 6982536091870204410}
   - component: {fileID: 6982536091870204411}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Ingame UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,7 +615,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 10
+  m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -619,8 +641,8 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1280, y: 720}
-  m_ScreenMatchMode: 1
-  m_MatchWidthOrHeight: 1
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0.547
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -932,6 +954,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68df66b9e5cc96149894a50fe9c7406a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpBarIndex: 1
 --- !u!1 &6982536092937496614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68df66b9e5cc96149894a50fe9c7406a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpBarIndex: 0
 --- !u!1 &6982536093290428997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,13 +1352,16 @@ GameObject:
   - component: {fileID: 8662224998353382433}
   - component: {fileID: 7089426457191414537}
   - component: {fileID: 7054601293245546438}
+  - component: {fileID: 8015076968960284881}
+  - component: {fileID: 2147059324}
+  - component: {fileID: 2147059325}
   m_Layer: 5
   m_Name: Pause Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8662224998353382433
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1353,7 +1380,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015259, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -356.3, y: -200.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7089426457191414537
@@ -1393,3 +1420,51 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &8015076968960284881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015076968960284880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  verticalButtons:
+  - {fileID: 3631106470766734459}
+  - {fileID: 8812430754887645589}
+  orientation: 0
+  mark: {fileID: 0}
+--- !u!114 &2147059324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015076968960284880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697146c3ddf2e514abd015743b320aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2147059325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015076968960284880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02aef8e7bc5c5bf4b9a5014a41628df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  verticalButtons:
+  - {fileID: 3631106470766734459}
+  - {fileID: 8812430754887645589}
+  orientation: 0
+  mark: {fileID: 0}

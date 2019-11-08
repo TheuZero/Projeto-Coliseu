@@ -16,6 +16,7 @@ TagManager:
   - "Bot\xF5es (UI)"
   - Menu (UI)
   - Hurt Box (Player)
+  - Hit Box (Enemy)
   layers:
   - Default
   - TransparentFX
@@ -35,8 +36,8 @@ TagManager:
   - Character Collider (Player)
   - Character Collider (Enemy)
   - Enemy FoV
-  - 
-  - 
+  - Hit Box (Enemy)
+  - Hurt Box (Enemy)
   - 
   - 
   - 

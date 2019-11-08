@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [System.Serializable]
 public class Status : MonoBehaviour, IHpNotifier
 {
+    GameModeManager gameMode;
     public int playerNumber;
-    public float hp;
+    public float hp = 1;
     public float maxHp = 30;
     float mp;
     public float maxMp;
@@ -33,6 +35,14 @@ public class Status : MonoBehaviour, IHpNotifier
         anim = GetComponent<Animator>();
         baseTag = Animator.StringToHash("Base");
         movementController = GetComponent<MovementController>();
+        if(gameObject.tag == "Player"){
+            try{
+                gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
+                gameMode.playersAlive++;
+            }catch(Exception e){
+                Debug.Log("Não foi encontrado o game mode (status)");
+            }
+        }
     }
 
     // Update is called once per frame
@@ -67,6 +77,10 @@ public class Status : MonoBehaviour, IHpNotifier
     public void ReduceHp(float damage){
         hp -= damage;
         NotifyOnHpChange(hpListeners, playerNumber);
+        if(hp <= 0){
+            Destroy(gameObject.transform.parent.gameObject);
+            gameMode.playersAlive -= 1;
+        }
     }
 
     public IEnumerator FreezeCharacter(float duration){

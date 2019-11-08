@@ -4857,6 +4857,7 @@ GameObject:
   - component: {fileID: 8666501700177921780}
   - component: {fileID: 8666501700177921781}
   - component: {fileID: 8666501700177921770}
+  - component: {fileID: 6820093829009048371}
   m_Layer: 0
   m_Name: Riki (Enemy)
   m_TagString: Untagged
@@ -4913,6 +4914,19 @@ MonoBehaviour:
   movement: {fileID: 8666501700762898198}
   player: {fileID: 8666501700762898201}
   defaultIdleTimer: 1
+--- !u!114 &6820093829009048371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666501700177921783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466873512de348640bd7a9e7cfff4c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scorePoints: 20
 --- !u!1 &8666501700227668837
 GameObject:
   m_ObjectHideFlags: 0
@@ -4983,6 +4997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4b7740e864608e4d9a5efba11da94f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   attackModifier: 0
   attack: 0
 --- !u!1 &8666501700552480800
@@ -5041,7 +5056,7 @@ GameObject:
   - component: {fileID: 8666501700762898207}
   m_Layer: 10
   m_Name: Riki
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5388,7 +5403,7 @@ GameObject:
   - component: {fileID: 8666501700830633940}
   - component: {fileID: 8666501700830633930}
   - component: {fileID: 8666501700830633941}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Hurt Box
   m_TagString: Hurt Box
   m_Icon: {fileID: 0}
@@ -10578,7 +10593,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8666501701516053647}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35703d86f3f502641a1db230983a94d0, type: 3}
   m_Name: 

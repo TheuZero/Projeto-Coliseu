@@ -96,7 +96,7 @@ public class Defense : MonoBehaviour
         if(knockup > 0){
             rb.velocity = new Vector2(rb.velocity.x, 0);
             knockup -= Time.deltaTime * weight;
-            anim.SetBool(launch, true);
+            anim.SetTrigger(launch);
             transform.Translate(Vector2.up * knockup * Time.deltaTime);
             anim.SetBool(fall, true);
         }

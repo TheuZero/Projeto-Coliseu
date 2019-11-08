@@ -5345,7 +5345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerNumber: 0
-  hp: 0
+  hp: 30
   maxHp: 30
   maxMp: 0
   timeFactor: 1
