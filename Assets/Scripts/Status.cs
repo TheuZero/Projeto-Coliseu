@@ -42,7 +42,7 @@ public class Status : MonoBehaviour, IHpNotifier
                 maxHp = 100;
                 hp = maxHp;
             }catch(Exception e){
-                Debug.Log("Não foi encontrado o game mode (status)");
+                Debug.Log("Não foi encontrado o game mode (status)" + e);
             }
         }
     }
@@ -83,9 +83,12 @@ public class Status : MonoBehaviour, IHpNotifier
         NotifyOnHpChange(hpListeners, playerNumber);
         if(hp <= 0){
             if(gameObject.tag == "Player"){
-                gameMode.PlayerDead(playerNumber);
+                try{gameMode.PlayerDead(playerNumber);}
+                catch(Exception e){
+                    Debug.Log("Não existe modo de jogo");
+                }
             }
-            Destroy(gameObject.transform.parent.gameObject);
+            gameObject.transform.parent.gameObject.SetActive(false);
         }
     }
 

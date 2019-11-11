@@ -16,6 +16,7 @@ public class Menus : MonoBehaviour
     //public Button[] horizontalButtons;
     //public Button[,] buttonMatrix;
     public Button mark;
+    public float xOffset = 109.9f;
     int verticalIndex = 0;
     //int horizontalIndex = 0;
     void OnEnable()
@@ -59,7 +60,7 @@ public class Menus : MonoBehaviour
     void HighLightVerticalButtons(){
         IndexLimiter();
         mark.transform.localPosition = new Vector3 
-        (verticalButtons[verticalIndex].transform.localPosition.x - 109.9f, 
+        (verticalButtons[verticalIndex].transform.localPosition.x - xOffset, 
         verticalButtons[verticalIndex].transform.localPosition.y,0);
 
         verticalButtons[verticalIndex].Select();

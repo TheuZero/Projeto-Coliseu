@@ -20,6 +20,7 @@ public class ResetTriggers : StateMachineBehaviour
     override public void OnStateExit(Animator anim, AnimatorStateInfo stateInfo, int layerIndex)
     {
         anim.ResetTrigger("isAttacking");
+        anim.ResetTrigger("superBeat");
         anim.ResetTrigger("grab");
     }
 

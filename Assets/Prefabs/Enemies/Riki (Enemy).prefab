@@ -101,7 +101,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -664500583
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 543e46aeff622344abe6273a629b0c56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.85490197}
@@ -5047,9 +5047,6 @@ GameObject:
   - component: {fileID: 8666501700762898196}
   - component: {fileID: 8666501700762898199}
   - component: {fileID: 8666501700762898198}
-  - component: {fileID: 8666501700762898193}
-  - component: {fileID: 8666501700762898192}
-  - component: {fileID: 8666501700762898195}
   - component: {fileID: 8666501700762898194}
   - component: {fileID: 8666501700762898205}
   - component: {fileID: 8666501700762898204}
@@ -5113,9 +5110,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -664500583
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 6f8bf125bb00c284e993e82e95e19667, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -5220,6 +5217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cacc9ab730596ab4fa3d29cbdea614d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMode: {fileID: 0}
   playerNumber: 0
   hp: 0
   maxHp: 30
@@ -5281,54 +5279,6 @@ MonoBehaviour:
   movement: {fileID: 0}
   groundDetection: {fileID: 0}
   canDoubleJump: 0
---- !u!114 &8666501700762898193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666501700762898201}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe06b1bd8b4c97469ed9ecb48e25dd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftInput: 276
-  rightInput: 275
-  upInput: 273
-  downInput: 274
-  jumpInput: 32
-  attackInput: 122
-  defendInput: 0
-  specialInput: 99
-  techInput: 120
---- !u!114 &8666501700762898192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666501700762898201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02af15b7e278d5e4eac2e0add19328c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8666501700762898195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8666501700762898201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63067f849e55f154b814a3ff7d548e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxFlushTimer: 0.33
-  flushTimer: 0
-  commandAux: 11
 --- !u!114 &8666501700762898194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10135,7 +10085,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1057150785
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 1
   m_SortMode: 0
