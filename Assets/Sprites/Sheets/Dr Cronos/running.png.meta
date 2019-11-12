@@ -1,15 +1,10 @@
 fileFormatVersion: 2
-guid: 80e881ef6b6a7c84cb7a117e8ae748aa
+guid: 026a71ee35a9576439bee17e01cc35c3
 TextureImporter:
   fileIDToRecycleName:
-    21300000: levitationForward_0
-    21300002: levitationForward_1
-    21300004: levitationForward_2
-    21300006: levitationForward_3
-    21300008: levitationForward_4
-    21300010: levitationForward_5
-    21300012: levitationForward_6
-    21300014: levitationForward_7
+    21300000: running_0
+    21300002: running_1
+    21300004: running_2
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -100,17 +95,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -125,67 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: levitationForward_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2d69700168306914f860694eeb1e76b9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: levitationForward_1
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87fb608ed1bc47f498d83d5da3db48af
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: levitationForward_2
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 512
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7176a898140812841bbebaf4786a3e7b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: levitationForward_3
+      name: running_0
       rect:
         serializedVersion: 2
         x: 0
@@ -199,13 +123,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e3130d12add5094ea18c454c6fc2485
+      spriteID: 85db4055d65b338439b9ecdabeee5d67
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levitationForward_4
+      name: running_1
       rect:
         serializedVersion: 2
         x: 256
@@ -219,33 +143,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44861a00445a61747ab67d07cb58e2a0
+      spriteID: 0b7ff7b19d2721c4e9566f3bbd07a10c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levitationForward_5
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c89ade334c4baef48b26bb1aeb1129f2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: levitationForward_6
+      name: running_2
       rect:
         serializedVersion: 2
         x: 0
@@ -259,27 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 808c10089cf009240813b3538b8fcdc6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: levitationForward_7
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3484316caf6870f4ca09489d482dc16e
+      spriteID: 29bd63bcfd9397543ad5fdc20bb58696
       vertices: []
       indices: 
       edges: []
@@ -287,7 +171,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5619f56e7b03b534d84a75ff4ee98c78
+    spriteID: 4524dbce068537d44a53a3a2df8dfaca
     vertices: []
     indices: 
     edges: []
