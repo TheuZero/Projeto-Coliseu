@@ -5,9 +5,9 @@ using UnityEngine;
 public class ProjectileAI : MonoBehaviour
 {
     Animator anim;
-    float projectileTimer;
+    float projectileTimer = 4.5f;
     float defaultProjectileTimer = 4.5f;
-    void Start()
+    void Awake()
     {
         projectileTimer = defaultProjectileTimer;
         anim = transform.GetChild(0).GetComponent<Animator>();
