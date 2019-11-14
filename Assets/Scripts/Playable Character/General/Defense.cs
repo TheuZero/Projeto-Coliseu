@@ -62,6 +62,7 @@ public class Defense : MonoBehaviour
     public void Damaged(AttackInfo attackInfo){
         status.ReduceHp(attackInfo.damage);
         if(hitstun > 0){
+            anim.SetTrigger("Hitstunned");
             isHitstunned = true;
             hitstunTimer = attackInfo.hitstun;
             hitlagTimer = attackInfo.hitlag;

@@ -6,12 +6,15 @@ public class DamageDetection : MonoBehaviour
 {
     GameObject parent;
     Defense defense;
+    Animator anim;
     void Start()
     {
         parent = transform.parent.gameObject;
         defense = parent.transform.parent.transform.parent.GetComponent<Defense>();
+        anim = parent.transform.parent.transform.parent.GetComponent<Animator>();
     }
     public void TakeDamage(AttackInfo attackInfo){
+        
         defense.GrabCancel();
         
         Debug.Log(parent.name + "Has taken " + attackInfo.damage + " damage, " + attackInfo.hitstun + " hitstun, " + attackInfo.hitlag + " hitlag");

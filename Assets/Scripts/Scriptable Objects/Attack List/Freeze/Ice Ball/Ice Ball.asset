@@ -21,7 +21,7 @@ MonoBehaviour:
     dmgMultiplier: 4
     knockback: 4
     knockup: 0
-    hitstun: 0.7
+    hitstun: 1
     hitlag: 0
   attackType: 1
   hitType: 1
