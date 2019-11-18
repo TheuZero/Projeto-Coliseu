@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     public float side;
     public int maxHit;
     int hitCounter;
+    public float startScale = 1;
 
     AttackInfo attackInfo;
     GameObject player;
@@ -37,7 +38,7 @@ public class Projectile : MonoBehaviour
         side = player.transform.localScale.x * (Mathf.Abs(projectileSize.x));
         particle.startRotation = Mathf.Sign(player.transform.localScale.x) * 1.5708f;
         gameObject.transform.position = new Vector2(player.transform.position.x + side * 0.8f, player.transform.position.y + 0.2f);
-        gameObject.transform.localScale = new Vector2(side, gameObject.transform.localScale.y);
+        gameObject.transform.localScale = new Vector2(side * startScale, gameObject.transform.localScale.y);
     }
 
 /*  void SetAttack(){

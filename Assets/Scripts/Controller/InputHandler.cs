@@ -8,6 +8,7 @@ public class InputHandler : MonoBehaviour
     AttackController attackFreeze;
     RikiAttackController attackRiki;
     CauboiAttackController attackCauboi;
+    CronosAttackController attackCronos;
 
 
     MovementController movement;
@@ -78,6 +79,13 @@ public class InputHandler : MonoBehaviour
                 SpecialDown += attackCauboi.SuperBeatVerify;
                 Debug.Log("cauboi");
                 break;
+            case "Dr Cronos":
+                attackCronos = GetComponent<CronosAttackController>();
+                AttackDown += attackCronos.ComboVerify;
+                TechDown += attackCronos.TechVerify;
+                SpecialDown += attackCronos.SuperBeatVerify;
+                break;
+
         }
         MoveRightDown = movement.TapRight;
         MoveRightHold = movement.WalkRight;

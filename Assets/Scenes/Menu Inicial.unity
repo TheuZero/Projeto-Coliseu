@@ -812,6 +812,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 390685579}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &89604789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7960831911878100938, guid: 39930c83e08ed3046a45bd9b9d83f06b,
+    type: 3}
+  m_PrefabInstance: {fileID: 390685579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &90158835 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7960831913716858298, guid: 39930c83e08ed3046a45bd9b9d83f06b,
@@ -5926,7 +5938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &774319598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7755,6 +7767,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 90158835}
   - {fileID: 235596093}
+  - {fileID: 1470004731}
   controller: {fileID: 438605692}
   cursor:
   - {fileID: 1253999656}
@@ -9624,6 +9637,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468291345}
   m_CullTransparentMesh: 0
+--- !u!114 &1470004731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7960831911878100938, guid: 39930c83e08ed3046a45bd9b9d83f06b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7960831913637186377}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1481353394
 GameObject:
   m_ObjectHideFlags: 0
@@ -12246,6 +12271,7 @@ MonoBehaviour:
   characters:
   - {fileID: 5171965130105187946, guid: be92e83ca3d614d4298ee1715cbb3308, type: 3}
   - {fileID: 3771227323996102757, guid: 9247ea485e0e01c44968dc285880d475, type: 3}
+  - {fileID: 2162087297383534888, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}
   toSpawn:
   - {fileID: 0}
   instantiatedPlayer: []
@@ -12805,7 +12831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1970017789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12939,6 +12965,7 @@ MonoBehaviour:
   buttons:
   - {fileID: 669309036}
   - {fileID: 1256298589}
+  - {fileID: 89604789}
   controller: {fileID: 438605692}
   cursor:
   - {fileID: 316489109}

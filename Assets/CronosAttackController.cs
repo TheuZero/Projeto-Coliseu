@@ -53,11 +53,11 @@ public class CronosAttackController : MonoBehaviour
     }
 
     void StateUpdate(){
-        anim.SetBool("isGrabbing", isGrabbing);
+        //anim.SetBool("isGrabbing", isGrabbing);
     }
 
     void FixedUpdate(){
-        StateUpdate();
+        //StateUpdate();
     }
 }
 
