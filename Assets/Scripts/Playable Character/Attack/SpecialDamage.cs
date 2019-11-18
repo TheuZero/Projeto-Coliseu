@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class SpecialDamage : MonoBehaviour
 {
     public AttackInfo attackInfo;
     public AttackData attackData;
+    public GameModeManager gameMode;
     int hitData = 0;
     GameObject player;
     float side;
@@ -14,6 +16,11 @@ public class SpecialDamage : MonoBehaviour
     void Awake(){
         attackInfo = new AttackInfo();
         player = transform.parent.transform.parent.transform.GetChild(0).gameObject;
+        try{
+            gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
+        }catch(Exception e){
+            Debug.Log("Gamemode não encontrado, debug");
+        }
     }
 
     void OnEnable(){
@@ -33,15 +40,22 @@ public class SpecialDamage : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if(IsTarget(col)){
+        if(CanHit(col)){
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
         }
         Debug.Log("colidiu");
     }
-    bool IsTarget(Collider2D col){
-        if(gameObject.tag == "Hit Box (Enemy)" && col.gameObject.tag == "Hurt Box (Player)"){
+    bool CanHit(Collider2D col){
+        if(col.gameObject.tag == "Hurt Box" && gameObject.tag != "Hit Box (Enemy)"){
+            return true;
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
+            return true;
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.Arcade && player.tag == "Enemy"){
             return true;
         }
         return false;
     }
+    
 }
