@@ -91,7 +91,7 @@ public class Status : MonoBehaviour, IHpNotifier
             gameObject.transform.parent.gameObject.SetActive(false);
         }
     }
-
+    
     public IEnumerator FreezeCharacter(float duration){
         while(duration > 0){
             duration -= Time.deltaTime;
@@ -132,6 +132,8 @@ public class Status : MonoBehaviour, IHpNotifier
             listeners.OnHpChange(hp, maxHp, playerNumber);
         }
     }
+
+
 
 }
 

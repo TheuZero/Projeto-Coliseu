@@ -4657,7 +4657,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4716,6 +4716,7 @@ MonoBehaviour:
   particle: {fileID: 0}
   speed: 4
   duration: 0.6
+  timeScale: 1
   side: 0
   maxHit: 0
   startScale: 1
@@ -9547,6 +9548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackData: {fileID: 11400000, guid: 1f9806f35dc6bfe4e8bc86c735a6dac8, type: 2}
   gameMode: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!61 &1248933472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19071,6 +19073,7 @@ MonoBehaviour:
   particle: {fileID: 0}
   speed: 7
   duration: 2
+  timeScale: 1
   side: 0
   maxHit: 0
   startScale: -1
@@ -19226,9 +19229,9 @@ GameObject:
   - component: {fileID: 4014504242357276864}
   - component: {fileID: 740996806356375768}
   - component: {fileID: 740996806356375769}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hit Box
-  m_TagString: Untagged
+  m_TagString: Hit Box
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19285,8 +19288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38d9fb5b64cba94790c73518fa4c5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackData: {fileID: 11400000, guid: 1f9806f35dc6bfe4e8bc86c735a6dac8, type: 2}
+  attackData: {fileID: 11400000, guid: e3e76d12bec8da0418f5a12f127e59bd, type: 2}
   gameMode: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!1 &1103375887527243596
 GameObject:
   m_ObjectHideFlags: 0
@@ -33739,6 +33743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackData: {fileID: 11400000, guid: 1f9806f35dc6bfe4e8bc86c735a6dac8, type: 2}
   gameMode: {fileID: 0}
+  projectile: {fileID: 0}
 --- !u!61 &8048116703812804582
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34041,6 +34046,7 @@ GameObject:
   - component: {fileID: 2826666188194586994}
   - component: {fileID: 7116110437737015965}
   - component: {fileID: 7116110437737015966}
+  - component: {fileID: 1112794345551969685}
   m_Layer: 10
   m_Name: Dr Cronos
   m_TagString: Player
@@ -34381,6 +34387,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGrabbing: 0
+--- !u!114 &1112794345551969685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116110437737015964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ddf5535a53f44b7fcc19ef35429d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iFrameDuration: 0.3
+  transparencyInterval: 0.05
+  hurtBox: {fileID: 2381743381049083638}
+  sprite: {fileID: 0}
 --- !u!1 &7259421900451937138
 GameObject:
   m_ObjectHideFlags: 0
@@ -34467,7 +34489,7 @@ Transform:
   m_GameObject: {fileID: 9035065136573322244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 5184725586107104581}
   m_Father: {fileID: 4052470333739621736}
@@ -39095,7 +39117,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -39154,6 +39176,7 @@ MonoBehaviour:
   particle: {fileID: 0}
   speed: 2
   duration: 0.35
+  timeScale: 1
   side: 0
   maxHit: 0
   startScale: 1

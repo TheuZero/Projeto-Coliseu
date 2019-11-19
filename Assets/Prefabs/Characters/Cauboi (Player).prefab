@@ -10067,6 +10067,7 @@ GameObject:
   - component: {fileID: 3771227324512616294}
   - component: {fileID: 3771227324512616299}
   - component: {fileID: 3771227324512616296}
+  - component: {fileID: 1664712895}
   m_Layer: 10
   m_Name: Cauboi
   m_TagString: Player
@@ -10406,6 +10407,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b34072e41f785144a81e38e424c5bc3c, type: 2}
   - {fileID: 11400000, guid: be271396f8fafd8419c1a16700eea615, type: 2}
   - {fileID: 11400000, guid: 6e4484ac83d69ac4fb29a41949babf93, type: 2}
+--- !u!114 &1664712895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3771227324512616312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ddf5535a53f44b7fcc19ef35429d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iFrameDuration: 0.3
+  transparencyInterval: 0.05
+  hurtBox: {fileID: 3771227324498115565}
+  sprite: {fileID: 0}
 --- !u!1 &3771227324797053782
 GameObject:
   m_ObjectHideFlags: 0

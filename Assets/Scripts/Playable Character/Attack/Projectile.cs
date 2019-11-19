@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public ParticleSystem particle;
     public float speed = 6;
     public float duration = 6f;
+    public float timeScale = 1f;
     public float side;
     public int maxHit;
     int hitCounter;
@@ -21,7 +22,7 @@ public class Projectile : MonoBehaviour
         particle = GetComponent<ParticleSystem>();
     }
     void OnEnable(){
-        StartCoroutine("Duration");
+        StartCoroutine(Duration(duration));
         SpawnReference();
         attackInfo.side = player.transform.localScale.x;
         side = player.transform.localScale.x;
@@ -29,7 +30,7 @@ public class Projectile : MonoBehaviour
     }
 
     void FixedUpdate(){
-        transform.Translate(Vector2.right * (speed * side) * Time.deltaTime);
+        transform.Translate(Vector2.right * (speed * side) * Time.deltaTime * timeScale);
     }
 
     void SpawnReference(){
@@ -50,8 +51,11 @@ public class Projectile : MonoBehaviour
         attackInfo.knockupDuration = 0.10f;
     }*/
 
-    IEnumerator Duration(){
-        yield return new WaitForSeconds(duration);
+    IEnumerator Duration(float duration){
+        while(duration > 0){
+            duration -= Time.deltaTime * timeScale;
+            yield return new WaitForFixedUpdate();
+        }
         gameObject.SetActive(false);
     }
     

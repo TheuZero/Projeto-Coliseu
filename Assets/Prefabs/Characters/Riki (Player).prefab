@@ -4943,7 +4943,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5171965130105187946}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5079,6 +5079,7 @@ GameObject:
   - component: {fileID: 5171965130876460598}
   - component: {fileID: 5171965130876460596}
   - component: {fileID: 5171965130876460597}
+  - component: {fileID: 404475898}
   m_Layer: 10
   m_Name: Riki
   m_TagString: Player
@@ -5420,6 +5421,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d1938dff77014d4f9e1af7e832b461a, type: 2}
   - {fileID: 11400000, guid: 48c51d6d19058e141abe1caf5dbac47d, type: 2}
   - {fileID: 11400000, guid: 892e5789fa6083c4282fae2b797c590b, type: 2}
+--- !u!114 &404475898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171965130876460549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ddf5535a53f44b7fcc19ef35429d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iFrameDuration: 0.3
+  transparencyInterval: 0.05
+  hurtBox: {fileID: 5171965131085797147}
+  sprite: {fileID: 0}
 --- !u!1 &5171965130922769499
 GameObject:
   m_ObjectHideFlags: 0
