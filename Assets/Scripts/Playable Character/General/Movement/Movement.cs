@@ -57,7 +57,7 @@ public class Movement : MonoBehaviour {
 
 	public void GroundMovement(float direction){
 		if(!isDashing){
-			transform.Translate(Vector2.right * movementSpeed * Time.deltaTime * direction);
+			transform.Translate(Vector2.right * movementSpeed * Time.deltaTime * status.timeFactor * direction);
 			Flip(direction);
 		}
 	}
@@ -71,7 +71,7 @@ public class Movement : MonoBehaviour {
 		jumpSquat = maxJumpSquat;
 		while(jumpSquat > 0){
 			initiateJump = true;
-			jumpSquat -= Time.deltaTime;
+			jumpSquat -= Time.deltaTime * status.timeFactor;
 			yield return new WaitForFixedUpdate();
 		}
 		initiateJump = false;
@@ -92,7 +92,7 @@ public class Movement : MonoBehaviour {
 			isJumping = true;
 			rb.velocity = new Vector2(0,0);
 			doubleJumping = true;
-			doubleJumpTimer -= Time.deltaTime;
+			doubleJumpTimer -= Time.deltaTime * status.timeFactor;
 			transform.Translate(Vector2.up * Time.deltaTime * status.timeFactor * jumpSpeed);
 			yield return new WaitForFixedUpdate();
 		}
@@ -101,15 +101,15 @@ public class Movement : MonoBehaviour {
 		yield break;
 	}
 	public void ActivateJump(){
-		transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
+		transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime * status.timeFactor);
 		isJumping = true;
 	}
 
 	public void Jump(Rigidbody2D rb){
 		if(isJumping){
 			if(jumpTimer < jumpMaxTimer){
-				jumpTimer += Time.deltaTime;
-				transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime);
+				jumpTimer += Time.deltaTime * status.timeFactor;
+				transform.Translate(Vector2.up * jumpSpeed * Time.deltaTime * status.timeFactor);
 				rb.velocity = new Vector2(rb.velocity.x, 0);
 			}else if(!doubleJumping){
 				isJumping = false;
@@ -150,10 +150,10 @@ public class Movement : MonoBehaviour {
 	public void Dash(float direction){
 		if(status.canMove){
 			if(isDashing){
-				dashTimer -= Time.deltaTime;
-				gravityTimer -= Time.deltaTime;
+				dashTimer -= Time.deltaTime * status.timeFactor;
+				gravityTimer -= Time.deltaTime * status.timeFactor;
 				if (dashTimer > 0){
-					transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * direction) * (4 * dashTimer));
+					transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * status.timeFactor * direction) * (4 * dashTimer));
 				}else if(dashTimer < 0.1){
 					isDashing = false;
 				}
@@ -166,10 +166,10 @@ public class Movement : MonoBehaviour {
 
 	public void AirDash(float direction){
 		if(isAirDashing){
-			airDashTimer -= Time.deltaTime;
-			gravityTimer -= Time.deltaTime;
+			airDashTimer -= Time.deltaTime * status.timeFactor;
+			gravityTimer -= Time.deltaTime * status.timeFactor;
 			if (airDashTimer > 0){
-				transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * lastDirection) * (4 * airDashTimer));
+				transform.Translate((Vector2.right * dashSpeed * Time.deltaTime * status.timeFactor * lastDirection) * (4 * airDashTimer));
 				if(gravityTimer > 0){
 					rb.velocity = new Vector3(0,-1,0);
 				}
@@ -194,7 +194,7 @@ public class Movement : MonoBehaviour {
 	public void Running(float direction){
 		ActivateRun(direction);
 		if(isRunning){
-			transform.Translate(Vector2.right * runSpeed * Time.deltaTime * direction);
+			transform.Translate(Vector2.right * runSpeed * Time.deltaTime * status.timeFactor * direction);
 			Flip(direction);
 		}
 	}

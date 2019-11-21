@@ -30,6 +30,7 @@ public class IFrames : MonoBehaviour
         StartCoroutine(Transparency(duration));
         while(duration > 0){
             hurtBox.SetActive(false);
+            Debug.Log("desativando hitbox");
             duration -= Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }

@@ -159,7 +159,6 @@ public class MovementController : MonoBehaviour {
 	}
 
 	void DashCheck(float lastKeyDir){
-		Debug.Log("dash check chamado");
 		if(lastKeyPressed == lastKeyDir && Time.time - lastPressed < doubleTapDashTimer ){
 			if(stateInfo.IsTag("Base")){
 				movement.ActivateDash(lastKeyDir);
@@ -167,7 +166,6 @@ public class MovementController : MonoBehaviour {
 			//anim.SetTrigger(isDashing);
 			lastKeyPressed = 0;
 		}else{
-			Debug.Log("dash check atribuido");
 			lastPressed = Time.time;
 			lastKeyPressed = lastKeyDir;
 		}		

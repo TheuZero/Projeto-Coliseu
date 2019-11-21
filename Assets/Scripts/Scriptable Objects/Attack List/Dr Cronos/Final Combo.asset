@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f2f01bc18ced0f840862bbd069a1689a, type: 3}
-  m_Name: Slash Ball
+  m_Name: Final Combo
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
-  attackName: Slash
+  attackName: 
   cooldown: 0
   manaCost: 0
   hitData:
   - manaGain: 0
-    dmgMultiplier: 10
+    dmgMultiplier: 5
     knockback: 3
     knockup: 2
     hitstun: 1

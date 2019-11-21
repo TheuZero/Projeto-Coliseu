@@ -18,6 +18,7 @@ TagManager:
   - Hurt Box (Player)
   - Hit Box (Enemy)
   - GameOver
+  - Debuff Field
   layers:
   - Default
   - TransparentFX
@@ -39,7 +40,7 @@ TagManager:
   - Enemy FoV
   - Hit Box (Enemy)
   - Hurt Box (Enemy)
-  - 
+  - Debuff Field
   - 
   - 
   - 

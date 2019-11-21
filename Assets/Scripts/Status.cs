@@ -113,6 +113,9 @@ public class Status : MonoBehaviour, IHpNotifier
         timeFactor = 1;
         anim.speed = 1;
     }
+    public void ActivateSlow(float slow, float duration){
+        StartCoroutine(SlowCharacter(slow, duration));
+    }
 
     public void AttachHpListeners(IHpListener listener){
         hpListeners.Add(listener);

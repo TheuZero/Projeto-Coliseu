@@ -5433,7 +5433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8349ddf5535a53f44b7fcc19ef35429d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iFrameDuration: 0.3
+  iFrameDuration: 1.3
   transparencyInterval: 0.05
   hurtBox: {fileID: 5171965131085797147}
   sprite: {fileID: 0}
@@ -5658,3 +5658,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d3e54ff6d2eb941bf05148344ea733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  status: {fileID: 5171965130876460599}

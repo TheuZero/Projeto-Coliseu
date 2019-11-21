@@ -80,7 +80,6 @@ public class InputOrganizer : MonoBehaviour
                 buffer[i].command = 0;
                 buffer[i].used = true;
             }
-            Debug.Log("Flushed buffer");
             flushTimer = 0;
         }
     }

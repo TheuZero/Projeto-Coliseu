@@ -19,10 +19,10 @@ MonoBehaviour:
   hitData:
   - manaGain: 0
     dmgMultiplier: 3
-    knockback: 4
+    knockback: 0.3
     knockup: 0
     hitstun: 0.4
     hitlag: 0
-  attackType: 1
+  attackType: 0
   hitType: 1
   movementData: {fileID: 11400000, guid: c5a0023b89e46fa439a24335a15bee16, type: 2}

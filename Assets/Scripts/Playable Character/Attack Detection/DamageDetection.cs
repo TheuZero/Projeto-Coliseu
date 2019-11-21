@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageDetection : MonoBehaviour
 {
+    public Status status;
     GameObject parent;
     Defense defense;
     Animator anim;
