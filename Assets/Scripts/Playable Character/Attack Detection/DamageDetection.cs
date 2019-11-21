@@ -24,6 +24,7 @@ public class DamageDetection : MonoBehaviour
     }
     public void Grabbed(Vector3 position, bool grabbed, float side){
         defense.Grabbed(position, grabbed, side);
+        defense.anim.SetTrigger("Hitstunned");
     }
     public void GrabCancel(){
         defense.GrabCancel();

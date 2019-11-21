@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1301,46 +1301,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1248933473, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}
-      propertyPath: attackData
-      value: 
-      objectReference: {fileID: 11400000, guid: 66bdbddd063b964458c2e0c3a90842bf,
-        type: 2}
-    - target: {fileID: 1908181948, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1908181948, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1908181948, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1908181948, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}
-      propertyPath: m_Color.a
-      value: 0.43529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 313243730509258184, guid: afd76fefc35ef7b40bbcca36bd87be74,
+    - target: {fileID: 9191878072809484455, guid: afd76fefc35ef7b40bbcca36bd87be74,
         type: 3}
-      propertyPath: m_Offset.y
-      value: -0.048793018
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 313243730509258184, guid: afd76fefc35ef7b40bbcca36bd87be74,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.9836291
+    - target: {fileID: 74204589, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}
+      propertyPath: duration
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 313243730509258184, guid: afd76fefc35ef7b40bbcca36bd87be74,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: -0.091015935
-      objectReference: {fileID: 0}
-    - target: {fileID: 313243730509258184, guid: afd76fefc35ef7b40bbcca36bd87be74,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.29244447
+    - target: {fileID: 74204589, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}
+      propertyPath: yOffset
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afd76fefc35ef7b40bbcca36bd87be74, type: 3}

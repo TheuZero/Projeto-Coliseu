@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class IcePillar : MonoBehaviour
 {   
-    public float duration = 3;
-    GameObject player;
+    public float duration = 6;
+    public GameObject player;
+    public float xOffset = 0;
+    public float yOffset = 3f;
     float side;
     void Awake(){
-        player = transform.parent.transform.parent.GetChild(0).gameObject;
+        //player = transform.parent.transform.parent.GetChild(0).gameObject;
     }
     void OnEnable(){
         SpawnReference();
@@ -21,8 +23,8 @@ public class IcePillar : MonoBehaviour
     void SpawnReference(){
         Vector2 pillarSize = transform.localScale;
         side = player.transform.localScale.x * (Mathf.Abs(pillarSize.x));
-        gameObject.transform.position = new Vector2(player.transform.position.x + side * 0.8f, player.transform.position.y + (pillarSize.y * 1.24f) * 0.12f);
-        gameObject.transform.localScale = new Vector2(side, gameObject.transform.localScale.y);
+        gameObject.transform.position = new Vector3(player.transform.position.x + side * xOffset, player.transform.position.y + yOffset, 0);
+        gameObject.transform.localScale = new Vector3(side, gameObject.transform.localScale.y, 1);
     }
     IEnumerator Duration(){
         yield return new WaitForSeconds(duration);
