@@ -16,7 +16,7 @@ public class Patrol : MonoBehaviour
     public GameObject alertBox;
     public GameObject patrolBox;
 
-    void Start()
+    void Awake()
     {
         player = transform.GetChild(0).gameObject;
         moveController = player.GetComponent<MovementController>();

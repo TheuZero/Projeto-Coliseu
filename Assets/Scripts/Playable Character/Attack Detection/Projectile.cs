@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Projectile : MonoBehaviour
 {
+    public GameModeManager gameMode;
     public ParticleSystem particle;
     public float speed = 6;
     public float duration = 6f;
@@ -20,6 +22,11 @@ public class Projectile : MonoBehaviour
         attackInfo = new AttackInfo();
         player = transform.parent.transform.parent.transform.GetChild(0).gameObject;
         particle = GetComponent<ParticleSystem>();
+        try{
+            gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
+        }catch(Exception e){
+            Debug.Log("Gamemode não encontrado, debug");
+        }
     }
     void OnEnable(){
         StartCoroutine(Duration(duration));
@@ -66,5 +73,19 @@ public class Projectile : MonoBehaviour
             gameObject.SetActive(false);
         }
         
+    }
+
+    bool CanHit(Collider2D col){
+        bool confirm = false;
+        if(col.gameObject.tag == "Hurt Box" && gameObject.tag != "Hit Box (Enemy)"){
+            confirm = true;
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
+            confirm = true;
+        }
+        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.Arcade && player.tag == "Enemy"){
+            confirm = true;
+        }
+        return confirm;
     }
 }

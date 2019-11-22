@@ -58,9 +58,6 @@ public class SpecialDamage : MonoBehaviour
         if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.Arcade && player.tag == "Enemy"){
             confirm = true;
         }
-        if(confirm){
-            StartCoroutine(HitStop(attackInfo.hitlag));
-        }
         return confirm;
     }
     

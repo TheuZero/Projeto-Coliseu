@@ -5051,6 +5051,7 @@ GameObject:
   - component: {fileID: 8666501700762898205}
   - component: {fileID: 8666501700762898204}
   - component: {fileID: 8666501700762898207}
+  - component: {fileID: 2773199741109516045}
   m_Layer: 10
   m_Name: Riki
   m_TagString: Enemy
@@ -5291,6 +5292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a2c804c5f10fb40b59761679da40cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   weight: 10
 --- !u!114 &8666501700762898205
 MonoBehaviour:
@@ -5342,6 +5344,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d1938dff77014d4f9e1af7e832b461a, type: 2}
   - {fileID: 11400000, guid: 48c51d6d19058e141abe1caf5dbac47d, type: 2}
   - {fileID: 11400000, guid: 892e5789fa6083c4282fae2b797c590b, type: 2}
+--- !u!114 &2773199741109516045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666501700762898201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ddf5535a53f44b7fcc19ef35429d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iFrameDuration: 0.3
+  transparencyInterval: 0.05
+  hurtBox: {fileID: 8666501700830633943}
+  sprite: {fileID: 0}
 --- !u!1 &8666501700830633943
 GameObject:
   m_ObjectHideFlags: 0
@@ -5412,6 +5430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d3e54ff6d2eb941bf05148344ea733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  status: {fileID: 0}
 --- !u!1 &8666501700855820350
 GameObject:
   m_ObjectHideFlags: 0
