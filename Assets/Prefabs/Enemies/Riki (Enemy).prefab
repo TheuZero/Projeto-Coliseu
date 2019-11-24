@@ -5358,7 +5358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iFrameDuration: 0
   transparencyInterval: 0.05
-  hurtBox: {fileID: 0}
+  hurtBox: {fileID: 8666501700830633943}
   sprite: {fileID: 0}
 --- !u!1 &8666501700830633943
 GameObject:

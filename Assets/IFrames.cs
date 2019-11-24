@@ -8,12 +8,13 @@ public class IFrames : MonoBehaviour
     public float transparencyInterval = 0.05f;
     public GameObject hurtBox;
     public SpriteRenderer sprite;
-    Color nColor = new Color(1,1,1,1);
+    Color nColor;
     Color iColor = new Color(1,1,1,0.3f);
 
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        nColor = sprite.color;
     }
 
     // Update is called once per frame
@@ -30,7 +31,6 @@ public class IFrames : MonoBehaviour
         StartCoroutine(Transparency(duration));
         while(duration > 0){
             hurtBox.SetActive(false);
-            Debug.Log("desativando hitbox");
             duration -= Time.deltaTime;
             yield return new WaitForFixedUpdate();
         }

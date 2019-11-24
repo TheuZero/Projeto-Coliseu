@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     public float startScale = 1;
 
     AttackInfo attackInfo;
-    GameObject player;
+    public GameObject player;
     
     void Awake(){
         attackInfo = new AttackInfo();
@@ -67,12 +67,12 @@ public class Projectile : MonoBehaviour
     }
     
     void OnTriggerEnter2D(Collider2D col){
-        
-        hitCounter -= 1;
-        if(hitCounter <= 0){
-            gameObject.SetActive(false);
+        if(CanHit(col)){
+            hitCounter -= 1;
+            if(hitCounter <= 0){
+                gameObject.SetActive(false);
+            }
         }
-        
     }
 
     bool CanHit(Collider2D col){

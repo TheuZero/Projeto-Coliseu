@@ -724,7 +724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   iFrameDuration: 0
   transparencyInterval: 0.05
-  hurtBox: {fileID: 0}
+  hurtBox: {fileID: 1316935768757958068}
   sprite: {fileID: 0}
 --- !u!1 &1316935769052203325
 GameObject:
@@ -1285,12 +1285,17 @@ PrefabInstance:
     - target: {fileID: 4636696377735807072, guid: 2fa3c67c689e8284e8dc0b02db408df3,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4636696377735807072, guid: 2fa3c67c689e8284e8dc0b02db408df3,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636696377735807072, guid: 2fa3c67c689e8284e8dc0b02db408df3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hit Box (Enemy)
       objectReference: {fileID: 0}
     - target: {fileID: 4636696377736240192, guid: 2fa3c67c689e8284e8dc0b02db408df3,
         type: 3}

@@ -103,6 +103,7 @@ public class Defense : MonoBehaviour
         }
         if(knockup <= 0 ){
             knockup = 0;
+            anim.SetBool(fall, false);
         }
     }
     public void Grabbed(Vector3 position, bool grabbed, float side){

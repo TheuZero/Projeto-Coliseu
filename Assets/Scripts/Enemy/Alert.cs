@@ -37,7 +37,6 @@ public class Alert : MonoBehaviour
                 movement.CancelWalk();
                 Attack(player.transform.position.x - target.x);
             }
-            Debug.Log(player.transform.position.x - target.x );
         }
     }
 
