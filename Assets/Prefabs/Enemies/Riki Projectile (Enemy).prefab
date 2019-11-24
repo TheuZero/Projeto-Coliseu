@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d3e54ff6d2eb941bf05148344ea733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  status: {fileID: 0}
 --- !u!1 &1316935768958854522
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +404,7 @@ GameObject:
   - component: {fileID: 1316935768958854527}
   - component: {fileID: 1316935768958854524}
   - component: {fileID: 1316935768958854521}
+  - component: {fileID: 4050875374245519270}
   m_Layer: 10
   m_Name: Riki
   m_TagString: Enemy
@@ -643,6 +645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a2c804c5f10fb40b59761679da40cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   weight: 10
 --- !u!114 &1316935768958854526
 MonoBehaviour:
@@ -707,6 +710,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 6111505610894079357}
+--- !u!114 &4050875374245519270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316935768958854522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8349ddf5535a53f44b7fcc19ef35429d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iFrameDuration: 0
+  transparencyInterval: 0.05
+  hurtBox: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!1 &1316935769052203325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1142,7 +1161,7 @@ GameObject:
   - component: {fileID: 1479633909339529728}
   - component: {fileID: 1479633909339529758}
   - component: {fileID: 1479633909339529759}
-  m_Layer: 18
+  m_Layer: 11
   m_Name: HitBox
   m_TagString: Hit Box (Enemy)
   m_Icon: {fileID: 0}
@@ -1176,6 +1195,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackData: {fileID: 11400000, guid: 1f9806f35dc6bfe4e8bc86c735a6dac8, type: 2}
+  gameMode: {fileID: 0}
+  projectile: {fileID: 0}
+  player: {fileID: 1316935768958854522}
 --- !u!61 &1479633909339529759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1243,20 +1265,10 @@ MonoBehaviour:
   particle: {fileID: 0}
   speed: 6
   duration: 2
+  timeScale: 1
   side: 0
   maxHit: 0
---- !u!114 &1479633909313388027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6111505610894079357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ed203f0eb521cb449d513b93ac9dfe8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  startScale: 1
 --- !u!1001 &1479633907705804061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1426,15 +1438,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fa3c67c689e8284e8dc0b02db408df3, type: 3}
---- !u!1 &6111505610894079357 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4636696377735807072, guid: 2fa3c67c689e8284e8dc0b02db408df3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1479633907705804061}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6111505610893846877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4636696377736240192, guid: 2fa3c67c689e8284e8dc0b02db408df3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1479633907705804061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6111505610894079357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4636696377735807072, guid: 2fa3c67c689e8284e8dc0b02db408df3,
     type: 3}
   m_PrefabInstance: {fileID: 1479633907705804061}
   m_PrefabAsset: {fileID: 0}

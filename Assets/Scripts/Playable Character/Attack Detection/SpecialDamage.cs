@@ -10,13 +10,13 @@ public class SpecialDamage : MonoBehaviour
     public GameModeManager gameMode;
     public Projectile projectile;
     int hitData = 0;
-    GameObject player;
+    public GameObject player;
     float side;
 
 
     void Awake(){
         attackInfo = new AttackInfo();
-        player = transform.parent.transform.parent.transform.GetChild(0).gameObject;
+        player = transform.parent.transform.parent.transform.parent.transform.GetChild(0).gameObject;
         projectile = transform.parent.GetComponent<Projectile>();
         try{
             gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
@@ -57,9 +57,6 @@ public class SpecialDamage : MonoBehaviour
         }
         if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.Arcade && player.tag == "Enemy"){
             confirm = true;
-        }
-        if(confirm){
-            StartCoroutine(HitStop(attackInfo.hitlag));
         }
         return confirm;
     }

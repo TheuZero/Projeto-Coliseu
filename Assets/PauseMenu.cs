@@ -26,6 +26,9 @@ public class PauseMenu : MonoBehaviour
 
     
     public void GoToScene(int sceneIndex){
+        if(sceneIndex == 0){
+            Score.score = 0;
+        }
         SceneManager.LoadScene(sceneIndex, LoadSceneMode.Single);
     }
     public void DisablePause(){

@@ -9986,7 +9986,7 @@ GameObject:
   - component: {fileID: 3771227324498115563}
   m_Layer: 12
   m_Name: Hurt Box
-  m_TagString: Hurt Box
+  m_TagString: Hurt Box (Player)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10359,6 +10359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a2c804c5f10fb40b59761679da40cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   weight: 10
 --- !u!114 &3771227324512616294
 MonoBehaviour:

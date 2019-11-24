@@ -9549,6 +9549,7 @@ MonoBehaviour:
   attackData: {fileID: 11400000, guid: 66bdbddd063b964458c2e0c3a90842bf, type: 2}
   gameMode: {fileID: 0}
   projectile: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &1248933472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23840,8 +23841,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1569948723
+  m_SortingLayer: 4
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: d7f3660104100f14c8e65e84dd7c8ad7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.43529412}
@@ -23917,6 +23918,7 @@ MonoBehaviour:
   player: {fileID: 2381743381049083638}
   hitted: []
   secondsSlowed: 4
+  slowEffect: 0.7
 --- !u!1 &423464437538411848
 GameObject:
   m_ObjectHideFlags: 0
@@ -24052,6 +24054,7 @@ MonoBehaviour:
   attackData: {fileID: 11400000, guid: e3e76d12bec8da0418f5a12f127e59bd, type: 2}
   gameMode: {fileID: 0}
   projectile: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &1103375887527243596
 GameObject:
   m_ObjectHideFlags: 0
@@ -24079,7 +24082,7 @@ Transform:
   m_GameObject: {fileID: 1103375887527243596}
   m_LocalRotation: {x: -0, y: -0, z: -0.6427876, w: 0.7660445}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 538872147864310466}
   m_RootOrder: 0
@@ -28724,9 +28727,9 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1569948723
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_RenderMode: 1
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -28939,7 +28942,7 @@ GameObject:
   - component: {fileID: 7265489324354211829}
   m_Layer: 12
   m_Name: Hurt Box
-  m_TagString: Hurt Box
+  m_TagString: Hurt Box (Player)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33788,7 +33791,7 @@ Transform:
   m_GameObject: {fileID: 3571972676692435541}
   m_LocalRotation: {x: -0, y: -0, z: 0.6427876, w: 0.7660445}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 538872147864310466}
   m_RootOrder: 1
@@ -38433,8 +38436,8 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1569948723
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_RenderMode: 1
   m_SortMode: 0
@@ -38537,9 +38540,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38d9fb5b64cba94790c73518fa4c5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackData: {fileID: 11400000, guid: 1f9806f35dc6bfe4e8bc86c735a6dac8, type: 2}
+  attackData: {fileID: 11400000, guid: 4dfa0603865bd554988d18c0c4f3e208, type: 2}
   gameMode: {fileID: 0}
   projectile: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &8048116703812804582
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38858,7 +38862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7116110437737015964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6391809780056393460}
@@ -44022,7 +44026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7697627552035404977
 Transform:
   m_ObjectHideFlags: 0
@@ -44032,7 +44036,7 @@ Transform:
   m_GameObject: {fileID: 9191878072809484455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 538872147864310466}
   - {fileID: 456905789707582792}
@@ -48720,4 +48724,4 @@ MonoBehaviour:
   duration: 3
   player: {fileID: 7116110437737015964}
   xOffset: 0
-  yOffset: 3
+  yOffset: 1

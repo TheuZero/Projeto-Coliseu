@@ -9,6 +9,7 @@ public class SlowingBox : MonoBehaviour
     GameModeManager gameMode;
     public List<GameObject> hitted = new List<GameObject>();
     public float secondsSlowed = 4f;
+    public float slowEffect = 0.15f;
     void Start(){
         if(player == null){
             player = transform.parent.transform.parent.transform.parent.gameObject;
@@ -25,7 +26,7 @@ public class SlowingBox : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject != player && CanHit(col) && !hitted.Contains(col.gameObject)){
-            col.gameObject.GetComponent<DamageDetection>().status.ActivateSlow(0.15f, secondsSlowed);
+            col.gameObject.GetComponent<DamageDetection>().status.ActivateSlow(slowEffect, secondsSlowed);
             Debug.Log("Slowing box");
             hitted.Add(col.gameObject);
         }

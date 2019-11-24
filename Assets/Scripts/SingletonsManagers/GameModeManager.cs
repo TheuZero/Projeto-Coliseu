@@ -33,6 +33,7 @@ public class GameModeManager : MonoBehaviour
             text.gameObject.SetActive(true);
             finalMessage = "Você fez "+ Score.score + " pontos";
             text.text = finalMessage;
+            Score.score = 0;
             StartCoroutine(BackToMenu());
         }else if(playersAlive == 1 && currentGameMode == GameModeManager.GameMode.PVP){
             text = referenceHolder.gameOverText;

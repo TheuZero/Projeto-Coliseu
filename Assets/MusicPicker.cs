@@ -7,7 +7,7 @@ public class MusicPicker : MonoBehaviour
 {
     AudioSource audioSource;
     public AudioClip[] musics;
-    public float volume;
+    public float volume = 1f;
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
