@@ -11,9 +11,9 @@ public class DamageDetection : MonoBehaviour
     void Start()
     {
         parent = transform.parent.transform.parent.transform.parent.gameObject;
-        status = parent.GetComponent<Status>();
         defense = parent.GetComponent<Defense>();
-        anim = parent.transform.parent.transform.parent.GetComponent<Animator>();
+        anim = parent.GetComponent<Animator>();
+        status = parent.GetComponent<Status>();
     }
     public void TakeDamage(AttackInfo attackInfo){
         

@@ -48721,7 +48721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27aac929705ce04ca50c7c5335137f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 3
+  duration: 6
   player: {fileID: 7116110437737015964}
   xOffset: 0
   yOffset: 1

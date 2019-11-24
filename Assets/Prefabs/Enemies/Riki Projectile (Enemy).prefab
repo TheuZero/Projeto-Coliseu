@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 1316935768423624952}
   m_Layer: 11
   m_Name: Neutral
-  m_TagString: Hit Box
+  m_TagString: Hit Box (Enemy)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1262,6 +1262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d279a35ac75f5df439eed10a56c0ecf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMode: {fileID: 0}
   particle: {fileID: 0}
   speed: 6
   duration: 2
@@ -1284,7 +1285,7 @@ PrefabInstance:
     - target: {fileID: 4636696377735807072, guid: 2fa3c67c689e8284e8dc0b02db408df3,
         type: 3}
       propertyPath: m_Layer
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4636696377735807072, guid: 2fa3c67c689e8284e8dc0b02db408df3,
         type: 3}
