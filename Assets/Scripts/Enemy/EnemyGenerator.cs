@@ -20,6 +20,10 @@ public class EnemyGenerator : MonoBehaviour
     void Update(){
         if(!SpawnCooldown)
         StartCoroutine(SpawnEnemy());
+
+        if(Input.GetKeyDown("r")){
+            Spawn(0);
+        }
     }
 
     IEnumerator SpawnEnemy(){
