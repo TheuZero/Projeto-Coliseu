@@ -15,7 +15,6 @@ public class ReferenceHolder : MonoBehaviour
     public List<IHpNotifier> hpNotifiers = new List<IHpNotifier>();
     public List<IHpListener> hpListeners = new List<IHpListener>();
     public GameObject pauseScreen;
-    public static CharacterManager statichpnotifier;
     float temporaryHp = 30;
 
     void Awake()

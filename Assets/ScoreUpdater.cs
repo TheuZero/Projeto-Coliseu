@@ -18,7 +18,6 @@ public class ScoreUpdater : MonoBehaviour
         }
     }
     IEnumerator textUpdate(){
-        updateTimer = 0.4f;
         updating = true;
         yield return new WaitForSeconds(updateTimer);
         texto.text = Score.score.ToString();
