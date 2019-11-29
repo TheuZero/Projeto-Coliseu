@@ -13,6 +13,9 @@ public class SpecialDamage : MonoBehaviour
     public GameObject player;
     float side;
 
+    public GameObject hitEffect;
+    public int effectIndex = 0;
+
 
     void Awake(){
         attackInfo = new AttackInfo();

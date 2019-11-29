@@ -2132,6 +2132,26 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 470669829}
+    - target: {fileID: 6982536092090928860, guid: a20be7cfc2959494e88107f3341560f8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -373
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982536092090928860, guid: a20be7cfc2959494e88107f3341560f8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 286
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982536092945896108, guid: a20be7cfc2959494e88107f3341560f8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 337
+      objectReference: {fileID: 0}
+    - target: {fileID: 6982536092945896108, guid: a20be7cfc2959494e88107f3341560f8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 286
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a20be7cfc2959494e88107f3341560f8, type: 3}
 --- !u!1 &427088443 stripped
