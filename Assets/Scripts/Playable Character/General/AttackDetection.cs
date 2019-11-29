@@ -17,6 +17,9 @@ public class AttackDetection : MonoBehaviour
     public float attack;
     List<MonoBehaviour> subjects = new List<MonoBehaviour>();
 
+    public GameObject hitEffect;
+    public int effectIndex = 0;
+
     void Start(){
         if(player == null){
             player = transform.parent.transform.parent.transform.parent.gameObject;
@@ -30,6 +33,9 @@ public class AttackDetection : MonoBehaviour
         anim = player.GetComponent<Animator>();
         status = player.GetComponent<Status>();
         attackInfo = new AttackInfo();
+
+        //adicionar play e stop junto com set de posição no objeto de feito
+        hitEffect = player.transform.parent.transform.GetChild(2).GetChild(effectIndex).gameObject;
 
         SubscribeOnHit();
     }
