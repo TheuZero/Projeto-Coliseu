@@ -45,7 +45,7 @@ public class CronosAttackController : MonoBehaviour
         if(status.canSpecial && gd.isGrounded || isGrabbing && gd.isGrounded){ 
             status.DisableActions();
             anim.SetTrigger("grab");
-            anim.SetBool("isGrabbing", false);
+            //anim.SetBool("isGrabbing", false);
             isGrabbing = false;
             verification = true;
         }

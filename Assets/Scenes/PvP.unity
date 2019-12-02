@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,7 +367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577545048}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.802, z: 86.578125}
+  m_LocalPosition: {x: 0.48, y: 3.802, z: 1}
   m_LocalScale: {x: 1, y: 6.820995, z: 1}
   m_Children: []
   m_Father: {fileID: 747378606}
@@ -754,7 +754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986302961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.5, y: 3.802, z: 86.578125}
+  m_LocalPosition: {x: 18.5, y: 3.802, z: 1}
   m_LocalScale: {x: 1, y: 6.8209996, z: 1}
   m_Children: []
   m_Father: {fileID: 747378606}
@@ -2503,7 +2503,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402115356}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0.48, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2546,7 +2546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449935152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: -1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1247404241}
@@ -2667,7 +2667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629729007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6405196, y: 0, z: -10}
+  m_LocalPosition: {x: 0.64050484, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2975,7 +2975,7 @@ PrefabInstance:
     - target: {fileID: 4085501303705561942, guid: caacdf77a57cb3c4dbaa533ab32a7052,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.94338083
+      value: -0.9433956
       objectReference: {fileID: 0}
     - target: {fileID: 4085501303705561942, guid: caacdf77a57cb3c4dbaa533ab32a7052,
         type: 3}

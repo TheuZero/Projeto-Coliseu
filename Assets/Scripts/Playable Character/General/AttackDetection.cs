@@ -17,7 +17,7 @@ public class AttackDetection : MonoBehaviour
     public float attack;
     List<MonoBehaviour> subjects = new List<MonoBehaviour>();
 
-    public GameObject hitEffect;
+    public ParticleSystem hitEffect;
     public int effectIndex = 0;
 
     void Start(){
@@ -35,7 +35,7 @@ public class AttackDetection : MonoBehaviour
         attackInfo = new AttackInfo();
 
         //adicionar play e stop junto com set de posição no objeto de feito
-        hitEffect = player.transform.parent.transform.GetChild(2).GetChild(effectIndex).gameObject;
+        hitEffect = player.transform.parent.transform.GetChild(2).GetChild(effectIndex).GetComponent<ParticleSystem>();
 
         SubscribeOnHit();
     }
@@ -72,23 +72,19 @@ public class AttackDetection : MonoBehaviour
             Debug.Log("wtf");
         }
         if(CanHit(col)){
-
             AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
-//            Debug.Log(gameObject.name + "Did " + attack.attackInfo.damage + " damage and " + attack.attackInfo.hitstun + " hitstun");
-            //col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackClass.attackInfo);
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
             StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
+            hitEffect.transform.position = new Vector3(col.transform.position.x, col.transform.position.y, 0);
+            if(Mathf.Sign(player.transform.localScale.x) == 1){
+                hitEffect.transform.eulerAngles = new Vector3(0,0,0);
+            }else{
+                hitEffect.transform.eulerAngles = new Vector3(0,180,0);
+            }
+            hitEffect.Stop();
+            hitEffect.Play();
         }
-        /*if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.PVP){
-            AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
-            col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
-            StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
-        }
-        if(col.gameObject.tag == "Hurt Box (Player)" && gameMode.currentGameMode == GameModeManager.GameMode.Arcade && player.tag == "Enemy"){
-            AttackSideOrigin(Mathf.Sign(player.transform.localScale.x));
-            col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
-            StartCoroutine(status.FreezeCharacter(attackInfo.hitlag));
-        }*/
+        
     }
 
     bool CanHit(Collider2D col){

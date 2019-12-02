@@ -17,6 +17,7 @@ public class CharacterSelector : MonoBehaviour
     public GameObject[] cursor;
     public GameObject[] cursorConfirm;
     public CharacterManager characterManager;
+    public GameObject[] selectedCharacter;
     
     public int playerNum = 2;
     int[] playerIndex;
@@ -37,6 +38,9 @@ public class CharacterSelector : MonoBehaviour
         DisablePlayer(1);
     }
     void OnEnable(){
+        for(int i = 0; i < 2; i++){
+            selectedCharacter[i].GetComponent<Image>().enabled = false;
+        }
         actualScreen = gameObject;
         if(actualScreen == arcade){
             gameMode.currentGameMode = GameModeManager.GameMode.Arcade;
@@ -60,6 +64,7 @@ public class CharacterSelector : MonoBehaviour
             }
             if(Input.GetKeyDown(controller.p1AttackInput)){
                 Confirm(0);
+                SetSelectedImage(0, playerIndex[0]);
                 characterManager.SetSpawnCharacter(0, playerIndex[0]);
             }
             if(Input.GetKeyDown(controller.p1TechInput)){
@@ -71,6 +76,7 @@ public class CharacterSelector : MonoBehaviour
             }
             if(Input.GetKeyDown(controller.p1TechInput)){
                 Cancel(0);
+                RemoveSelectedImage(0);
                 characterManager.RemoveSpawnCharacter(0);
             }
         }
@@ -84,6 +90,7 @@ public class CharacterSelector : MonoBehaviour
             }
             if(Input.GetKeyDown(controller.p2AttackInput)){
                 Confirm(1);
+                SetSelectedImage(1, playerIndex[1]);
                 characterManager.SetSpawnCharacter(1, playerIndex[1]);
             }
             if(Input.GetKeyDown(controller.p2TechInput)){
@@ -95,6 +102,7 @@ public class CharacterSelector : MonoBehaviour
             }
             if(Input.GetKeyDown(controller.p2TechInput)){
                 Cancel(1);
+                RemoveSelectedImage(1);
                 characterManager.RemoveSpawnCharacter(1);
             }
         }
@@ -189,6 +197,15 @@ public class CharacterSelector : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void SetSelectedImage(int playerNum, int charNum){
+        selectedCharacter[playerNum].GetComponent<Image>().enabled = true;
+        selectedCharacter[playerNum].GetComponent<Image>().sprite = buttons[charNum].GetComponent<Image>().sprite;
+    }
+
+    public void RemoveSelectedImage(int playerNum){
+        selectedCharacter[playerNum].GetComponent<Image>().enabled = false;
     }
 
 }

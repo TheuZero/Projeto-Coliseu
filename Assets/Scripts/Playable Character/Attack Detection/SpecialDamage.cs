@@ -13,9 +13,8 @@ public class SpecialDamage : MonoBehaviour
     public GameObject player;
     float side;
 
-    public GameObject hitEffect;
+    public ParticleSystem hitEffect;
     public int effectIndex = 0;
-
 
     void Awake(){
         attackInfo = new AttackInfo();
@@ -26,6 +25,8 @@ public class SpecialDamage : MonoBehaviour
         }catch(Exception e){
             Debug.Log("Gamemode não encontrado, debug");
         }
+
+        hitEffect = player.transform.parent.transform.GetChild(2).GetChild(effectIndex).GetComponent<ParticleSystem>();
     }
 
     void OnEnable(){
@@ -47,6 +48,13 @@ public class SpecialDamage : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if(CanHit(col)){
             col.gameObject.GetComponent<DamageDetection>().TakeDamage(attackInfo);
+            hitEffect.transform.position = col.transform.position;
+            if(Mathf.Sign(player.transform.localScale.x) == 1){
+                hitEffect.transform.eulerAngles = new Vector3(0,0,0);
+            }else{
+                hitEffect.transform.eulerAngles = new Vector3(0,0,180);
+            }
+            hitEffect.Play();
         }
         Debug.Log("colidiu");
     }
