@@ -21,7 +21,7 @@ class DBConnect
     private void Initialize()
     {
         server = "localhost";
-        database = "";
+        database = "FightersOfColosseum";
         uid = "root";
         password = "";
         string connectionString;
@@ -75,58 +75,58 @@ class DBConnect
         }
     }
 
-    //Insert statement
-    public void Insert()
-    {
-        string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
 
-        //open connection
+    public void InsertScore(int score, int charId, int userId)
+    {
+        string query = $"INSERT INTO tb_pontuacoes (pontuacao, fk_id_personagem, fk_id_usuario,) VALUES('{score}', '{charId}', '{userId}')";
+
+        
         if (this.OpenConnection() == true)
         {
-            //create command and assign the query and connection from the constructor
             MySqlCommand cmd = new MySqlCommand(query, connection);
-            
-            //Execute command
             cmd.ExecuteNonQuery();
-
-            //close connection
             this.CloseConnection();
         }
     }
 
-    //Update statement
-    public void Update()
+    public void RegisterUser(string user, string password)
     {
-        string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+        string query = $"INSERT INTO tb_usuario (usuario, senha) VALUES('{user}', '{password}')";
 
-        //Open connection
+        
         if (this.OpenConnection() == true)
         {
-            //create mysql command
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            cmd.ExecuteNonQuery();
+            this.CloseConnection();
+        }
+    }
+
+    public void UpdateSenha(int userId, string newPassword)
+    {
+        string query = $"UPDATE tb_usuario SET senha = '{newPassword}' WHERE id_usuario='{userId}'";
+
+        if (this.OpenConnection() == true)
+        {
             MySqlCommand cmd = new MySqlCommand();
-            //Assign the query using CommandText
             cmd.CommandText = query;
-            //Assign the connection using Connection
             cmd.Connection = connection;
 
-            //Execute query
             cmd.ExecuteNonQuery();
-
-            //close connection
             this.CloseConnection();
         }
     }
 
     //Select statement
-    public List< string >[] Select()
+    public List<string>[] SelectUsuario()
     {
-        string query = "SELECT * FROM tableinfo";
+        string query = "SELECT * FROM tb_usuario";
 
         //Create a list to store the result
-        List< string >[] list = new List< string >[3];
-        list[0] = new List< string >();
-        list[1] = new List< string >();
-        list[2] = new List< string >();
+        List<string>[] list = new List<string>[3];
+        for(int i = 0; i < list.Length; i++){
+            list[i] = new List<string>();
+        }
 
         //Open connection
         if (this.OpenConnection() == true)
@@ -139,9 +139,9 @@ class DBConnect
             //Read the data and store them in the list
             while (dataReader.Read())
             {
-                list[0].Add(dataReader["id"] + "");
-                list[1].Add(dataReader["name"] + "");
-                list[2].Add(dataReader["age"] + "");
+                list[0].Add(dataReader["id_usuario"] + "");
+                list[1].Add(dataReader["usuario"] + "");
+                list[2].Add(dataReader["senha"] + "");
             }
 
             //close Data Reader
@@ -158,33 +158,57 @@ class DBConnect
             return list;
         }
     }
-/* 
-    //Count statement
-    public int Count()
-    {
-        string query = "SELECT Count(*) FROM tableinfo";
-        int Count = -1;
 
-        //Open Connection
+    public List<string>[] SelectUsuario(int idUsuario)
+    {
+        string query = $"SELECT * FROM tb_usuario where id_usuario = '{idUsuario}'";
+
+        //Create a list to store the result
+        List<string>[] list = new List<string>[3];
+        for(int i = 0; i < list.Length; i++){
+            list[i] = new List<string>();
+        }
+
+        //Open connection
         if (this.OpenConnection() == true)
         {
-            //Create Mysql Command
+            //Create Command
             MySqlCommand cmd = new MySqlCommand(query, connection);
-
-            //ExecuteScalar will return one value
-            Count = int.Parse(cmd.ExecuteScalar()+"");
+            //Create a data reader and Execute the command
+            MySqlDataReader dataReader = cmd.ExecuteReader();
             
+            //Read the data and store them in the list
+            while (dataReader.Read())
+            {
+                list[0].Add(dataReader["id_usuario"] + "");
+                list[1].Add(dataReader["usuario"] + "");
+                list[2].Add(dataReader["senha"] + "");
+            }
+
+            //close Data Reader
+            dataReader.Close();
+
             //close Connection
             this.CloseConnection();
 
-            return Count;
+            //return list to be displayed
+            return list;
         }
         else
         {
-            return Count;
+            return list;
         }
     }
-
-*/
     
+}
+
+static class UserSession{
+    public static int userId;
+    public static string userName;
+    public static bool IsLogged(){
+        if(userId != 0 && userName != ""){
+            return true;
+        }
+        return false;
+    }
 }
