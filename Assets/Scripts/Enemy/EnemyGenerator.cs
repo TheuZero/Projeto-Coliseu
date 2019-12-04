@@ -7,7 +7,7 @@ public class EnemyGenerator : MonoBehaviour
     public GameObject[] enemy;
     public List<GameObject> enemySpawn = new List<GameObject>();
     public GameObject boss;
-    int maxEnemy = 4;
+    public int maxEnemy = 5;
     float spawnTimer = 8f;
     public Vector2[] spawnPositions;
     public Vector2[] projectileEnemySpawn;
@@ -18,7 +18,7 @@ public class EnemyGenerator : MonoBehaviour
 
 
     void Update(){
-        if(!SpawnCooldown)
+        if(!SpawnCooldown && enemySpawn.Count <= 5)
         StartCoroutine(SpawnEnemy());
     }
 
@@ -43,6 +43,10 @@ public class EnemyGenerator : MonoBehaviour
     }
     int RandomIndex(int length){
         return Random.Range(0, length);
+    }
+
+    void OnDeath(GameObject enemy){
+        enemySpawn.Remove(enemy);
     }
 
 }

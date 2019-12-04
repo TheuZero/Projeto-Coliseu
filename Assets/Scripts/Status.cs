@@ -25,6 +25,8 @@ public class Status : MonoBehaviour, IHpNotifier
 
     [SerializeField]
     public List<IHpListener> hpListeners = new List<IHpListener>();
+    //public List<IDeathListener> deathListener = new List<IDeathListener>();
+    public Action<GameObject> OnDeath;
 
     int baseTag;
 
@@ -82,6 +84,7 @@ public class Status : MonoBehaviour, IHpNotifier
         hp -= damage;
         NotifyOnHpChange(hpListeners, playerNumber);
         if(hp <= 0){
+            OnDeath(gameObject);
             if(gameObject.tag == "Player"){
                 try{gameMode.PlayerDead(playerNumber);}
                 catch(Exception e){
