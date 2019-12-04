@@ -10,6 +10,8 @@ public class CharacterManager : MonoBehaviour
     public Dictionary<int, GameObject> assignedCharacter = new Dictionary<int, GameObject>();
     public GameObject[] toSpawn;
     public List<GameObject> instantiatedPlayer = new List<GameObject>();
+
+    public int[] playerCharacter = new int[2];
     void Start()
     {
 
@@ -18,6 +20,7 @@ public class CharacterManager : MonoBehaviour
     public void SetSpawnCharacter(int playerNum, int playerChar){
         assignedCharacter.Remove(playerNum);
         assignedCharacter.Add (playerNum, characters[playerChar]);
+        playerCharacter[playerNum] = playerChar;
     }
     public void RemoveSpawnCharacter(int playerNum){
         assignedCharacter.Remove(playerNum);

@@ -61,8 +61,4 @@ public class ReferenceHolder : MonoBehaviour
             hpBars[i].SetActive(true);
         }
     }
-    void Update()
-    {
-        
-    }
 }

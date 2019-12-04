@@ -6,6 +6,7 @@ using System;
 [System.Serializable]
 public class Status : MonoBehaviour, IHpNotifier
 {
+    public int charId;
     public GameModeManager gameMode;
     public int playerNumber;
     public float hp = 1;
@@ -13,7 +14,6 @@ public class Status : MonoBehaviour, IHpNotifier
     float mp;
     public float maxMp;
     public float timeFactor = 1;
-
 
     public bool canMove;
     public bool canAttack;
