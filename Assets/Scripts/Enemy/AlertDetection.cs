@@ -17,8 +17,10 @@ public class AlertDetection : MonoBehaviour
             targets.Add(col.gameObject);
     }
     void OnTriggerStay2D(Collider2D col){
-        if(col.gameObject == targets[0]){
-            alert.Follow(targets[0].transform.position);
+        if(col.gameObject.tag == "Player"){
+            if(col.gameObject == targets[0]){
+                alert.Follow(targets[0].transform.position);
+            }
         }
     }
     void OnTriggerExit2D(Collider2D col){

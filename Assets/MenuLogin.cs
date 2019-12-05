@@ -7,16 +7,6 @@ using TMPro;
 public class MenuLogin : MonoBehaviour
 {
     public TMP_InputField user, password;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void Login(){
 

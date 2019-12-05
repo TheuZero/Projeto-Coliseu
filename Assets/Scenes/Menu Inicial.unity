@@ -729,7 +729,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 71273171}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1368251713}
+        m_MethodName: GoToMenu
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 808292310}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &71273171
@@ -3322,7 +3333,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 298319040}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1368251713}
+        m_MethodName: GoToMenu
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 389710579}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &298319040
@@ -3684,7 +3706,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 308478877}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 808292312}
+        m_MethodName: GoToMenu
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1368251711}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &308478877
@@ -7906,13 +7939,14 @@ GameObject:
   - component: {fileID: 808292315}
   - component: {fileID: 808292314}
   - component: {fileID: 808292313}
+  - component: {fileID: 808292312}
   m_Layer: 0
   m_Name: Canvas_Cadastro
   m_TagString: Menu (UI)
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &808292311
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7933,6 +7967,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &808292312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808292310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848939267592e734ab6e09f29a713e91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  user: {fileID: 1081554039}
+  password: {fileID: 672434704}
+  confirmPassword: {fileID: 255878388}
 --- !u!114 &808292313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12114,7 +12163,7 @@ RectTransform:
   m_Children:
   - {fileID: 2107593909}
   m_Father: {fileID: 2017845752}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13136,7 +13185,7 @@ RectTransform:
   m_Children:
   - {fileID: 671509043}
   m_Father: {fileID: 2017845752}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14911,7 +14960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1598297912
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17781,6 +17830,7 @@ MonoBehaviour:
   toSpawn:
   - {fileID: 0}
   instantiatedPlayer: []
+  playerCharacter: 0000000000000000
 --- !u!1 &1900593835
 GameObject:
   m_ObjectHideFlags: 0
@@ -18984,8 +19034,8 @@ RectTransform:
   - {fileID: 512796841}
   - {fileID: 937346531}
   - {fileID: 1938229868}
-  - {fileID: 1413410141}
   - {fileID: 1335990587}
+  - {fileID: 1413410141}
   - {fileID: 905651682}
   m_Father: {fileID: 626177990}
   m_RootOrder: 0

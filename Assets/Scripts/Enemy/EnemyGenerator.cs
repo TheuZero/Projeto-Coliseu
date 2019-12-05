@@ -18,7 +18,7 @@ public class EnemyGenerator : MonoBehaviour
 
 
     void Update(){
-        if(!SpawnCooldown && enemySpawn.Count <= 5)
+        if(!SpawnCooldown && enemySpawn.Count <= maxEnemy)
         StartCoroutine(SpawnEnemy());
     }
 
@@ -40,6 +40,8 @@ public class EnemyGenerator : MonoBehaviour
         else if(enemyNum == 1){
             enemySpawn.Add(Instantiate(enemy[1], spawnPositions[RandomIndex(projectileEnemySpawn.Length)], Quaternion.identity, this.gameObject.transform));
         }
+        Debug.Log(enemySpawn.Count);
+        enemySpawn[enemySpawn.Count - 1].transform.GetChild(0).GetComponent<Status>().OnDeath = this.OnDeath;
     }
     int RandomIndex(int length){
         return Random.Range(0, length);

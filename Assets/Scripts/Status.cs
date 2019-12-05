@@ -84,7 +84,8 @@ public class Status : MonoBehaviour, IHpNotifier
         hp -= damage;
         NotifyOnHpChange(hpListeners, playerNumber);
         if(hp <= 0){
-            OnDeath(gameObject);
+            if(OnDeath != null)
+            OnDeath(transform.parent.gameObject);
             if(gameObject.tag == "Player"){
                 try{gameMode.PlayerDead(playerNumber);}
                 catch(Exception e){

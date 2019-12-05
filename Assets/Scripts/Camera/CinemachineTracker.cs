@@ -22,10 +22,4 @@ public class CinemachineTracker : MonoBehaviour
         }
         cinemachine.m_Targets = targets.ToArray();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(cinemachine);
-    }
 }

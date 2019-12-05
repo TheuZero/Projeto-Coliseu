@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Patrol : MonoBehaviour
 {
-    float moveTimer = 1.0f;
+    float moveTimer = 0;
     float defaultmoveTimer = 1f;
     float idleTimer = 1f;
     float defaultIdleTimer = 1f;
