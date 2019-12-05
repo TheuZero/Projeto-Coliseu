@@ -41,21 +41,6 @@ class DBConnect
         }
         catch (MySqlException ex)
         {
-            //When handling errors, you can your application's response based 
-            //on the error number.
-            //The two most common error numbers when connecting are as follows:
-            //0: Cannot connect to server.
-            //1045: Invalid user name and/or password.
-            switch (ex.Number)
-            {
-                case 0:
-                    //MessageBox.Show("Cannot connect to server.  Contact administrator");
-                    break;
-
-                case 1045:
-                    //MessageBox.Show("Invalid username/password, please try again");
-                    break;
-            }
             return false;
         }
     }
@@ -70,7 +55,6 @@ class DBConnect
         }
         catch (MySqlException ex)
         {
-            //MessageBox.Show(ex.Message);
             return false;
         }
     }
@@ -116,27 +100,21 @@ class DBConnect
             this.CloseConnection();
         }
     }
-
-    //Select statement
+/*
     public List<string>[] SelectUsuario()
     {
         string query = "SELECT * FROM tb_usuario";
 
-        //Create a list to store the result
         List<string>[] list = new List<string>[3];
         for(int i = 0; i < list.Length; i++){
             list[i] = new List<string>();
         }
 
-        //Open connection
         if (this.OpenConnection() == true)
         {
-            //Create Command
             MySqlCommand cmd = new MySqlCommand(query, connection);
-            //Create a data reader and Execute the command
             MySqlDataReader dataReader = cmd.ExecuteReader();
             
-            //Read the data and store them in the list
             while (dataReader.Read())
             {
                 list[0].Add(dataReader["id_usuario"] + "");
@@ -144,13 +122,10 @@ class DBConnect
                 list[2].Add(dataReader["senha"] + "");
             }
 
-            //close Data Reader
             dataReader.Close();
 
-            //close Connection
             this.CloseConnection();
 
-            //return list to be displayed
             return list;
         }
         else
@@ -158,11 +133,43 @@ class DBConnect
             return list;
         }
     }
+    */
 
     public List<string>[] SelectUsuario(int idUsuario)
     {
         string query = $"SELECT * FROM tb_usuario where id_usuario = '{idUsuario}'";
 
+        List<string>[] list = new List<string>[3];
+        for(int i = 0; i < list.Length; i++){
+            list[i] = new List<string>();
+        }
+
+        if (this.OpenConnection() == true)
+        {
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                list[0].Add(dataReader["id_usuario"] + "");
+                list[1].Add(dataReader["usuario"] + "");
+                list[2].Add(dataReader["senha"] + "");
+            }
+            dataReader.Close();
+            this.CloseConnection();
+
+            return list;
+        }
+        else
+        {
+            return list;
+        }
+    }
+
+        public List<string>[] LoginUsuario(string user, string password)
+    {
+        string query = $"SELECT * FROM tb_usuario where usuario = {user} and senha = {password}";
+
         //Create a list to store the result
         List<string>[] list = new List<string>[3];
         for(int i = 0; i < list.Length; i++){
@@ -198,10 +205,9 @@ class DBConnect
         {
             return list;
         }
-    }
     
+    }
 }
-
 static class UserSession{
     public static int userId;
     public static string userName;
