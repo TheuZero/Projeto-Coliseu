@@ -7,7 +7,7 @@ public class EnemyGenerator : MonoBehaviour
     public GameObject[] enemy;
     public List<GameObject> enemySpawn = new List<GameObject>();
     public GameObject boss;
-    public int maxEnemy = 5;
+    public int maxEnemy = 5, enemyKilled = 0;
     float spawnTimer = 8f;
     public Vector2[] spawnPositions;
     public Vector2[] projectileEnemySpawn;
@@ -16,9 +16,11 @@ public class EnemyGenerator : MonoBehaviour
     bool SpawnCooldown = false;
     bool canSpawn = true;
 
-
+    void OnEnable(){
+        enemyKilled = 0;
+    }
     void Update(){
-        if(!SpawnCooldown && enemySpawn.Count <= maxEnemy)
+        if(!SpawnCooldown && enemySpawn.Count < maxEnemy)
         StartCoroutine(SpawnEnemy());
     }
 
@@ -49,6 +51,10 @@ public class EnemyGenerator : MonoBehaviour
 
     void OnDeath(GameObject enemy){
         enemySpawn.Remove(enemy);
+        enemyKilled++;
+        if(enemyKilled % 6 == 0){
+            maxEnemy++;
+        }
     }
 
 }

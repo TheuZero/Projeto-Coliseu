@@ -4827,7 +4827,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -28653,7 +28653,7 @@ MonoBehaviour:
   player: {fileID: 2381743381049083638}
   hitted: []
   secondsSlowed: 4
-  slowEffect: 0.7
+  slowEffect: 0.25
 --- !u!1 &423464437538411848
 GameObject:
   m_ObjectHideFlags: 0

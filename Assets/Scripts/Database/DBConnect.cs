@@ -209,8 +209,8 @@ class DBConnect
     }
 }
 static class UserSession{
-    public static int userId;
-    public static string userName;
+    public static int userId = 0;
+    public static string userName = "";
     public static bool IsLogged(){
         if(userId != 0 && userName != ""){
             return true;

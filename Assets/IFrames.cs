@@ -17,14 +17,6 @@ public class IFrames : MonoBehaviour
         nColor = sprite.color;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown("r")){
-            StartCoroutine(Invulnerability());
-        }
-    }
-
     public IEnumerator Invulnerability(){
 
         float duration = iFrameDuration;

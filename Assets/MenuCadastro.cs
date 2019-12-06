@@ -6,9 +6,13 @@ using TMPro;
 public class MenuCadastro : MonoBehaviour
 {
     public TMP_InputField user, password, confirmPassword;
-
-    public void Register(){
-
+    DBConnect connection = new DBConnect();
+    public void Register(GameObject go){
+        if(!ConfirmPassword()){
+            return;
+        }
+        connection.RegisterUser(user.text, password.text);
+        GoToMenu(go);
     }
 
     bool ConfirmPassword(){

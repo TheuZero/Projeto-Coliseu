@@ -41,7 +41,7 @@ public class Status : MonoBehaviour, IHpNotifier
             try{
                 gameMode = GameObject.Find("Game Mode Manager").GetComponent<GameModeManager>();
                 gameMode.playersAlive++;
-                maxHp = 100;
+                maxHp = 60;
                 hp = maxHp;
             }catch(Exception e){
                 Debug.Log("Não foi encontrado o game mode (status)" + e);
