@@ -49,3 +49,9 @@ Considerações finais:
 
 Eu vou enrolar para arrumar tudo isso, pois eu estou bem cansado após toda essa correria. O projeto foi feito em 6 meses e eu programei
 sozinho, por enquanto ele só serve como um guia de como não fazer certas coisas.
+
+Sobre a arte dos personagens:
+
+Ela foi feita em 3D, animada e transformada em frames, depois aplicamos uns filtros pra corrigir as cores.
+
+Agradeço ao meu amigo Lucas de Queiroz Silva, pois ele cobriu toda essa parte sozinho, apenas pedindo a minha opinião.
