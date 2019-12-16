@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2f01bc18ced0f840862bbd069a1689a, type: 3}
+  m_Name: Combo
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  attackName: Combo
+  cooldown: 0
+  manaCost: 0
+  hitData:
+  - manaGain: 2
+    dmgMultiplier: 2
+    knockback: 0.1
+    knockup: 0
+    hitstun: 0.3
+    hitlag: 0.05
+  - manaGain: 3
+    dmgMultiplier: 2
+    knockback: 0.1
+    knockup: 0
+    hitstun: 0.3
+    hitlag: 0.05
+  - manaGain: 5
+    dmgMultiplier: 4
+    knockback: 4
+    knockup: 5.7
+    hitstun: 1
+    hitlag: 0.12
+  attackType: 0
+  hitType: 0
+  movementData: {fileID: 11400000, guid: 3ea42e8df7032e442a341ea59db3f6c6, type: 2}

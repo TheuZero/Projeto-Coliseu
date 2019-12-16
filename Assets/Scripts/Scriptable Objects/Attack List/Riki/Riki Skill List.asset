@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d7f97318f7edd498fa3e1760c1bfb0, type: 3}
+  m_Name: Riki Skill List
+  m_EditorClassIdentifier: 
+  normalAttack:
+  - {fileID: 11400000, guid: 46ec2a57d3449294e90a128f81dacb73, type: 2}
+  skill: []
+  specialSkill: []

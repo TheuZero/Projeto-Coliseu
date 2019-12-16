@@ -11,6 +11,14 @@ TagManager:
   - Hit Box
   - Enemy
   - Special Hit Box
+  - Entity Hit Box
+  - HpBar
+  - "Bot\xF5es (UI)"
+  - Menu (UI)
+  - Hurt Box (Player)
+  - Hit Box (Enemy)
+  - GameOver
+  - Debuff Field
   layers:
   - Default
   - TransparentFX
@@ -27,12 +35,12 @@ TagManager:
   - Hurt Box
   - Ledge
   - Enemy
-  - Human Box
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Character Collider (Player)
+  - Character Collider (Enemy)
+  - Enemy FoV
+  - Hit Box (Enemy)
+  - Hurt Box (Enemy)
+  - Debuff Field
   - 
   - 
   - 
@@ -51,11 +59,14 @@ TagManager:
   - name: Background
     uniqueID: 4063134643
     locked: 0
-  - name: Effects
-    uniqueID: 2725018573
+  - name: Ground
+    uniqueID: 2349626399
     locked: 0
   - name: Player
     uniqueID: 3630466713
+    locked: 0
+  - name: Effects
+    uniqueID: 2725018573
     locked: 0
   - name: UI
     uniqueID: 1057150785
