@@ -54,4 +54,5 @@ Sobre a arte dos personagens:
 
 Ela foi feita em 3D, animada e transformada em frames, depois aplicamos uns filtros pra corrigir as cores.
 
-Agradeço ao meu amigo Lucas de Queiroz Silva, pois ele cobriu toda essa parte sozinho, apenas pedindo a minha opinião.
+Agradeço ao meu amigo Lucas de Queiroz Silva, pois ele cobriu toda essa parte sozinho, apenas pedindo a minha opinião algumas vezes.
+Segue o Perfil dele: https://github.com/TecoTecoChines
